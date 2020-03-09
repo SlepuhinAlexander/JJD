@@ -10,8 +10,8 @@ public class LoopsDemo {
 
     public static void main(String[] args) {
         LoopsDemo demo = new LoopsDemo();
-//        demo.whileDemo();
-//        demo.doWhileDemo();
+        demo.whileDemo();
+        demo.doWhileDemo();
         demo.forDemo();
         demo.foreachDemo();
     }
