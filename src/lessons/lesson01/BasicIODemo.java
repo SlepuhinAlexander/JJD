@@ -4,12 +4,11 @@ import java.util.Scanner;
 
 public class BasicIODemo {
     public static void main(String[] args) {
-        BasicIODemo demo = new BasicIODemo();
-        demo.basicConsoleOutputDemo();
-        demo.basicConsoleInputDemo();
+        basicConsoleOutputDemo();
+        basicConsoleInputDemo();
     }
 
-    private void basicConsoleOutputDemo() {
+    private static void basicConsoleOutputDemo() {
         /*
          * Базовый вывод в консоль использует 3 метда:
          *  - System.out.print();
@@ -66,7 +65,7 @@ public class BasicIODemo {
          * */
     }
 
-    private void basicConsoleInputDemo() {
+    private static void basicConsoleInputDemo() {
         /*
          * Получение данных, введённых пользователем, из консоли можно реализовать с помощью служебного класса
          * java.util.Scanner

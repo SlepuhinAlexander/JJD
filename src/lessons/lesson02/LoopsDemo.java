@@ -9,14 +9,13 @@ public class LoopsDemo {
      * */
 
     public static void main(String[] args) {
-        LoopsDemo demo = new LoopsDemo();
-        demo.whileDemo();
-        demo.doWhileDemo();
-        demo.forDemo();
-        demo.foreachDemo();
+        whileDemo();
+        doWhileDemo();
+        forDemo();
+        foreachDemo();
     }
 
-    private void whileDemo() {
+    private static void whileDemo() {
         /*
          * Цикл с предусловием.
          * Синтаксис:
@@ -55,7 +54,7 @@ public class LoopsDemo {
         }
     }
 
-    private void doWhileDemo() {
+    private static void doWhileDemo() {
         /*
          * Цикл с постусловием do .. while имеет похожий на цикл while синтаксис:
          * do {
@@ -103,7 +102,7 @@ public class LoopsDemo {
         } while (true);
     }
 
-    private void forDemo() {
+    private static void forDemo() {
         /*
          * Цикл for удобно использовать когда заранее известно необходимое количество итераций цикла.
          * Синтаксис:
@@ -136,7 +135,7 @@ public class LoopsDemo {
         System.out.println();
     }
 
-    private void foreachDemo() {
+    private static void foreachDemo() {
         /*
          * Цикл foreach появился в Java 5. Он является иной формой записи цикла for для случаев, когда в цикле
          * перебираются все эдементы из какого-либо перечислимого набора.

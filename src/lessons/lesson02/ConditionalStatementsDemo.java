@@ -4,12 +4,11 @@ import org.w3c.dom.ls.LSOutput;
 
 public class ConditionalStatementsDemo {
     public static void main(String[] args) {
-        ConditionalStatementsDemo demo = new ConditionalStatementsDemo();
-        demo.ifElseDemo();
-        demo.switchDemo();
+        ifElseDemo();
+        switchDemo();
     }
 
-    private void ifElseDemo() {
+    private static void ifElseDemo() {
         /*
          * Базовый синтаксис условного оператора if:
          * if (условие) {
@@ -109,7 +108,7 @@ public class ConditionalStatementsDemo {
         }
     }
 
-    private void switchDemo() {
+    private static void switchDemo() {
         /*
          * Конструкция switch позволяет делать ветвление кода на произвольное количество альтернатив.
          * Синтаксис:

@@ -18,13 +18,12 @@ public class DataTypesDemo {
     public static void main(String[] args) {
         // Для демонстрации работы отдельных частей кода можно вызывать отдельные методы
         // (закомментировав вызов остальных)
-        DataTypesDemo demo = new DataTypesDemo();
-        demo.variablesDemo();
-        demo.dataTypesDemo();
-        demo.typesCastDemo();
+        variablesDemo();
+        dataTypesDemo();
+        typesCastDemo();
     }
 
-    private void variablesDemo() {
+    private static void variablesDemo() {
         /*
          * Все перемеенные должны быть объявлены перед тем как будут использоваться.
          * Объявление переменной состоит из указания типа данных и имени переменной.
@@ -57,7 +56,7 @@ public class DataTypesDemo {
         System.out.println("byteVar6: " + byteVar6); // byteVar6: 12
     }
 
-    private void dataTypesDemo() {
+    private static void dataTypesDemo() {
         /*
          * Все типы данных в Java делятся на две категории: примитивные и ссылочные.
          * От принадлежности переменной к примитивным или ссылочным типам данных зависит способ её хранения и способы
@@ -250,7 +249,7 @@ public class DataTypesDemo {
         // и не совместим с другими примитивными типами.
     }
 
-    private void typesCastDemo() {
+    private static void typesCastDemo() {
         /*
          * Совместимые типы данных возможно приводить один к другому.
          * Существует 2 варианта приведения типов:

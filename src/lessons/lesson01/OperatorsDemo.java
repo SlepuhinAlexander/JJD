@@ -2,15 +2,14 @@ package lessons.lesson01;
 
 public class OperatorsDemo {
     public static void main(String[] args) {
-        OperatorsDemo demo = new OperatorsDemo();
-        demo.mathOperatorsDemo();
-        demo.comparisonOperatorsDemo();
-        demo.assignmentOperatorsDemo();
-        demo.logicalOperatorsDemo();
-        demo.ternaryOperatorDemo();
+        mathOperatorsDemo();
+        comparisonOperatorsDemo();
+        assignmentOperatorsDemo();
+        logicalOperatorsDemo();
+        ternaryOperatorDemo();
     }
 
-    private void mathOperatorsDemo() {
+    private static void mathOperatorsDemo() {
         /*
          * Бинарные арифметические операторы (действуют с двумя операндами):
          * + сложение
@@ -47,7 +46,7 @@ public class OperatorsDemo {
         System.out.println(a++ - ++a + a++ + a++ + a); // 13
     }
 
-    private void assignmentOperatorsDemo() {
+    private static void assignmentOperatorsDemo() {
         /*
          * Операторы присваивания
          * =  присваивание:
@@ -77,7 +76,7 @@ public class OperatorsDemo {
         System.out.println("a %= b : a = " + a); // a %= b : a = 0
     }
 
-    private void comparisonOperatorsDemo() {
+    private static void comparisonOperatorsDemo() {
         /*
          * В операциях сравнения сравниваются два операнда и возвращается значения типа boolean:
          *  - true, если выражение верно;
@@ -96,7 +95,7 @@ public class OperatorsDemo {
         System.out.println("15 == 10 + 5 : " + (15 == 10 + 5)); // 15 == 10 + 5 : true
     }
 
-    private void logicalOperatorsDemo() {
+    private static void logicalOperatorsDemo() {
         /*
          * Логические операторы
          * Применяются к значениями типа boolean (или переменным / выражениям, принимающим значения boolean)
@@ -130,7 +129,7 @@ public class OperatorsDemo {
         System.out.println("!" + a + " = " + !a); // !true = false
     }
 
-    private void ternaryOperatorDemo() {
+    private static void ternaryOperatorDemo() {
         /*
          * Тренарный (условный) оператор.
          * Использует три операнда. Использует синтаксис:
