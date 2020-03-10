@@ -8,21 +8,7 @@ import java.util.Scanner;
  * */
 public class Exercise10 {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        int num;
-        while (true) {
-            try {
-                System.out.print("Введите натуральное число: ");
-                num = scanner.nextInt();
-                if (num < 0) {
-                    System.out.println("Некорректный ввод, попробуйте ещё раз");
-                } else if (num > 1000) {
-                    System.out.println("Число слишком больше, вычисление не рекомендуется");
-                } else break;
-            } catch (Exception ex) {
-                scanner.nextLine();
-            }
-        }
+        int num = getUserInput();
         System.out.println(num + "! = " + factorial(num));
 //        System.out.println(num + "! = " + recursiveFactorial(num)); // альтернативное решение через рекурсию
     }
@@ -50,6 +36,26 @@ public class Exercise10 {
         }
         BigInteger result = BigInteger.valueOf(n);
         return result.multiply(new BigInteger(recursiveFactorial(n-1))).toString();
+    }
+
+    static int getUserInput() {
+        Scanner scanner = new Scanner(System.in);
+        int result;
+        while (true) {
+            try {
+                System.out.print("Введите натуральное число: ");
+                result = scanner.nextInt();
+                if (result < 0) {
+                    System.out.println("Некорректный ввод, попробуйте ещё раз");
+                } else if (result > 1000) {
+                    System.out.println("Число слишком больше, рекомендуется взять число до 1000");
+                } else break;
+            } catch (Exception ex) {
+                System.out.println("Некорректный ввод, попробуйте ещё раз");
+                scanner.nextLine();
+            }
+        }
+        return result;
     }
 }
 /*
