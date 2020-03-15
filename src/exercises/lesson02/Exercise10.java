@@ -1,7 +1,8 @@
 package exercises.lesson02;
 
+import static utils.ConsoleHelper.*;
+
 import java.math.BigInteger;
-import java.util.Scanner;
 
 /*
  * Создайте программу, вычисляющую факториал натурального числа n, которое пользователь введёт с клавиатуры.
@@ -9,8 +10,8 @@ import java.util.Scanner;
 public class Exercise10 {
     public static void main(String[] args) {
         int num = getUserInput();
-        System.out.println(num + "! = " + factorial(num));
-//        System.out.println(num + "! = " + recursiveFactorial(num)); // альтернативное решение через рекурсию
+        println(num + "! = " + factorial(num));
+//        println(num + "! = " + recursiveFactorial(num)); // альтернативное решение через рекурсию
     }
 
     static String factorial(int n) {
@@ -35,24 +36,21 @@ public class Exercise10 {
             }
         }
         BigInteger result = BigInteger.valueOf(n);
-        return result.multiply(new BigInteger(recursiveFactorial(n-1))).toString();
+        return result.multiply(new BigInteger(recursiveFactorial(n - 1))).toString();
     }
 
     static int getUserInput() {
-        Scanner scanner = new Scanner(System.in);
-        int result;
+        Integer result;
         while (true) {
-            try {
-                System.out.print("Введите натуральное число: ");
-                result = scanner.nextInt();
-                if (result < 0) {
-                    System.out.println("Некорректный ввод, попробуйте ещё раз");
-                } else if (result > 1000) {
-                    System.out.println("Число слишком больше, рекомендуется взять число до 1000");
-                } else break;
-            } catch (Exception ex) {
-                System.out.println("Некорректный ввод, попробуйте ещё раз");
-                scanner.nextLine();
+            result = readInteger("Введите натуральное число: ");
+            if (result == null) {
+                println("Некорректный ввод, попробуйте ещё раз");
+            } else if (result < 0) {
+                println("Некорректный ввод, попробуйте ещё раз");
+            } else if (result > 1000) {
+                println("Число слишком больше, рекомендуется взять число до 1000");
+            } else {
+                break;
             }
         }
         return result;

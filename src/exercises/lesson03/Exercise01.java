@@ -1,5 +1,7 @@
 package exercises.lesson03;
 
+import static utils.ConsoleHelper.*;
+
 import java.util.Arrays;
 import java.util.Random;
 
@@ -11,9 +13,9 @@ public class Exercise01 {
         Random r = new Random();
         int n = r.nextInt(Integer.MAX_VALUE) + 1; // [1, max int]
         int m = r.nextInt(Integer.MAX_VALUE) + 1; // понятие НОД имеет смысл для натуральных чисел.
-//        System.out.println("НОД чисел " + n + " и " + m + " равен " + getGCF(n, m));
-//        System.out.println("НОД чисел " + n + " и " + m + " равен " + getGCFPrimes(n, m));
-        System.out.println("НОД чисел " + n + " и " + m + " равен " + getGFCEuler(n, m));
+//        println("НОД чисел " + n + " и " + m + " равен " + getGCF(n, m));
+//        println("НОД чисел " + n + " и " + m + " равен " + getGCFPrimes(n, m));
+        println("НОД чисел " + n + " и " + m + " равен " + getGFCEuler(n, m));
     }
 
     /*

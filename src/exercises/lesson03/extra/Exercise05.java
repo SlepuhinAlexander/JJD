@@ -1,7 +1,9 @@
 package exercises.lesson03.extra;
 
+import static utils.ConsoleHelper.*;
+import static utils.ArraysHelper.*;
+
 import java.util.Arrays;
-import java.util.Random;
 
 /*
  * Создать двумерный массив из 8 строк по 5 столбцов в каждой из случайных целых чисел из отрезка [10;99].
@@ -11,27 +13,7 @@ public class Exercise05 {
     public static void main(String[] args) {
         int[][] someArr = new int[8][5];
         fillRandomly(someArr, 10, 100);
-        System.out.println(Arrays.deepToString(someArr).replace("],", "],\n"));
-    }
-
-    /**
-     * Method fills the given two-dimensional integer array with random integers in range from bottom (inclusively)
-     * to top (exclusively)
-     *
-     * @param arr the array to fill
-     * @param bottom lower border for int value to assign, inclusive
-     * @param top upper border for int value to assign, exclusive
-     */
-    static void fillRandomly(int[][] arr, int bottom, int top) {
-        if (arr == null || top <= bottom) {
-            return;
-        }
-        Random r = new Random();
-        for (int i = 0; i < arr.length; i++) {
-            for (int j = 0; j < arr[i].length; j++) {
-                arr[i][j] = r.nextInt(top - bottom) + bottom;
-            }
-        }
+        println(Arrays.deepToString(someArr).replace("],", "],\n"));
     }
 }
 /*

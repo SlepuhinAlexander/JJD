@@ -1,5 +1,7 @@
 package exercises.lesson03.extra;
 
+import static utils.ConsoleHelper.*;
+
 /*
  * Создайте массив из всех чётных чисел от 2 до 20 и выведите элементы массива в консоль в обратном порядке
  * (20 18 16 ... 4 2).
@@ -10,7 +12,7 @@ public class Exercise01 {
         for (int i = 1; i <= someArr.length; i++) {
             someArr[i - 1] = i * 2;
         }
-        System.out.println(reverseToString(someArr));
+        println(reverseToString(someArr));
     }
 
     private static String reverseToString(int[] arr) {

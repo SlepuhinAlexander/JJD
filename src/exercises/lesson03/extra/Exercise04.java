@@ -1,5 +1,8 @@
 package exercises.lesson03.extra;
 
+import static utils.ArraysHelper.*;
+import static utils.ConsoleHelper.*;
+
 import java.util.Arrays;
 
 /*
@@ -10,8 +13,8 @@ import java.util.Arrays;
 public class Exercise04 {
     public static void main(String[] args) {
         int[] someArr = new int[11];
-        Exercise02.fillRandomly(someArr, -1, 2);
-        System.out.println(Arrays.toString(someArr));
+        fillRandomly(someArr, -1, 2);
+        println(Arrays.toString(someArr));
         findMostCommonElement(someArr);
     }
 
@@ -50,7 +53,7 @@ public class Exercise04 {
 
         for (int i = 0; i < counts.length; i++) {
             if (counts[i] == maxCount) {
-                System.out.println("Чаще всего (" + maxCount + " раз(a)) в массиве встречается элемент " + elements[i]);
+                println("Чаще всего (" + maxCount + " раз(a)) в массиве встречается элемент " + elements[i]);
                 return;
             }
         }

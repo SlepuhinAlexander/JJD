@@ -1,5 +1,8 @@
 package exercises.lesson03.extra;
 
+import static utils.ConsoleHelper.*;
+import static utils.ArraysHelper.*;
+
 import java.util.Arrays;
 
 /*
@@ -9,13 +12,13 @@ import java.util.Arrays;
 public class Exercise03 {
     public static void main(String[] args) {
         int[] someArr = new int[4];
-        Exercise02.fillRandomly(someArr, 10, 100);
-        System.out.println(Arrays.toString(someArr));
-        System.out.print("Массив ");
+        fillRandomly(someArr, 10, 100);
+        println(Arrays.toString(someArr));
+        print("Массив ");
         if (!isStrictlyIncreasing(someArr)) {
-            System.out.print("не ");
+            print("не ");
         }
-        System.out.println("является строго возрастающей последовательностью.");
+        println("является строго возрастающей последовательностью.");
     }
 
     static boolean isStrictlyIncreasing(int[] arr) {

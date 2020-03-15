@@ -1,5 +1,7 @@
 package exercises.lesson02;
 
+import static utils.ConsoleHelper.*;
+
 import java.util.Random;
 
 /*
@@ -13,7 +15,7 @@ public class Exercise05 {
     public static void main(String[] args) {
         Random r = new Random();
         int n = r.nextInt(900) + 100; // [100, 999]
-        System.out.println("В числе " + n + " наибольшая цифра " + getLargestDigit(n));
+        println("В числе " + n + " наибольшая цифра " + getLargestDigit(n));
     }
 
     static byte getLargestDigit(long num) {

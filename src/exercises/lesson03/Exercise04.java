@@ -1,8 +1,9 @@
 package exercises.lesson03;
 
+import static utils.ConsoleHelper.*;
+import static utils.ArraysHelper.*;
+
 import java.util.Arrays;
-import java.util.Random;
-import java.util.Scanner;
 
 /*
  * Пользователь вводит с клавиатуры натуральное число большее 3, которое сохраняется в переменную n.
@@ -15,45 +16,28 @@ public class Exercise04 {
         int num = getUserInput();
         int[] someArr = new int[num];
         fillRandomly(someArr, 0, num + 1);
-        System.out.println(Arrays.toString(someArr));
+        println(Arrays.toString(someArr));
         int[] evensArr = getEvensArr(someArr);
         if (evensArr.length != 0) {
-            System.out.println("Чётные элементы:\n" + Arrays.toString(evensArr));
+            println("Чётные элементы:\n" + Arrays.toString(evensArr));
         }
     }
 
     static int getUserInput() {
-        Scanner scanner = new Scanner(System.in);
-        int result;
+        Integer result;
         while (true) {
-            try {
-                System.out.print("Задайте размер масива: ");
-                result = scanner.nextInt();
-                if (result < 0) {
-                    System.out.println("Некорректный ввод, попробуйте ещё раз.");
-                } else if (result <= 3) {
-                    System.out.println("Слишком малый размер, рекомендуется взять число от 4");
-                } else if (result > 1000) {
-                    System.out.println("Слишком большой размер, рекомендуется взять число до 1000");
-                } else {
-                    break;
-                }
-            } catch (Exception ex) {
-                System.out.println("Некорректный ввод, попробуйте ещё раз.");
-                scanner.nextLine();
+            result = readInteger("Задайте размер масива: ");
+            if (result == null) {
+                println("Некорректный ввод, попробуйте ещё раз.");
+            } else if (result < 3) {
+                println("Слишком малый размер, рекомендуется взять число от 4");
+            } else if (result > 1000) {
+                println("Слишком большой размер, рекомендуется взять число до 1000");
+            } else {
+                break;
             }
         }
         return result;
-    }
-
-    static void fillRandomly(int[] arr, int bottom, int top) {
-        if (arr == null || top <= bottom) {
-            return;
-        }
-        Random r = new Random();
-        for (int i = 0; i < arr.length; i++) {
-            arr[i] = r.nextInt(top - bottom) + bottom;
-        }
     }
 
     static int[] getEvensArr(int[] arr) {

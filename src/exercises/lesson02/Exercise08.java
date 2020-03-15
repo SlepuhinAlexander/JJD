@@ -1,5 +1,7 @@
 package exercises.lesson02;
 
+import static utils.ConsoleHelper.*;
+
 /*
  * Создайте программу, выводящую на экран все неотрицательные элементы последовательности
  *   90 85 80 75 70 65 60 ...
@@ -11,7 +13,7 @@ public class Exercise08 {
 
     static void generateCountdown(int start, int finish, int step) {
         while (start > finish) {
-            System.out.print(start + " ");
+            print(start + " ");
             start -= step;
         }
     }

@@ -1,5 +1,8 @@
 package exercises.lesson03.extra;
 
+import static utils.ConsoleHelper.*;
+import static utils.ArraysHelper.*;
+
 import java.util.Arrays;
 
 /*
@@ -11,9 +14,9 @@ import java.util.Arrays;
 public class Exercise06 {
     public static void main(String[] args) {
         int[][] someArr = new int[7][4];
-        Exercise05.fillRandomly(someArr, -5, 6);
-        System.out.println(Arrays.deepToString(someArr).replace("],", "],\n"));
-        System.out.println("Строка с индексом " + findHighestRowProduct(someArr) +
+        fillRandomly(someArr, -5, 6);
+        println(Arrays.deepToString(someArr).replace("],", "],\n"));
+        println("Строка с индексом " + findHighestRowProduct(someArr) +
                 " содержит наибольшее по модулю произведение элементов");
     }
 

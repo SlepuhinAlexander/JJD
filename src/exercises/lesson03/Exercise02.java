@@ -1,5 +1,8 @@
 package exercises.lesson03;
 
+import static utils.ConsoleHelper.*;
+import static utils.ArraysHelper.*;
+
 import java.util.Arrays;
 import java.util.Random;
 
@@ -12,7 +15,7 @@ import java.util.Random;
 public class Exercise02 {
     public static void main(String[] args) {
         int[] someArr = getRandomArray(10);
-        System.out.println(Arrays.toString(someArr));
+        println(Arrays.toString(someArr));
         findPair(someArr, 7);
     }
 
@@ -22,9 +25,7 @@ public class Exercise02 {
         }
         Random r = new Random();
         int[] arr = new int[r.nextInt(bound) + bound]; // [bound; 2 * bound)
-        for (int i = 0; i < arr.length; i++) {
-            arr[i] = r.nextInt(bound * 2) - bound; // [-bound;bound)
-        }
+        fillRandomly(arr, -bound, bound);
         return arr;
     }
 
@@ -36,12 +37,12 @@ public class Exercise02 {
         for (int i = 0; i < arr.length - 1; i++) {
             for (int j = i + 1; j < arr.length; j++) {
                 if (arr[i] + arr[j] == sum) {
-                    System.out.println(arr[i] + " + " + arr[j] + " = " + sum);
+                    println(arr[i] + " + " + arr[j] + " = " + sum);
                     return;
                 }
             }
         }
-        System.out.println("Не удалось найти подходящую пару, дающую " + sum + " в сумме.");
+        println("Не удалось найти подходящую пару, дающую " + sum + " в сумме.");
     }
 }
 

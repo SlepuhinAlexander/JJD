@@ -1,7 +1,9 @@
 package exercises.lesson03.extra;
 
+import static utils.ConsoleHelper.*;
+import static utils.ArraysHelper.*;
+
 import java.util.Arrays;
-import java.util.Random;
 
 /*
  * Создайте массив из 15 случайных целых чисел из отрезка [0;9]. Выведите массив в консоль.
@@ -11,26 +13,8 @@ public class Exercise02 {
     public static void main(String[] args) {
         int[] someArr = new int[15];
         fillRandomly(someArr, 0, 10);
-        System.out.println(Arrays.toString(someArr));
-        System.out.println("Массив содержит " + countEvenElements(someArr) + " чётных элементов.");
-    }
-
-    /**
-     * Method fills the given one-dimensional integer array with random integers in range from bottom (inclusively)
-     * to top (exclusively)
-     *
-     * @param arr the array to fill
-     * @param bottom lower border for int value to assign, inclusive
-     * @param top upper border for int value to assign, exclusive
-     */
-    static void fillRandomly(int[] arr, int bottom, int top) {
-        if (arr == null || top <= bottom) {
-            return;
-        }
-        Random r = new Random();
-        for (int i = 0; i < arr.length; i++) {
-            arr[i] = r.nextInt(top - bottom) + bottom;
-        }
+        println(Arrays.toString(someArr));
+        println("Массив содержит " + countEvenElements(someArr) + " чётных элементов.");
     }
 
     static int countEvenElements(int[] arr) {

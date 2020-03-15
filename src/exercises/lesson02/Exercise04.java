@@ -1,5 +1,9 @@
 package exercises.lesson02;
 
+import static utils.ConsoleHelper.*;
+
+import java.util.Random;
+
 /*
  * Написать код, который будет проверять попало ли случайно сгенерированное целое число из отрезка [5;122]
  * в интервал (25;100) и выводить результат в консоль.
@@ -7,9 +11,6 @@ package exercises.lesson02;
  *   Число 113 не содержится в интервале (25,100)
  *   Число 72 содержится в интервале (25,100)
  * */
-
-import java.util.Random;
-
 public class Exercise04 {
     public static void main(String[] args) {
         Random r = new Random();
@@ -18,11 +19,12 @@ public class Exercise04 {
     }
 
     static void checkIntervalHit(int target) {
-        System.out.print("Число " + target + " ");
-        if (target < 25 || target > 100) System.out.print("не ");
-        System.out.println("содержится в интервале (25, 100)");
+        print("Число " + target + " ");
+        if (target < 25 || target > 100) print("не ");
+        println("содержится в интервале (25, 100)");
     }
 }
 /*
-*
-* */
+ * output:
+ * Число 46 содержится в интервале (25, 100)
+ * */

@@ -1,7 +1,9 @@
 package exercises.lesson03;
 
 import java.util.Arrays;
-import java.util.Random;
+
+import static utils.ArraysHelper.fillRandomly;
+import static utils.ConsoleHelper.println;
 
 /*
  * Создать двумерный массив из 5 строк по 8 столбцов в каждой из случайных целых чисел из отрезка [-99;99].
@@ -12,20 +14,8 @@ public class Exercise05 {
     public static void main(String[] args) {
         int[][] someArr = new int[5][8];
         fillRandomly(someArr, -99, 100);
-        System.out.println(Arrays.deepToString(someArr).replace("],", "],\n"));
-        System.out.println(getMax(someArr) + " - максимальный элемент массива.");
-    }
-
-    static void fillRandomly(int[][] arr, int bottom, int top) {
-        if (arr == null || top <= bottom) {
-            return;
-        }
-        Random r = new Random();
-        for (int i = 0; i < arr.length; i++) {
-            for (int j = 0; j < arr[i].length; j++) {
-                arr[i][j] = r.nextInt(top - bottom) + bottom;
-            }
-        }
+        println(Arrays.deepToString(someArr).replace("],", "],\n"));
+        println(getMax(someArr) + " - максимальный элемент массива.");
     }
 
     static int getMax(int[][] arr) {

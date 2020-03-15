@@ -1,5 +1,7 @@
 package exercises.lesson02;
 
+import static utils.ConsoleHelper.*;
+
 import java.util.Random;
 
 /*
@@ -10,7 +12,7 @@ public class Exercise01 {
     public static void main(String[] args) {
         Random r = new Random();
         int n = r.nextInt(900) + 100; // [100, 999]
-        System.out.println("Сумма цифр числа " + n + " равна " + sumDigits(n));
+        println("Сумма цифр числа " + n + " равна " + sumDigits(n));
     }
 
     static int sumDigits(long num) {

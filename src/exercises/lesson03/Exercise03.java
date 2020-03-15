@@ -1,5 +1,8 @@
 package exercises.lesson03;
 
+import static utils.ConsoleHelper.*;
+import static utils.ArraysHelper.*;
+
 import java.util.Arrays;
 import java.util.Random;
 
@@ -9,10 +12,10 @@ import java.util.Random;
 public class Exercise03 {
     public static void main(String[] args) {
         int[] someArr = getRandomArray(42);
-        System.out.println(Arrays.toString(someArr));
-        System.out.println("Максимальное значение: " + getMax(someArr));
-        System.out.println("Миминальное значение: " + getMin(someArr));
-        System.out.println("Среднее значение: " + getAverage(someArr));
+        println(Arrays.toString(someArr));
+        println("Максимальное значение: " + getMax(someArr));
+        println("Миминальное значение: " + getMin(someArr));
+        println("Среднее значение: " + getAverage(someArr));
     }
 
     static int[] getRandomArray(int bound) {
@@ -21,9 +24,7 @@ public class Exercise03 {
         }
         Random r = new Random();
         int[] arr = new int[r.nextInt(bound - 1) + 1]; // [1;bound)
-        for (int i = 0; i < arr.length; i++) {
-            arr[i] = r.nextInt(bound * 2) - bound; // [-bound;bound)
-        }
+        fillRandomly(arr, -bound, bound);
         return arr;
     }
 

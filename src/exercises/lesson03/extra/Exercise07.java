@@ -1,5 +1,8 @@
 package exercises.lesson03.extra;
 
+import static utils.ConsoleHelper.*;
+import static utils.ArraysHelper.*;
+
 import java.util.Arrays;
 
 /*
@@ -14,11 +17,11 @@ import java.util.Arrays;
 public class Exercise07 {
     public static void main(String[] args) {
         int[][] someArr = new int[6][7];
-        Exercise05.fillRandomly(someArr, 0, 10);
-        System.out.println(Arrays.deepToString(someArr).replace("],", "],\n"));
+        fillRandomly(someArr, 0, 10);
+        println(Arrays.deepToString(someArr).replace("],", "],\n"));
         findHighestInRows(someArr);
-        System.out.println("Преобразованный массив: ");
-        System.out.println(Arrays.deepToString(someArr).replace("],", "],\n"));
+        println("Преобразованный массив: ");
+        println(Arrays.deepToString(someArr).replace("],", "],\n"));
     }
 
     private static void findHighestInRows(int[][] arr) {

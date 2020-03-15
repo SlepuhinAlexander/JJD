@@ -1,5 +1,7 @@
 package exercises.lesson02;
 
+import static utils.ConsoleHelper.*;
+
 import java.util.Random;
 
 /*
@@ -14,9 +16,9 @@ public class Exercise02 {
     }
 
     static void oddOrEven(long num) {
-        System.out.print("Число " + num + " - ");
-        if (num % 2 != 0) System.out.print("не");
-        System.out.println("чётное");
+        print("Число " + num + " - ");
+        if (num % 2 != 0) print("не");
+        println("чётное");
     }
 }
 /*

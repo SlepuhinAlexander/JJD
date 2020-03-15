@@ -1,5 +1,7 @@
 package exercises.lesson02;
 
+import static utils.ConsoleHelper.*;
+
 /*
  * Создайте программу, выводящую на экран все четырёхзначные числа последовательности
  * 1000 1003 1006 1009 1012 1015 ...
@@ -13,11 +15,11 @@ public class Exercise06 {
         byte counter = 0;
         while (start < bound) {
             counter++;
-            System.out.print(start + " ");
+            print(start + " ");
             start += step;
             if (counter == 20) {     // counter используется для более приличного вида вывода.
                 counter = 0;
-                System.out.println();
+                println();
             }
         }
     }

@@ -1,5 +1,7 @@
 package exercises.lesson02;
 
+import static utils.ConsoleHelper.*;
+
 import java.util.Formatter;
 
 /*
@@ -19,8 +21,8 @@ public class Exercise12 {
                 }
             }
         }
-        System.out.println("В течение суток симметричное время показывается " + counter + " раз");
-        System.out.println(f.toString());
+        println("В течение суток симметричное время показывается " + counter + " раз");
+        println(f.toString());
     }
 }
 /*

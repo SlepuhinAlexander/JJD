@@ -1,5 +1,7 @@
 package exercises.lesson02;
 
+import static utils.ConsoleHelper.*;
+
 /*
  * Создайте программу, выводящую на экран первые 55 элементов последовательности
  *   1 3 5 7 9 11 13 15 17 ...
@@ -11,7 +13,7 @@ public class Exercise07 {
 
     static void generateSequence(int start, int quantity, int step) {
         for (int i = 0, n = start; i < quantity; i++, n += step) {
-            System.out.print(n + " ");
+            print(n + " ");
         }
     }
 }

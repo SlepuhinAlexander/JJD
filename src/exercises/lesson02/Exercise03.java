@@ -1,5 +1,7 @@
 package exercises.lesson02;
 
+import static utils.ConsoleHelper.*;
+
 import java.util.Random;
 
 /*
@@ -11,7 +13,7 @@ public class Exercise03 {
         Random r = new Random();
         int n = r.nextInt(), m = r.nextInt();
         int res = min(n, m);
-        System.out.println("Из чисел " + m + " и " + n + " наименьшее - " + res);
+        println("Из чисел " + m + " и " + n + " наименьшее - " + res);
     }
 
     static int min(int one, int two) {
