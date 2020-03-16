@@ -22,7 +22,7 @@ public class Exercise05 {
         getUserInput();
         buildGraph();
         println();
-        println("Ищем пусть от \"" + dictionary.get(0) + "\" до \"" + dictionary.get(dictionary.size() - 1)
+        println("Ищем путь от \"" + dictionary.get(0) + "\" до \"" + dictionary.get(dictionary.size() - 1)
                 + "\" испрользуя словарь:");
         printDictionary();
         if (graph.get(0).size() == 1 || graph.get(graph.size() - 1).size() == 1) {
