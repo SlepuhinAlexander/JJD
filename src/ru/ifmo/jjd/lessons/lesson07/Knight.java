@@ -1,4 +1,4 @@
-package ru.ifmo.jjd.exercises.lesson07;
+package ru.ifmo.jjd.lessons.lesson07;
 
 public class Knight extends BattleUnit {
     private int horseSpeed;

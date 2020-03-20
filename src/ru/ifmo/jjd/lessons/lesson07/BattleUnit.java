@@ -1,6 +1,4 @@
-package ru.ifmo.jjd.exercises.lesson07;
-
-import org.w3c.dom.ls.LSOutput;
+package ru.ifmo.jjd.lessons.lesson07;
 
 abstract public class BattleUnit extends Unit implements CanAttack {
     /*
