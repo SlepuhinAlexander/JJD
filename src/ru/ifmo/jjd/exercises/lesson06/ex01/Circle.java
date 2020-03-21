@@ -1,7 +1,11 @@
 package ru.ifmo.jjd.exercises.lesson06.ex01;
 
 public class Circle {
-    private double radius;
+    private double radius = 0.0;
+
+    public Circle(double radius) {
+        setRadius(radius);
+    }
 
     public double getRadius() {
         return radius;
@@ -13,11 +17,11 @@ public class Circle {
         }
     }
 
-    public double getPerimeter() {
+    public double calcPerimeter() {
         return 2 * Math.PI * radius;
     }
 
-    public double getArea() {
+    public double calcArea() {
         return Math.PI * radius * radius;
     }
 }
