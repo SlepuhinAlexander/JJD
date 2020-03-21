@@ -1,17 +1,9 @@
 package ru.ifmo.jjd.lessons.lesson08.school;
 
 abstract public class Person {
-    private String name = "Иван";
-    private String surname = "Иванов";
-    private int age = 7;
-
-    public Person() {
-    }
-
-    public Person(String name, String surname) {
-        setName(name);
-        setSurname(surname);
-    }
+    protected String name;
+    protected String surname;
+    protected int age;
 
     public Person(String name, String surname, int age) {
         this.name = name;
@@ -47,5 +39,10 @@ abstract public class Person {
         if (age > 7) {
             this.age = age;
         }
+    }
+
+    @Override
+    public String toString() {
+        return name + " " + surname;
     }
 }
