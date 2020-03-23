@@ -6,6 +6,13 @@ public class Director extends Person {
         super(person.name, person.surname, person.age);
     }
 
+    @Override
+    public void setAge(int age) {
+        if (age > 35) {
+            super.setAge(age);
+        }
+    }
+
     public static Director appointDirector(Person person) {
         Director director = null;
         if (person != null) {
