@@ -23,3 +23,7 @@
     задачи, полученные после [занятия 5](src/ru/ifmo/jjd/lessons/lesson05)
 4. [Классы и объекты](src/ru/ifmo/jjd/exercises/lesson06) : 
     задачи, полученные после [занятия 6](src/ru/ifmo/jjd/lessons/lesson06)
+    
+### Контрольные работы
+
+1. [Ферма](src/ru/ifmo/jjd/examfarm)
