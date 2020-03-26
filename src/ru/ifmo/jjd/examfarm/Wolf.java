@@ -8,11 +8,11 @@ public class Wolf extends WildAnimal {
 
     public Wolf() {
         super("Волк", 30 + r.nextInt(21),
-                4 + r.nextInt(7), 3 + r.nextInt(6));
+                5 + r.nextInt(6), 7 + r.nextInt(9));
     }
 
     public Wolf(int weight, int speed) {
-        super("Волк", weight, speed, 3 + r.nextInt(6));
+        super("Волк", weight, speed, 7 + r.nextInt(9));
     }
 
     public Wolf(int weight, int speed, int attack) {

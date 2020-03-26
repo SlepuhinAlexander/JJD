@@ -4,6 +4,8 @@ import java.util.Date;
 import java.util.Random;
 
 public class Farmer {
+    private static Random r = new Random(new Date().getTime());
+
     private int resources = 5;
 
     public int getResources() {
@@ -16,18 +18,23 @@ public class Farmer {
 
     public boolean collectResources(Farm farm) {
         int collected = 0;
+        System.out.print("Фермер собирает ресурсы с фермы. ");
         for (DomesticatedAnimal animal : farm.getAnimals()) {
             if (animal instanceof CanGiveResources && animal.getHealth() > 0) {
                 collected += animal.getResources();
             }
         }
         setResources(resources + collected);
+        System.out.println("Получно: " + collected + " ресурсов. Всего: " + resources);
         return collected > 0;
     }
 
     public void feedAnimals(Farm farm) {
+        System.out.println("Фемрер кормит своих животных");
         for (DomesticatedAnimal animal : farm.getAnimals()) {
-            feed(animal);
+            if (animal != null) {
+                feed(animal);
+            }
         }
     }
 
@@ -37,13 +44,15 @@ public class Farmer {
 
     public void eat(CanBeEaten animal) {
         if (animal != null) {
-            setResources(resources + animal.beEaten());
+            int received = animal.beEaten();
+            System.out.print("Фермер съел " + animal + ". ");
+            setResources(resources + received);
+            System.out.println("Получено " + received + " ресурсов. Всего: " + resources);
         }
     }
 
     public boolean frighten(CanBeFrightened wildAnimal) {
         boolean isFrightened = false;
-        Random r = new Random(new Date().getTime());
         if (r.nextBoolean()) {
             wildAnimal.beFrightened();
             isFrightened = true;
@@ -52,6 +61,8 @@ public class Farmer {
     }
 
     public void spendResources() {
+        System.out.print("Фермер проел 2 ресурса. ");
         setResources(resources - 2);
+        System.out.println("Осталось: " + resources);
     }
 }

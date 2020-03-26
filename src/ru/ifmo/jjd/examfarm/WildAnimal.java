@@ -3,25 +3,25 @@ package ru.ifmo.jjd.examfarm;
 import java.util.Date;
 import java.util.Random;
 
-abstract public class WildAnimal extends Animal implements CanBeFrightened, CanAttack{
-    private final int attack; // [2;10]
+abstract public class WildAnimal extends Animal implements CanBeFrightened, CanAttack {
+    private static Random r = new Random(new Date().getTime());
+
+    private final int attack; // [10;20]
     private int timesFrightened;
 
     public WildAnimal(String name) {
         super(name);
-        Random r = new Random(new Date().getTime());
-        attack = 2 + r.nextInt(9);
+        attack = 10 + r.nextInt(11);
     }
 
     public WildAnimal(String name, int weight, int speed) {
         super(name, weight, speed);
-        Random r = new Random(new Date().getTime());
-        attack = 2 + r.nextInt(9);
+        attack = 10 + r.nextInt(11);
     }
 
     public WildAnimal(String name, int weight, int speed, int attack) {
         super(name, weight, speed);
-        this.attack = Math.min(10, Math.max(2, attack));
+        this.attack = Math.min(20, Math.max(10, attack));
     }
 
     public int getAttack() {
@@ -30,19 +30,22 @@ abstract public class WildAnimal extends Animal implements CanBeFrightened, CanA
 
     @Override
     public boolean isFrightened() {
-        return timesFrightened > 3;
+        return timesFrightened > 2;
     }
 
     @Override
     public void beFrightened() {
+        System.out.println(this + " испугался фермера и сбежал");
         timesFrightened++;
     }
 
     @Override
     public void attack(CanRunAway prey) {
         if (getSpeed() > prey.getSpeed()) {
-            System.out.println(this + " атакует " + prey);
+            System.out.print(this + " атакует " + prey + ". ");
             prey.beAttacked(getAttack());
+        } else {
+            System.out.println(prey + " убежал от " + this);
         }
     }
 }

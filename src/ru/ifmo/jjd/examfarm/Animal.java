@@ -41,6 +41,6 @@ abstract public class Animal {
 
     @Override
     public String toString() {
-        return "Animal " + name;
+        return name;
     }
 }

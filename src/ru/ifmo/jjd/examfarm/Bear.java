@@ -8,11 +8,11 @@ public class Bear extends WildAnimal {
 
     public Bear() {
         super("Медведь", 80 + r.nextInt(21),
-                3 + r.nextInt(3), 8 + r.nextInt(3));
+                3 + r.nextInt(4), 12 + r.nextInt(9));
     }
 
     public Bear(int weight, int speed) {
-        super("Медведь", weight, speed, 8 + r.nextInt(3));
+        super("Медведь", weight, speed, 12 + r.nextInt(9));
     }
 
     public Bear(int weight, int speed, int attack) {

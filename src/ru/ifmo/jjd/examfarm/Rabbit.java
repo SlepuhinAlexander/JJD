@@ -7,7 +7,7 @@ public class Rabbit extends DomesticatedAnimal implements CanBeEaten {
     private static Random r = new Random(new Date().getTime());
 
     public Rabbit(String name) {
-        super(name, 5 + r.nextInt(6), 8 + r.nextInt(3),
+        super(name, 5 + r.nextInt(6), 5 + r.nextInt(6),
                 5 + r.nextInt(11), 0);
     }
 
@@ -24,6 +24,7 @@ public class Rabbit extends DomesticatedAnimal implements CanBeEaten {
         int resources = 0;
         if (getHealth() > 0) {
             setHealth(0);
+            checkHealth();
             resources = getWeight();
         }
         return resources;

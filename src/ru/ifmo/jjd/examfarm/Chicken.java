@@ -24,6 +24,7 @@ public class Chicken extends DomesticatedAnimal implements CanBeEaten, CanGiveRe
         int resources = 0;
         if (getHealth() > 0) {
             setHealth(0);
+            checkHealth();
             resources = getWeight();
         }
         return resources;

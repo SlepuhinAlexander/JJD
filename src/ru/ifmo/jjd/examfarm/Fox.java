@@ -8,11 +8,11 @@ public class Fox extends WildAnimal {
 
     public Fox() {
         super("Лисица", 20 + r.nextInt(21),
-                4 + r.nextInt(2), 2 + r.nextInt(4));
+                4 + r.nextInt(4), 5 + r.nextInt(6));
     }
 
     public Fox(int weight, int speed) {
-        super("Лисица", weight, speed, 2 + r.nextInt(4));
+        super("Лисица", weight, speed, 5 + r.nextInt(6));
     }
 
     public Fox(int weight, int speed, int attack) {

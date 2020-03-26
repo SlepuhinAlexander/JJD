@@ -7,7 +7,7 @@ public class Cat extends DomesticatedAnimal {
     private static Random r = new Random(new Date().getTime());
 
     public Cat(String name) {
-        super(name, 5 + r.nextInt(6), 5 + r.nextInt(6),
+        super(name, 5 + r.nextInt(6), 7 + r.nextInt(4),
                 10 + r.nextInt(11), 0);
     }
 

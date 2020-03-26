@@ -8,11 +8,11 @@ public class Cow extends DomesticatedAnimal implements CanBeEaten, CanGiveResour
 
     public Cow(String name) {
         super(name, 50 + r.nextInt(51), 1 + r.nextInt(2),
-                20 + r.nextInt(21), 3 + r.nextInt(3));
+                20 + r.nextInt(21), 2 + r.nextInt(2));
     }
 
     public Cow(String name, int weight, int speed) {
-        super(name, weight, speed, 20 + r.nextInt(21), 3 + r.nextInt(3));
+        super(name, weight, speed, 20 + r.nextInt(21), 2 + r.nextInt(2));
     }
 
     public Cow(String name, int weight, int speed, int maxHealth, int resources) {
@@ -24,6 +24,7 @@ public class Cow extends DomesticatedAnimal implements CanBeEaten, CanGiveResour
         int resources = 0;
         if (getHealth() > 0) {
             setHealth(0);
+            checkHealth();
             resources = getWeight();
         }
         return resources;

@@ -1,36 +1,34 @@
 package ru.ifmo.jjd.examfarm;
 
-import org.w3c.dom.ls.LSOutput;
-
 import java.util.Date;
 import java.util.Random;
 
 abstract public class DomesticatedAnimal extends Animal implements CanRunAway, CanBeFed {
+    private static Random r = new Random(new Date().getTime());
+
     private final int maxHealth; // [10; 40]
     private int health; // [0;maxHealth]
-    private final int resources; // [2;5]
+    private final int resources; // [1;3]
 
     public DomesticatedAnimal(String name) {
         super(name);
-        Random r = new Random(new Date().getTime());
         maxHealth = 10 + r.nextInt(31);
         health = maxHealth;
-        resources = 2 + r.nextInt(4);
+        resources = 1 + r.nextInt(3);
     }
 
     public DomesticatedAnimal(String name, int weight, int speed) {
         super(name, weight, speed);
-        Random r = new Random(new Date().getTime());
         maxHealth = 10 + r.nextInt(31);
         health = maxHealth;
-        resources = 2 + r.nextInt(4);
+        resources = 1 + r.nextInt(3);
     }
 
     public DomesticatedAnimal(String name, int weight, int speed, int maxHealth, int resources) {
         super(name, weight, speed);
         this.maxHealth = Math.min(40, Math.max(10, maxHealth));
         health = maxHealth;
-        this.resources = Math.min(5, Math.max(2, resources));
+        this.resources = Math.min(3, Math.max(1, resources));
     }
 
     public int getHealth() {
@@ -49,11 +47,18 @@ abstract public class DomesticatedAnimal extends Animal implements CanRunAway, C
         return resources;
     }
 
+    void checkHealth() {
+        if (health == 0) {
+            System.out.println(this + " убит.");
+        }
+    }
+
     @Override
     public void beAttacked(int damage) {
         System.out.print(this + " получает урон " + damage + ". ");
         setHealth(health - damage);
         System.out.println("Здоровье: " + getHealth());
+        checkHealth();
     }
 
     @Override
