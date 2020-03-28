@@ -1,13 +1,11 @@
 package ru.ifmo.jjd.exercises.lesson02.ex02;
 
-import java.util.Random;
-
 import static ru.ifmo.jjd.utils.ConsoleHelper.*;
+import static ru.ifmo.jjd.utils.RandomHelper.*;
 
 public class Exercise02 {
     public static void main(String[] args) {
-        Random r = new Random();
-        int n = r.nextInt();
+        int n = randomInt();
         oddOrEven(n);
     }
 

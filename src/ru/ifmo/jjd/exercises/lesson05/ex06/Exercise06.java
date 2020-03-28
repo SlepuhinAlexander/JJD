@@ -1,10 +1,10 @@
 package ru.ifmo.jjd.exercises.lesson05.ex06;
 
 import java.util.Arrays;
-import java.util.Random;
 
 import static ru.ifmo.jjd.utils.ConsoleHelper.*;
 import static ru.ifmo.jjd.utils.StringHelper.*;
+import static ru.ifmo.jjd.utils.RandomHelper.*;
 
 public class Exercise06 {
     public static void main(String[] args) {
@@ -25,10 +25,9 @@ public class Exercise06 {
         if (result.length() == 0) {
             result = "Москва Санкт-Петербург Новосибирск Екатеринбург Казань Челябинск Омск Самара Ростов-на-Дону";
         } else if (result.replaceAll("\\W+", "").equalsIgnoreCase("random")) {
-            Random r = new Random();
             StringBuilder builder = new StringBuilder();
             for (int i = 0; i < 10; i++) {
-                builder.append(uppercaseFirst(randomWord(r.nextInt(5) + 5))).append(" ");
+                builder.append(uppercaseFirst(randomWord(randomInt(5, 10)))).append(" ");
             }
             result = builder.toString().trim();
         } else {

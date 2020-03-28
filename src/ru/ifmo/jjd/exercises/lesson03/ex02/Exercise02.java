@@ -1,10 +1,10 @@
 package ru.ifmo.jjd.exercises.lesson03.ex02;
 
 import java.util.Arrays;
-import java.util.Random;
 
 import static ru.ifmo.jjd.utils.ArraysHelper.*;
 import static ru.ifmo.jjd.utils.ConsoleHelper.*;
+import static ru.ifmo.jjd.utils.RandomHelper.*;
 
 public class Exercise02 {
     public static void main(String[] args) {
@@ -17,8 +17,7 @@ public class Exercise02 {
         if (bound < 1) {
             bound = 1;
         }
-        Random r = new Random();
-        int[] arr = new int[r.nextInt(bound) + bound]; // [bound; 2 * bound)
+        int[] arr = new int[randomInt(bound, bound * 2)];
         fillRandomly(arr, -bound, bound);
         return arr;
     }

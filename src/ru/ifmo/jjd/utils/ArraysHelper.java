@@ -1,42 +1,40 @@
 package ru.ifmo.jjd.utils;
 
-import java.util.Random;
+import static ru.ifmo.jjd.utils.RandomHelper.*;
 
 public class ArraysHelper {
     /**
-     * Method fills the given one-dimensional integer array with random integers in range from bottom (inclusively)
-     * to top (exclusively)
+     * Method fills the given one-dimensional integer array with random integers in range from lower (inclusively)
+     * to upper (exclusively)
      *
-     * @param arr    the array to fill
-     * @param bottom lower border for int value to assign, inclusive
-     * @param top    upper border for int value to assign, exclusive
+     * @param arr   the array to fill
+     * @param lower lower border for int value to assign, inclusive
+     * @param upper upper border for int value to assign, exclusive
      */
-    public static void fillRandomly(int[] arr, int bottom, int top) {
-        if (arr == null || top <= bottom) {
+    public static void fillRandomly(int[] arr, int lower, int upper) {
+        if (arr == null || upper <= lower) {
             return;
         }
-        Random r = new Random();
         for (int i = 0; i < arr.length; i++) {
-            arr[i] = r.nextInt(top - bottom) + bottom;
+            arr[i] = randomInt(lower, upper);
         }
     }
 
     /**
-     * Method fills the given two-dimensional integer array with random integers in range from bottom (inclusively)
-     * to top (exclusively)
+     * Method fills the given two-dimensional integer array with random integers in range from lower (inclusively)
+     * to upper (exclusively)
      *
-     * @param arr    the array to fill
-     * @param bottom lower border for int value to assign, inclusive
-     * @param top    upper border for int value to assign, exclusive
+     * @param arr   the array to fill
+     * @param lower lower border for int value to assign, inclusive
+     * @param upper upper border for int value to assign, exclusive
      */
-    public static void fillRandomly(int[][] arr, int bottom, int top) {
-        if (arr == null || top <= bottom) {
+    public static void fillRandomly(int[][] arr, int lower, int upper) {
+        if (arr == null || upper <= lower) {
             return;
         }
-        Random r = new Random();
         for (int i = 0; i < arr.length; i++) {
             for (int j = 0; j < arr[i].length; j++) {
-                arr[i][j] = r.nextInt(top - bottom) + bottom;
+                arr[i][j] = randomInt(lower, upper);
             }
         }
     }

@@ -1,19 +1,17 @@
 package ru.ifmo.jjd.exercises.lesson02.ex03;
 
-import java.util.Random;
-
-import static ru.ifmo.jjd.utils.ConsoleHelper.println;
+import static ru.ifmo.jjd.utils.ConsoleHelper.*;
+import static ru.ifmo.jjd.utils.RandomHelper.*;
 
 public class Exercise03 {
     public static void main(String[] args) {
-        Random r = new Random();
-        int n = r.nextInt(), m = r.nextInt();
+        int n = randomInt(), m = randomInt();
         int res = min(n, m);
         println("Из чисел " + m + " и " + n + " наименьшее - " + res);
     }
 
     static int min(int one, int two) {
-        return (one < two) ? one : two; // can be replaced with Math.min() of course.
+        return Math.min(one, two);
     }
 }
 /*

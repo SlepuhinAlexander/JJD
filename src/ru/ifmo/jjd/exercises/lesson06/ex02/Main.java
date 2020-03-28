@@ -1,51 +1,52 @@
 package ru.ifmo.jjd.exercises.lesson06.ex02;
 
 import java.util.Arrays;
-import java.util.Random;
+
+import static ru.ifmo.jjd.utils.ConsoleHelper.*;
+import static ru.ifmo.jjd.utils.RandomHelper.*;
 
 public class Main {
     public static void main(String[] args) {
-        Random r = new Random();
         Cat[] cats = new Cat[6];
         Cat cat0 = new Cat("Васька");
-        cat0.setHealthScore(r.nextInt(50) + 50);
-        cat0.setHitPower(r.nextInt(5) + 5);
+        cat0.setHealthScore(randomInt(50, 100));
+        cat0.setHitPower(randomInt(5, 10));
         cats[0] = cat0;
 
         Cat cat1 = new Cat("Барсик", 3);
-        cat1.setHealthScore(r.nextInt(50) + 50);
-        cat1.setHitPower(r.nextInt(5) + 5);
+        cat1.setHealthScore(randomInt(50, 100));
+        cat1.setHitPower(randomInt(5, 10));
         cats[1] = cat1;
 
         Cat cat2 = new Cat("Дымок", 2, 4);
-        cat2.setHealthScore(r.nextInt(50) + 50);
-        cat2.setHitPower(r.nextInt(5) + 5);
+        cat2.setHealthScore(randomInt(50, 100));
+        cat2.setHitPower(randomInt(5, 10));
         cats[2] = cat2;
 
         Cat cat3 = new Cat("Пушок", "чёрный");
-        cat3.setHealthScore(r.nextInt(50) + 50);
-        cat3.setHitPower(r.nextInt(5) + 5);
+        cat3.setHealthScore(randomInt(50, 100));
+        cat3.setHitPower(randomInt(5, 10));
         cats[3] = cat3;
 
         Cat cat4 = new Cat("Кекс", 4, "пр. Ленина");
-        cat4.setHealthScore(r.nextInt(50) + 50);
-        cat4.setHitPower(r.nextInt(5) + 5);
+        cat4.setHealthScore(randomInt(50, 100));
+        cat4.setHitPower(randomInt(5, 10));
         cats[4] = cat4;
 
         Cat cat5 = new Cat("Персик", "рыжий",
-                r.nextInt(50) + 50, r.nextInt(5) + 5);
+                randomInt(50, 100), randomInt(5, 10));
         cats[5] = cat5;
 
-        System.out.println("Драка котов : ");
+        println("Драка котов : ");
         for (Cat cat : cats) {
-            System.out.println(cat);
+            println(cat);
         }
 
         while (cats.length > 1) {
-            Cat attacker = cats[r.nextInt(cats.length)];
+            Cat attacker = cats[randomInt(cats.length)];
             Cat defender;
             do {
-                defender = cats[r.nextInt(cats.length)];
+                defender = cats[randomInt(cats.length)];
             } while (defender == attacker);
             attacker.fight(defender);
             Cat[] catsCopy = new Cat[cats.length];
@@ -57,7 +58,7 @@ public class Main {
             }
             cats = Arrays.copyOf(catsCopy, index);
         }
-        System.out.println("Победил " + cats[0].getName());
+        println("Победил " + cats[0].getName());
     }
 }
 /*
@@ -67,7 +68,8 @@ public class Main {
  * Кот = {имя = 'Барсик', вес = 4, возраст = 3, цвет = 'Чёрный', адрес владельца = '', здововье = 67, сила удара = 6}
  * Кот = {имя = 'Дымок', вес = 4, возраст = 2, цвет = 'Чёрный', адрес владельца = '', здововье = 72, сила удара = 9}
  * Кот = {имя = 'Пушок', вес = 4, возраст = 1, цвет = 'чёрный', адрес владельца = '', здововье = 67, сила удара = 6}
- * Кот = {имя = 'Кекс', вес = 4, возраст = 4, цвет = 'Чёрный', адрес владельца = 'пр. Ленина', здововье = 79, сила удара = 9}
+ * Кот = {имя = 'Кекс', вес = 4, возраст = 4, цвет = 'Чёрный', адрес владельца = 'пр. Ленина', здововье = 79, сила
+ * удара = 9}
  * Кот = {имя = 'Персик', вес = 4, возраст = 1, цвет = 'рыжий', адрес владельца = '', здововье = 99, сила удара = 7}
  * Персик наносит удар 7 по Васька : осталось здоровья 85
  * Васька наносит ответный удар 8 по Персик : осталось здоровья 91

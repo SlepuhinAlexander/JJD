@@ -1,13 +1,11 @@
 package ru.ifmo.jjd.exercises.lesson05.ex04;
 
-import java.util.Random;
-
 import static ru.ifmo.jjd.utils.ConsoleHelper.*;
 import static ru.ifmo.jjd.utils.StringHelper.*;
+import static ru.ifmo.jjd.utils.RandomHelper.*;
 
 public class Exercise04 {
     public static void main(String[] args) {
-        int[] arr = new int[]{1, 2, 3};
         String input = getUserInput();
         println();
         StringBuilder output = new StringBuilder();
@@ -29,18 +27,17 @@ public class Exercise04 {
         if (result.length() == 0) {
             result = "A Santa Lived As a Devil At NASA";
         } else if (result.replaceAll("\\W+", "").equalsIgnoreCase("random")) {
-            Random r = new Random();
             StringBuilder builder = new StringBuilder();
             for (int i = 0; i < 5; i++) {
-                builder.append(randomWord(r.nextInt(5) + 5));
+                builder.append(randomWord(randomInt(5, 9)));
             }
             String half = builder.toString();
             builder.reverse().append(half);
             int index = builder.length() - 1;
-            index -= r.nextInt(8) + 1;
+            index -= randomInt(1, 9);
             while (index > 0) {
                 builder.insert(index, " ");
-                index -= r.nextInt(8) + 1;
+                index -= randomInt(1, 9);
             }
             result = builder.toString();
         }

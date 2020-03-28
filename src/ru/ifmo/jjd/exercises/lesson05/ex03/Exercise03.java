@@ -1,10 +1,10 @@
 package ru.ifmo.jjd.exercises.lesson05.ex03;
 
-import java.util.Random;
 import java.util.regex.*;
 
 import static ru.ifmo.jjd.utils.ConsoleHelper.*;
 import static ru.ifmo.jjd.utils.StringHelper.*;
+import static ru.ifmo.jjd.utils.RandomHelper.*;
 
 public class Exercise03 {
     public static void main(String[] args) {
@@ -32,20 +32,19 @@ public class Exercise03 {
             result[0] = "рек";
             result[1] = "Ехал грека через реку. Видит Грека в реке рак.";
         } else if (result[0].replaceAll("\\W+", "").equalsIgnoreCase("random")) {
-            Random r = new Random();
-            result[0] = randomWord(r.nextInt(5) + 2);
+            result[0] = randomWord(randomInt(2, 7));
             StringBuilder builder = new StringBuilder(result[0]);
-            for (int i = 0; i < r.nextInt(5) + 3; i++) {
+            for (int i = 0; i < randomInt(3, 8); i++) {
                 builder.append(" ");
                 if (Math.random() < 0.5) {
-                    builder.append(randomWord(r.nextInt(i + 2)));
+                    builder.append(randomWord(randomInt(i + 2)));
                 }
                 builder.append(result[0]);
                 if (Math.random() < 0.5) {
-                    builder.append(randomWord(r.nextInt(i + 2)));
+                    builder.append(randomWord(randomInt(i + 2)));
                 }
                 if (Math.random() < 0.8) {
-                    builder.append(" ").append(randomWord(r.nextInt(5) + 2));
+                    builder.append(" ").append(randomWord(randomInt(2, 7)));
                 }
             }
             result[1] = builder.toString();

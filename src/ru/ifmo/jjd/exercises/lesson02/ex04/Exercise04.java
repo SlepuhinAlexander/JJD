@@ -1,13 +1,11 @@
 package ru.ifmo.jjd.exercises.lesson02.ex04;
 
-import java.util.Random;
-
 import static ru.ifmo.jjd.utils.ConsoleHelper.*;
+import static ru.ifmo.jjd.utils.RandomHelper.*;
 
 public class Exercise04 {
     public static void main(String[] args) {
-        Random r = new Random();
-        int n = r.nextInt(118) + 5; // [5,122]
+        int n = randomInt(5, 123); // [5,122]
         checkIntervalHit(n);
     }
 

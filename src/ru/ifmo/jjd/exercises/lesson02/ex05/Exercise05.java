@@ -1,13 +1,11 @@
 package ru.ifmo.jjd.exercises.lesson02.ex05;
 
-import java.util.Random;
-
 import static ru.ifmo.jjd.utils.ConsoleHelper.*;
+import static ru.ifmo.jjd.utils.RandomHelper.*;
 
 public class Exercise05 {
     public static void main(String[] args) {
-        Random r = new Random();
-        int n = r.nextInt(900) + 100; // [100, 999]
+        int n = randomInt(100, 1000); // [100, 999]
         println("В числе " + n + " наибольшая цифра " + getLargestDigit(n));
     }
 

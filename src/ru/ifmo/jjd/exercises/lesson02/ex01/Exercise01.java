@@ -1,13 +1,12 @@
 package ru.ifmo.jjd.exercises.lesson02.ex01;
 
-import java.util.Random;
+import static ru.ifmo.jjd.utils.RandomHelper.*;
 
 import static ru.ifmo.jjd.utils.ConsoleHelper.*;
 
 public class Exercise01 {
     public static void main(String[] args) {
-        Random r = new Random();
-        int n = r.nextInt(900) + 100; // [100, 999]
+        int n = randomInt(100, 1000); // [100, 999]
         println("Сумма цифр числа " + n + " равна " + sumDigits(n));
     }
 

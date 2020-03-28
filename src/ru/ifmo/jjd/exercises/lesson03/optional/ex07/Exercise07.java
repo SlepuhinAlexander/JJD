@@ -1,9 +1,9 @@
 package ru.ifmo.jjd.exercises.lesson03.optional.ex07;
 
-import static ru.ifmo.jjd.utils.ConsoleHelper.*;
-import static ru.ifmo.jjd.utils.ArraysHelper.*;
-
 import java.util.Arrays;
+
+import static ru.ifmo.jjd.utils.ArraysHelper.*;
+import static ru.ifmo.jjd.utils.ConsoleHelper.*;
 
 /*
  * Создать двумерный массив из 6 строк по 7 столбцов в каждой из случайных целых чисел из отрезка [0;9].

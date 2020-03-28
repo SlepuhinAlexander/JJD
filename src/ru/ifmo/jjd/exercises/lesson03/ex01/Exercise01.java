@@ -1,15 +1,14 @@
 package ru.ifmo.jjd.exercises.lesson03.ex01;
 
 import java.util.Arrays;
-import java.util.Random;
 
 import static ru.ifmo.jjd.utils.ConsoleHelper.*;
+import static ru.ifmo.jjd.utils.RandomHelper.*;
 
 public class Exercise01 {
     public static void main(String[] args) {
-        Random r = new Random();
-        int n = r.nextInt(Integer.MAX_VALUE) + 1; // [1, max int]
-        int m = r.nextInt(Integer.MAX_VALUE) + 1; // понятие НОД имеет смысл для натуральных чисел.
+        int n = randomInt(1, Integer.MAX_VALUE); // [1, max int]
+        int m = randomInt(1, Integer.MAX_VALUE); // понятие НОД имеет смысл для натуральных чисел.
 //        println("НОД чисел " + n + " и " + m + " равен " + getGCF(n, m));
 //        println("НОД чисел " + n + " и " + m + " равен " + getGCFPrimes(n, m));
         println("НОД чисел " + n + " и " + m + " равен " + getGFCEuler(n, m));

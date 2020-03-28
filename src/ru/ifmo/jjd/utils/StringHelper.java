@@ -1,6 +1,6 @@
 package ru.ifmo.jjd.utils;
 
-import java.util.Random;
+import static ru.ifmo.jjd.utils.RandomHelper.*;
 
 public class StringHelper {
     private static final char[] VOWELS = {'a', 'e', 'i', 'o', 'u', 'y'};
@@ -23,15 +23,14 @@ public class StringHelper {
      */
     public static String randomWord(int length) {
         length = Math.max(length, 1);
-        Random r = new Random();
         boolean nextIsVowel = Math.random() < 0.5; // A word can start with vowel
         StringBuilder builder = new StringBuilder();
         for (int i = 0; i < length; i++) {
             if (nextIsVowel) {
-                builder.append(VOWELS[r.nextInt(VOWELS.length)]);
+                builder.append(VOWELS[randomInt(VOWELS.length)]);
                 nextIsVowel = false;
             } else {
-                builder.append(CONSONANTS[r.nextInt(CONSONANTS.length)]);
+                builder.append(CONSONANTS[randomInt(CONSONANTS.length)]);
                 nextIsVowel = true;
             }
         }
@@ -45,12 +44,11 @@ public class StringHelper {
      */
     public static String randomSentence(int length) {
         length = Math.max(length, 2);
-        Random r = new Random();
         StringBuilder builder = new StringBuilder();
-        builder.append(uppercaseFirst(randomWord(10) + 1));
+        builder.append(uppercaseFirst(randomWord(randomInt(1, 11))));
         for (int i = 1; i < length; i++) {
             builder.append(" ");
-            builder.append(randomWord(r.nextInt(10) + 1));
+            builder.append(randomWord(randomInt(1, 11)));
         }
         return builder.toString();
     }

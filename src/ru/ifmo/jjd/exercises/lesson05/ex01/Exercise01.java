@@ -1,9 +1,9 @@
 package ru.ifmo.jjd.exercises.lesson05.ex01;
 
 import java.util.Arrays;
-import java.util.Random;
 
 import static ru.ifmo.jjd.utils.ConsoleHelper.*;
+import static ru.ifmo.jjd.utils.RandomHelper.*;
 import static ru.ifmo.jjd.utils.StringHelper.*;
 
 public class Exercise01 {
@@ -26,9 +26,8 @@ public class Exercise01 {
                 result = new String[]{"PenPineapple", "ApplePen"};
                 break;
             } else if (input.replaceAll("\\W+", "").equalsIgnoreCase("random")) {
-                Random r = new Random();
-                result = new String[]{randomWord(2 * r.nextInt(5) + 2),
-                        randomWord(2 * r.nextInt(5) + 2)};
+                result = new String[]{randomWord(2 * randomInt(2, 7)),
+                        randomWord(2 * randomInt(2, 7))};
                 break;
             } else {
                 result = splitToWords(input);
