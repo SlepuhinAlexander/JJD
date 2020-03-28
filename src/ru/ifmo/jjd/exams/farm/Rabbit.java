@@ -1,18 +1,16 @@
-package ru.ifmo.jjd.examfarm;
+package ru.ifmo.jjd.exams.farm;
 
-import java.util.Date;
-import java.util.Random;
+import static ru.ifmo.jjd.utils.RandomHelper.*;
 
 public class Rabbit extends DomesticatedAnimal implements CanBeEaten {
-    private static Random r = new Random(new Date().getTime());
 
     public Rabbit(String name) {
-        super(name, 5 + r.nextInt(6), 5 + r.nextInt(6),
-                5 + r.nextInt(11), 0);
+        super(name, randomInt(5, 11), randomInt(5, 11),
+                randomInt(5, 16), 0);
     }
 
     public Rabbit(String name, int weight, int speed) {
-        super(name, weight, speed, 5 + r.nextInt(11), 0);
+        super(name, weight, speed, randomInt(5, 16), 0);
     }
 
     public Rabbit(String name, int weight, int speed, int maxHealth, int resources) {

@@ -1,7 +1,6 @@
-package ru.ifmo.jjd.examfarm;
+package ru.ifmo.jjd.exams.farm;
 
-import java.util.Date;
-import java.util.Random;
+import static ru.ifmo.jjd.utils.RandomHelper.*;
 
 abstract public class Animal {
     private String name;
@@ -10,9 +9,8 @@ abstract public class Animal {
 
     public Animal(String name) {
         setName(name);
-        Random r = new Random(new Date().getTime());
-        weight = 5 + r.nextInt(96);
-        speed = 2 + r.nextInt(9);
+        weight = randomInt(5, 101);
+        speed = randomInt(2, 11);
     }
 
     public Animal(String name, int weight, int speed) {

@@ -1,27 +1,24 @@
-package ru.ifmo.jjd.examfarm;
+package ru.ifmo.jjd.exams.farm;
 
-import java.util.Date;
-import java.util.Random;
+import static ru.ifmo.jjd.utils.RandomHelper.*;
 
-abstract public class DomesticatedAnimal extends Animal implements CanRunAway, CanBeFed {
-    private static Random r = new Random(new Date().getTime());
-
+abstract public class DomesticatedAnimal extends Animal implements CanRunAway {
     private final int maxHealth; // [10; 40]
     private int health; // [0;maxHealth]
     private final int resources; // [1;3]
 
     public DomesticatedAnimal(String name) {
         super(name);
-        maxHealth = 10 + r.nextInt(31);
+        maxHealth = randomInt(10, 41);
         health = maxHealth;
-        resources = 1 + r.nextInt(3);
+        resources = randomInt(1, 3);
     }
 
     public DomesticatedAnimal(String name, int weight, int speed) {
         super(name, weight, speed);
-        maxHealth = 10 + r.nextInt(31);
+        maxHealth = randomInt(10, 41);
         health = maxHealth;
-        resources = 1 + r.nextInt(3);
+        resources = randomInt(1, 3);
     }
 
     public DomesticatedAnimal(String name, int weight, int speed, int maxHealth, int resources) {
@@ -47,6 +44,14 @@ abstract public class DomesticatedAnimal extends Animal implements CanRunAway, C
         return resources;
     }
 
+    public void beFed() {
+        if (health != 0) {
+            System.out.print(this + " покормлен. ");
+            setHealth(health + 1);
+            System.out.println("Здоровье: " + getHealth());
+        }
+    }
+
     void checkHealth() {
         if (health == 0) {
             System.out.println(this + " убит.");
@@ -55,18 +60,9 @@ abstract public class DomesticatedAnimal extends Animal implements CanRunAway, C
 
     @Override
     public void beAttacked(int damage) {
-        System.out.print(this + " получает урон " + damage + ". ");
+        System.out.print(this + " получает урон " + damage + " ");
         setHealth(health - damage);
         System.out.println("Здоровье: " + getHealth());
         checkHealth();
-    }
-
-    @Override
-    public void beFed() {
-        if (health != 0) {
-            System.out.print(this + " покормлен. ");
-            setHealth(health + 1);
-            System.out.println("Здоровье: " + getHealth());
-        }
     }
 }

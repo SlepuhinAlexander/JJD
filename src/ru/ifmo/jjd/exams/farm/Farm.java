@@ -1,11 +1,8 @@
-package ru.ifmo.jjd.examfarm;
+package ru.ifmo.jjd.exams.farm;
 
-import java.util.Date;
-import java.util.Random;
+import static ru.ifmo.jjd.utils.RandomHelper.*;
 
 public class Farm {
-    private static Random r = new Random(new Date().getTime());
-
     private DomesticatedAnimal[] animals = new DomesticatedAnimal[10];
     private WildAnimal[] wildAnimals = new WildAnimal[5];
     private Farmer farmer = new Farmer();
@@ -46,8 +43,7 @@ public class Farm {
             System.out.println("На ферму пробрался " + hunter);
             if (!farmer.frighten(hunter)) {
                 if (canSelectPrey()) {
-                    DomesticatedAnimal prey = selectPrey();
-                    hunter.attack(prey);
+                    hunter.attack(selectPrey());
                 } else {
                     System.out.println("А поживиться-то и нечем.");
 
@@ -57,8 +53,7 @@ public class Farm {
         farmer.feedAnimals(this);
         if (!farmer.collectResources(this)) {
             if (canSelectEdible()) {
-                CanBeEaten edible = selectEdible();
-                farmer.eat(edible);
+                farmer.eat(selectEdible());
             }
         }
         return true;
@@ -67,7 +62,7 @@ public class Farm {
     private WildAnimal selectHunter() {
         WildAnimal hunter;
         do {
-            hunter = wildAnimals[r.nextInt(wildAnimals.length)];
+            hunter = wildAnimals[randomInt(wildAnimals.length)];
         } while (hunter == null || hunter.isFrightened());
         return hunter;
     }
@@ -84,7 +79,7 @@ public class Farm {
     private DomesticatedAnimal selectPrey() {
         DomesticatedAnimal prey;
         do {
-            prey = animals[r.nextInt(animals.length)];
+            prey = animals[randomInt(animals.length)];
         } while (prey == null || prey.getHealth() == 0);
         return prey;
     }
@@ -100,7 +95,7 @@ public class Farm {
 
     private CanBeEaten selectEdible() {
         while (true) {
-            int ind = r.nextInt(animals.length);
+            int ind = randomInt(animals.length);
             if (animals[ind] instanceof CanBeEaten && animals[ind].getHealth() > 0) {
                 return ((CanBeEaten) animals[ind]);
             }

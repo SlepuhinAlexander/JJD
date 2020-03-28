@@ -1,11 +1,7 @@
-package ru.ifmo.jjd.examfarm;
-
-import java.util.Date;
-import java.util.Random;
+package ru.ifmo.jjd.exams.farm;
 
 public class Main {
     public static void main(String[] args) {
-        Random r = new Random(new Date().getTime());
         Farm farm = new Farm();
         farm.addWildAnimal(new Wolf());
         farm.addWildAnimal(new Wolf());

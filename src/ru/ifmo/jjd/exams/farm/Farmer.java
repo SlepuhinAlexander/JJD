@@ -1,11 +1,8 @@
-package ru.ifmo.jjd.examfarm;
+package ru.ifmo.jjd.exams.farm;
 
-import java.util.Date;
-import java.util.Random;
+import static ru.ifmo.jjd.utils.RandomHelper.*;
 
 public class Farmer {
-    private static Random r = new Random(new Date().getTime());
-
     private int resources = 5;
 
     public int getResources() {
@@ -38,22 +35,22 @@ public class Farmer {
         }
     }
 
-    private void feed(CanBeFed animal) {
+    private void feed(DomesticatedAnimal animal) {
         animal.beFed();
     }
 
     public void eat(CanBeEaten animal) {
         if (animal != null) {
             int received = animal.beEaten();
-            System.out.print("Фермер съел " + animal + ". ");
+            System.out.print("Фермер съел " + animal + " ");
             setResources(resources + received);
             System.out.println("Получено " + received + " ресурсов. Всего: " + resources);
         }
     }
 
-    public boolean frighten(CanBeFrightened wildAnimal) {
+    public boolean frighten(WildAnimal wildAnimal) {
         boolean isFrightened = false;
-        if (r.nextBoolean()) {
+        if (randomBoolean()) {
             wildAnimal.beFrightened();
             isFrightened = true;
         }

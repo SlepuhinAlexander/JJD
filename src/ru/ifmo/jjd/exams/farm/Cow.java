@@ -1,18 +1,15 @@
-package ru.ifmo.jjd.examfarm;
+package ru.ifmo.jjd.exams.farm;
 
-import java.util.Date;
-import java.util.Random;
+import static ru.ifmo.jjd.utils.RandomHelper.*;
 
 public class Cow extends DomesticatedAnimal implements CanBeEaten, CanGiveResources {
-    private static Random r = new Random(new Date().getTime());
-
     public Cow(String name) {
-        super(name, 50 + r.nextInt(51), 1 + r.nextInt(2),
-                20 + r.nextInt(21), 2 + r.nextInt(2));
+        super(name, randomInt(50, 101), randomInt(1, 3),
+                randomInt(20, 41), randomInt(2, 4));
     }
 
     public Cow(String name, int weight, int speed) {
-        super(name, weight, speed, 20 + r.nextInt(21), 2 + r.nextInt(2));
+        super(name, weight, speed, randomInt(20, 41), randomInt(2, 4));
     }
 
     public Cow(String name, int weight, int speed, int maxHealth, int resources) {

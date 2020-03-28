@@ -1,18 +1,16 @@
-package ru.ifmo.jjd.examfarm;
+package ru.ifmo.jjd.exams.farm;
 
-import java.util.Date;
-import java.util.Random;
+import static ru.ifmo.jjd.utils.RandomHelper.*;
 
 public class Chicken extends DomesticatedAnimal implements CanBeEaten, CanGiveResources {
-    private static Random r = new Random(new Date().getTime());
 
     public Chicken(String name) {
-        super(name, 5 + r.nextInt(6), 2 + r.nextInt(4),
-                5 + r.nextInt(6), 1 + r.nextInt(2));
+        super(name, randomInt(5, 11), randomInt(2, 6),
+                randomInt(5, 11), randomInt(1, 3));
     }
 
     public Chicken(String name, int weight, int speed) {
-        super(name, weight, speed,5 + r.nextInt(6), 1 + r.nextInt(2));
+        super(name, weight, speed, randomInt(5, 11), randomInt(1, 3));
     }
 
     public Chicken(String name, int weight, int speed, int maxHealth, int resources) {

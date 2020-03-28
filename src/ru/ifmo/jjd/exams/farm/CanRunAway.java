@@ -1,4 +1,4 @@
-package ru.ifmo.jjd.examfarm;
+package ru.ifmo.jjd.exams.farm;
 
 public interface CanRunAway extends CanBeAttacked{
     int getSpeed();
