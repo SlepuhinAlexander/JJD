@@ -4,7 +4,9 @@
 1. [Введение в java](first-lesson.pdf)
 2. [Переменные; примитивные типы данных; операторы](data-types.pdf)
 
-#### Классы
-1. [Типы данных](DataTypesDemo.java)
-2. [Операторы](OperatorsDemo.java)
-3. [Базовый ввод-вывод в консоль](BasicIODemo.java)
+#### Конспект
+
+1. [Введение в Java](Introduction.md)
+2. [Типы данных](DataTypes.md)
+3. [Ввод и вывод данных через консоль](BasicInputOutput.md)
+4. [Операторы](Operators.md)

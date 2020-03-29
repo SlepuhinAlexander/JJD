@@ -10,6 +10,8 @@
 6. [Пакеты, классы и объекты](src/ru/ifmo/jjd/lessons/lesson06)
 7. [Наследование, абстрактные классы, интерфейсы](src/ru/ifmo/jjd/lessons/lesson07)
 8. [Операторы final и static](src/ru/ifmo/jjd/lessons/lesson08)
+9. [Класс Object и его методы](src/ru/ifmo/jjd/lessons/lesson09)
+10. [Класс Random и его методы](src/ru/ifmo/jjd/lessons/lesson10)
 
 ### Домашние задания
 
@@ -24,6 +26,6 @@
 4. [Классы и объекты](src/ru/ifmo/jjd/exercises/lesson06) : 
     задачи, полученные после [занятия 6](src/ru/ifmo/jjd/lessons/lesson06)
     
-### Контрольные работы
+### Контрольные и экзаменационные работы
 
-1. [Ферма](src/ru/ifmo/jjd/examfarm)
+1. [Ферма](src/ru/ifmo/jjd/exams/farm)

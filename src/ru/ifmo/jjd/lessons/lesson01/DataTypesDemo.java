@@ -95,7 +95,7 @@ public class DataTypesDemo {
 
         /*
          * Тип int
-         * Хранит целое число в диапазоне от -2 147 483 648 до 1 124 483 647. Значение по умолчанию = 0.
+         * Хранит целое число в диапазоне от -2 147 483 648 до 2 147 483 647. Значение по умолчанию = 0.
          * Занимает 4 байта (32 бита).
          * */
         int intVar = 1000;
@@ -108,8 +108,8 @@ public class DataTypesDemo {
         // Ошибка компиляции: incompatible types: possible lossy conversion from int to byte
         // short bigShort = 1_000_000;
         // Ошибка компиляции: incompatible types: possible lossy conversion from int to short
-        // Любое численное значение, заданное таким образом (численный литерал) интерпретируется Java как тип данных int
-        // значение, выходящее за диапазон значений типа данных нельзя просто так присвоить.
+        // Любое численное значение, заданное таким образом (численный литерал) интерпретируется Java как тип данных
+        // int. Значение, выходящее за диапазон значений типа данных нельзя просто так присвоить.
 
         // byte byteSum = byteVar + byteVar1;
         // Ошибка компиляции: incompatible types: possible lossy conversion from int to byte
@@ -148,8 +148,8 @@ public class DataTypesDemo {
         // ArithmeticException: / by zero
         // Целочисленное деление на ноль приводит к ошибке (не определено).
 
-        // Для работы с большими числами, для которых не подойдут примитивные типы, рекомендуется использовать служебный
-        // класс java.math.BigInteger
+        // Для работы с большими числами, для которых не подойдут примитивные типы, рекомендуется использовать
+        // служебный класс java.math.BigInteger
 
         /*
          * Тип float
@@ -208,15 +208,15 @@ public class DataTypesDemo {
 
         // Арифметические операции числами float и double дают ПРИБЛИЗИТЕЛЬНЫЙ результат.
         System.out.println("2.0 - 1.1 = " + (2.0 - 1.1)); // 2.0 - 1.1 = 0.8999999999999999
-        System.out.println("0.1 + 0.1 + 0.2 + 0.2 = " + (0.1 + 0.1 + 0.2 + 0.2)); // 0.1 + 0.1 + 0.2 + 0.2 =
-        // 0.6000000000000001
+        System.out.println("0.1 + 0.1 + 0.2 + 0.2 = " + (0.1 + 0.1 + 0.2 + 0.2));
+        // 0.1 + 0.1 + 0.2 + 0.2 = 0.6000000000000001
         // Для ТОЧНЫХ вычислений эти типы данных использовать некорректно.
         // Для работы с точными вычислениями рекомендуется использовать служебный класс java.math.BigDecimal
 
         /*
          * Тип char
          * Хранит один Unicode-символ (в кодировке UTF-16). Фактически, хранит численный код символа.
-         * Диапазон значений от 0 до 65536 (от '\u0000' до '\uFFFF').
+         * Диапазон значений от 0 до 65535 (от '\u0000' до '\uFFFF').
          * Значение по умолчаниню = 0.
          * Занимает 2 байта (16 бит).
          * */
@@ -264,20 +264,25 @@ public class DataTypesDemo {
         byte byteVal = 15;
         short shortVal = byteVal; // значение типа byte переменной byteVal автоматически приведено
         // к типу short присвоением переменной shortVal
-        int intVal = byteVal, intVal1 = shortVal; // значение типа byte (short) автоматически приведенр к int
+        int intVal = byteVal, intVal1 = shortVal; // значение типа byte (short) автоматически приведено к int
         long longVal = byteVal, longVal1 = shortVal, longVal2 = intVal; // значение автоматически приведено к long
         double doubleVal = intVal; // значение автоматически приведено к double
+        float floatVal = 1.0f;
+        double doubleVal1 = floatVal;
         // такие преобразования просходят без потери данных.
-        System.out.println("byte = " + byteVal + "; byte to short = " + shortVal + "; byte to int = " + intVal +
-                "; byte to long = " + longVal + "; byte to double = " + doubleVal);
-        // byte = 15; byte to short = 15; byte to int = 15; byte to long = 15; byte to double = 15.0
+        System.out.println("byte = " + byteVal); // byte = 15
+        System.out.println("byte to short = " + shortVal); // byte to short = 15
+        System.out.println("short to int = " + intVal1); // short to int = 15
+        System.out.println("int to long = " + longVal2); // int to long = 15
+        System.out.println("int to double = " + doubleVal); // int to double = 15.0
+        System.out.println("float to double = " + doubleVal1); // float to double = 1.0
 
         // автоматическое приведение с возможной потерей точности данных:
         intVal = 1_234_567_890;
         longVal = 123_456_789_000L;
-        float floatVal = intVal, floatVal1 = longVal;
+        float floatVal2 = intVal, floatVal1 = longVal;
         double doubleVal2 = longVal;
-        System.out.println(intVal + " to float = " + floatVal); // 1234567890 to float = 1.23456794E9
+        System.out.println(intVal + " to float = " + floatVal2); // 1234567890 to float = 1.23456794E9
         System.out.println(longVal + " to float = " + floatVal1); // 123456789000 to float = 1.23456791E11
         System.out.println(longVal + " to double = " + doubleVal2); //123456789000 to double = 1.23456789E11
 
@@ -289,7 +294,7 @@ public class DataTypesDemo {
         intVal = (int) longVal;
         System.out.println(longVal + " to int = " + intVal); // 4294968407 to int = 1111
 
-        // нецелые типы приводятся к целым отбрасыванием дробной части (округления не производится).
+        // Дробные типы приводятся к целым отбрасыванием дробной части (округления не производится).
         doubleVal = 3.9485;
         longVal = (long) doubleVal;
         System.out.println(doubleVal + " to long = " + longVal); // 3.9485 to long = 3
