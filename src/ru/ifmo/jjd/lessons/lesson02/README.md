@@ -5,6 +5,6 @@
 1. [Условные конструкции; циклы](ifelse-loops.pdf)
 
 #### Конспект
-1. [Конструкции ветвления](ConditionalStatementsDemo.java)
-2. [Циклы](LoopsDemo.java)
+1. [Конструкции ветвления](ConditionalStatements.md)
+2. [Циклы](Loops.md)
 
