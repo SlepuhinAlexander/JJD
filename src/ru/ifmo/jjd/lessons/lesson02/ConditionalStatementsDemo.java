@@ -16,10 +16,11 @@ public class ConditionalStatementsDemo {
          * */
 
         // Если случайное двузначное целое число - чётное, вывести этот факт в консоль
-        int n = (int) (Math.random() * 100); // генерируем случайное целое число от 0 до 9
+        int n = (int) (Math.random() * 100); // генерируем случайное целое число от 0 до 99
         if (n % 2 == 0) {
             System.out.println("Число " + n + " - чётное.");
         }
+        // Число 68 - чётное.
 
         /*
          * Условный оператор if может содержать необязательный блок else. Синтаксис:
@@ -38,6 +39,7 @@ public class ConditionalStatementsDemo {
         } else {
             System.out.println("Число " + n + " - нечётное.");
         }
+        // Число 32 - чётное.
 
         // Если блок кода внутри конструкции if или else состоит из только одной инструкции,
         // заключать его в {} не обязательно.
@@ -46,6 +48,7 @@ public class ConditionalStatementsDemo {
         System.out.print("Число " + n + " - ");
         if (n % 2 != 0) System.out.print("не");
         System.out.println("чётное.");
+        // Число 15 - нечётное.
 
         /*
          * Оператор if допускает последовательную вложенность.
@@ -89,6 +92,7 @@ public class ConditionalStatementsDemo {
         } else {
             System.out.println("некорректное значение.");
         }
+        // 4 мин. - это первая четверть.
 
         // альтернативное и несколько более оптимальное решение
         minute = (int) (Math.random() * 100) - 10;
@@ -104,6 +108,26 @@ public class ConditionalStatementsDemo {
         } else {
             System.out.println("четвёртая четверть.");
         }
+        // 55 мин. - это четвёртая четверть.
+
+        // Проверить, является ли случайное целое число от -999 до 999 положительным или отрицательным; для
+        // положительных чисел определить является ли число чётным или нечётным.
+        // Результат вывести в консоль.
+        int num = (int) (Math.random() * 1999) - 999; // [-999; 999]
+        System.out.print("Число " + num + " - ");
+        if (num > 0) {
+            System.out.print("положительное");
+            if (num % 2 == 0) {
+                System.out.println(" чётное.");
+            } else {
+                System.out.println(" нечётное.");
+            }
+        } else if (num < 0) {
+            System.out.println("отрицательное.");
+        } else {
+            System.out.println("ноль.");
+        }
+        // Число -665 - отрицательное
     }
 
     private static void switchDemo() {
@@ -112,17 +136,18 @@ public class ConditionalStatementsDemo {
          * Синтаксис:
          * switch (выражение) {
          *     case значение1:
-         *         ... код
+         *         // <code>
          *         break;
          *     case значение2:
-         *         ... код
+         *         // <code>
          *         break;
          *     case значение3:
+         *         // <code>
          *     case значение4:
-         *         ... код
+         *         // <code>
          *         break;
          *     default:
-         *         ... код, который выполняется если не один case не совпал.
+         *         // <code>, который выполняется если не один case не совпал.
          * }
          *
          * Все варианты значения в case-ах должны быть уникальны.
@@ -156,6 +181,7 @@ public class ConditionalStatementsDemo {
             default:
                 System.out.println(num + " попробуйте ещё раз");
         }
+        // 666 попробуйте ещё раз
 
         /*
          * В версиях Java 12 и 13 конструкцию switch стало возможно использовать в более компактном виде.
@@ -175,18 +201,20 @@ public class ConditionalStatementsDemo {
             case 777 -> System.out.println(num + " крупный приз");
             default -> System.out.println(num + " попробуйте ещё раз");
         }
+        // 111 малый приз
 
         /*
          * В версиях Java 12 и 13 конструкция switch может возвращать значение, которое можно в дальнейшем использовать
          * */
         // тот же пример.
         num = ((int) (Math.random() * 9) + 1) * 111;
-        String result = switch (num){
+        String result = switch (num) {
             case 111, 222, 333 -> num + " малый приз";
             case 444, 555 -> num + " средний приз";
             case 777 -> num + " крупный приз";
             default -> num + " попробуйте ещё раз";
         };
         System.out.println(result);
+        // 777 крупный приз
     }
 }
