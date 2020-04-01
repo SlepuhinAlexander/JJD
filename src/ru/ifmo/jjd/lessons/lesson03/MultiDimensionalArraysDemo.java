@@ -10,15 +10,15 @@ public class MultiDimensionalArraysDemo {
 
     private static void twoDimensionalArraysDemo() {
         /*
-         * Элементами массива могут быть любые объекты. В частности, элементами массива могут быть другие массивы.
+         * Элементами массива могут быть любые типы данных. В частности, элементами массива могут быть другие массивы.
          * Такая конструкиця, массив из массивов, называется двумерным массивом.
          * */
 
         // Синтаксис объявления двумерного массива
-        int[][] twoDimArr; // т.е. нужно буквально указать, что это массив массивов целых чисел.ы
+        int[][] biDimArr; // т.е. нужно буквально указать, что это массив массивов целых чисел.
 
         // Инициализация двумерного массива значениями по умолчанию
-        twoDimArr = new int[3][4];
+        biDimArr = new int[3][4];
         /*
          * Т.е. необходимо указать размер внешнего массива, и размер каждого из внутренних массивов.
          * */
@@ -27,25 +27,25 @@ public class MultiDimensionalArraysDemo {
          * Метод печати многомерных массивов. Метод Arrays.deepToString().
          * Метод аналогичен Arrays.toString, но только применим к многомерным массивам.
          * */
-        System.out.println("twoDimArr = " + Arrays.deepToString(twoDimArr));
-        // twoDimArr = [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]]
+        System.out.println("biDimArr = " + Arrays.deepToString(biDimArr));
+        // biDimArr = [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]]
 
         // Обращеие к элементу двумерного массива
-        twoDimArr[1][1] = 1;
-        twoDimArr[2][2] = 2;
-        System.out.println("twoDimArr = " + Arrays.deepToString(twoDimArr));
-        // twoDimArr = [[0, 0, 0, 0], [0, 1, 0, 0], [0, 0, 2, 0]]
+        biDimArr[1][1] = 1;
+        biDimArr[2][2] = 2;
+        System.out.println("biDimArr = " + Arrays.deepToString(biDimArr));
+        // biDimArr = [[0, 0, 0, 0], [0, 1, 0, 0], [0, 0, 2, 0]]
 
         /*
          * Перебрать все элементы двумерного массива можно с помощью двух циклов for вложенных друг в друга
          * */
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 4; j++) {
-                twoDimArr[i][j] = i + j;
+        for (int i = 0; i < biDimArr.length; i++) {
+            for (int j = 0; j < biDimArr[i].length; j++) {
+                biDimArr[i][j] = i + j;
             }
         }
-        System.out.println("twoDimArr = " + Arrays.deepToString(twoDimArr));
-        // twoDimArr = [[0, 1, 2, 3], [1, 2, 3, 4], [2, 3, 4, 5]]
+        System.out.println("biDimArr = " + Arrays.deepToString(biDimArr));
+        // biDimArr = [[0, 1, 2, 3], [1, 2, 3, 4], [2, 3, 4, 5]]
 
         /*
          * Двумерный массив не обязан иметь одинаковый размер вложенных (внутренних) массивов,
