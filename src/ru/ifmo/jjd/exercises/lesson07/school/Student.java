@@ -1,4 +1,4 @@
-package ru.ifmo.jjd.lessons.lesson08.school;
+package ru.ifmo.jjd.exercises.lesson07.school;
 
 import java.util.Random;
 

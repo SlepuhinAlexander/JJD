@@ -47,4 +47,4 @@
     
 #### Ещё задача
 
-[[School]](school)
+[[School]](../../exercises/lesson07/school)

@@ -1,4 +1,4 @@
-package ru.ifmo.jjd.lessons.lesson08.school;
+package ru.ifmo.jjd.exercises.lesson07.school;
 
 abstract public class Learner extends Person {
     private static final String[] subjects = {"География", "История", "Литература", "Музыка", "Физика", "Математика",

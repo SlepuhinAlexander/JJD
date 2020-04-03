@@ -1,4 +1,4 @@
-package ru.ifmo.jjd.exercises.lesson06.ex02;
+package ru.ifmo.jjd.exercises.lesson06.cats;
 
 public class Cat {
     private String name = "Кот";

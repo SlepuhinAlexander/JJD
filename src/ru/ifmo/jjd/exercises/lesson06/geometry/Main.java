@@ -1,4 +1,4 @@
-package ru.ifmo.jjd.exercises.lesson06.ex01;
+package ru.ifmo.jjd.exercises.lesson06.geometry;
 
 public class Main {
     public static void main(String[] args) {
