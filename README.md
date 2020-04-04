@@ -26,9 +26,9 @@
     работу со строками 
 4. _(после [занятия 06](src/ru/ifmo/jjd/lessons/lesson06))_: [Фигуры](src/ru/ifmo/jjd/exercises/lesson06/geometry) и 
     [Коты](src/ru/ifmo/jjd/exercises/lesson06/cats) - задачи на работу с классами и объектами 
-5. _(после [занятия 07](src/ru/ifmo/jjd/lessons/lesson06))_: [Школа](src/ru/ifmo/jjd/exercises/lesson07) - задача на 
+5. _(после [занятия 07](src/ru/ifmo/jjd/lessons/lesson07))_: [Школа](src/ru/ifmo/jjd/exercises/lesson07) - задача на 
     работу с наследованием, интерфейсами
-6. _(после [занятия 11](src/ru/ifmo/jjd/lessons/lesson06))_: [Фитнес](src/ru/ifmo/jjd/exercises/lesson11/fitness) - 
+6. _(после [занятия 11](src/ru/ifmo/jjd/lessons/lesson11))_: [Фитнес](src/ru/ifmo/jjd/exercises/lesson11/fitness) - 
     задача на наследование, интерфейсы, с участием API даты-времени.
     - дополнительные задачи: [Самолёты](src/ru/ifmo/jjd/exercises/lesson11/aircrafts) (API даты и времени), 
     [Альпинисты](src/ru/ifmo/jjd/exercises/lesson11/climbers) (классы и объекты), 
