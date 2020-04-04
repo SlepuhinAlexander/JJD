@@ -1,6 +1,8 @@
 package ru.ifmo.jjd.utils;
 
-import static ru.ifmo.jjd.utils.RandomHelper.*;
+import java.util.regex.Pattern;
+
+import static ru.ifmo.jjd.utils.RandomHelper.randomInt;
 
 public class StringHelper {
     private static final char[] VOWELS = {'a', 'e', 'i', 'o', 'u', 'y'};
@@ -58,5 +60,57 @@ public class StringHelper {
      */
     public static String[] splitToWords(String s) {
         return s.split("[\\W&&[^А-Яа-я-]]+");
+    }
+
+    public static boolean isNullOrEmpty(String s) {
+        return (s == null) || s.isEmpty();
+    }
+
+    public static boolean isNullOrBlank(String s) {
+        return (s == null) || s.isBlank();
+    }
+
+    /**
+     * Cuts out all matches for given regex in given string. Additionally removes all extra whitespaces.
+     * Returns empty string in case of invalid arguments.
+     *
+     * @param s     A string to normalize
+     * @param regex A regex for replacement to empty string
+     * @return The given string s with all regex matches and extra whitespaces being cut out. Returns empty string if
+     * any param is null or blank.
+     */
+    public static String normalize(String s, String regex) {
+        if (!isNullOrBlank(s) && !isNullOrBlank(regex)) {
+            try {
+                Pattern.compile(regex);
+                s = s.replaceAll(regex, "").replaceAll("\\s", " ").
+                        replaceAll(" {2,}", " ").trim();
+            } catch (Exception e) {
+                s = "";
+            }
+        } else {
+            s = "";
+        }
+        return s;
+    }
+
+    public static String normalize(String s) {
+        return normalize(s, "[\\W&&\\S&&[^А-Яа-я-]]+");
+    }
+
+    public static String normalizeLatin(String s) {
+        return normalize(s, "[\\W&&\\S&&[^-]]+");
+    }
+
+    public static String normalizeLatinWord(String s) {
+        return normalize(s, "[^A-Za-z-]+");
+    }
+
+    public static String normalizeCyrillic(String s) {
+        return normalize(s,"[^А-Яа-я-_\\d\\s]+");
+    }
+
+    public static String normalizeCyrillicWord(String s) {
+        return normalize(s, "[^А-Яа-я-]+");
     }
 }

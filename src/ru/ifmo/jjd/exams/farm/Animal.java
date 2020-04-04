@@ -1,11 +1,12 @@
 package ru.ifmo.jjd.exams.farm;
 
-import static ru.ifmo.jjd.utils.RandomHelper.*;
+import static ru.ifmo.jjd.utils.RandomHelper.randomInt;
+import static ru.ifmo.jjd.utils.StringHelper.normalizeCyrillicWord;
 
 abstract public class Animal {
-    private String name;
     private final int weight; // [5;100]
     private final int speed; // [2;10]
+    private String name;
 
     public Animal(String name) {
         setName(name);
@@ -24,8 +25,11 @@ abstract public class Animal {
     }
 
     public void setName(String name) {
-        if (name != null && !"".equals(name.replaceAll("[\\W&&[^А-Яа-я]]+", ""))) {
+        name = normalizeCyrillicWord(name);
+        if (!name.isBlank()) {
             this.name = name;
+        } else {
+            this.name = "";
         }
     }
 
