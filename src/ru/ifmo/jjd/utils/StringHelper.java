@@ -10,10 +10,11 @@ public class StringHelper {
             's', 't', 'v', 'w', 'x', 'z'};
 
     public static String uppercaseFirst(String s) {
-        if (Character.isLowerCase(s.charAt(0))) {
+        if (!isNullOrEmpty(s) && Character.isLowerCase(s.charAt(0))) {
             return s.substring(0, 1).toUpperCase() + s.substring(1);
+        } else {
+            return s;
         }
-        return s;
     }
 
     /**
@@ -99,18 +100,18 @@ public class StringHelper {
     }
 
     public static String normalizeLatin(String s) {
-        return normalize(s, "[\\W&&\\S&&[^-]]+");
+        return normalize(s, "[\\W&&\\S&&[^\\-]]+");
     }
 
     public static String normalizeLatinWord(String s) {
-        return normalize(s, "[^A-Za-z-]+");
+        return normalize(s, "[^A-Za-z\\-]+");
     }
 
     public static String normalizeCyrillic(String s) {
-        return normalize(s,"[^А-Яа-я-_\\d\\s]+");
+        return normalize(s,"[^А-ЯЁа-яё\\-_\\d\\s]+");
     }
 
     public static String normalizeCyrillicWord(String s) {
-        return normalize(s, "[^А-Яа-я-]+");
+        return normalize(s, "[^А-ЯЁа-яё\\-]+");
     }
 }
