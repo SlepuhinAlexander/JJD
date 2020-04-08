@@ -1,6 +1,16 @@
-## Массивы
+## Одномерные массивы
 
-### Определения
+1. [Определения](#definitions)
+1. [Работа с массивом](#simple-array)
+    1. [Объявление массива](#declaration)
+    1. [Инициализация массива](#initialization)
+    1. [Получение длины массива](#length)
+    1. [Печать массива](#to-string)
+    1. [Повторная инициализация массива](#re-initialization)
+1. [Доступ к элементам массива](#elements)
+1. [Перебор элементов массива](#iterating)
+
+### Определения <a name="definitions"></a>
 
 **Массив** - это объект, представляющий некоторую *непрерывную* область памяти, хранящую *набор* данных (переменных) 
 определённого (одного) типа.
@@ -26,7 +36,9 @@
 В платформе Java есть удобный статический класс `Arrays` (`java.util.Arrays`), содержащий методы для выполнения самых 
 распространённых действий с массивами. Класс `Arrays` позволяет решать типовые задачи при работе с массивами. 
 
-### Объявление массива
+### Работа с массивом <a name="simple-array"></a>
+
+#### Объявление массива <a name="declaration"></a>
 
 Объявление переменной типа массив, как и для любых других переменных, состоит из указания типа данных и имени 
 переменной: 
@@ -42,7 +54,7 @@
 не создан: текущее значение переменной `someArr == null`.  
 Массив всегда является *объектом*, в т.ч. если он объединяет данные примитивного типа.
 
-### Инициализация массива
+#### Инициализация массива <a name="initialization"></a>
 
 **Инициализация** массива - это момент создания, собственно, массива, заполнения его элементов, и присвоения его 
 объявленной переменной массива.
@@ -95,46 +107,49 @@
     
 делает ровно то же самое.
 
-#### Получение длины массива
+#### Получение длины массива <a name="length"></a>
 
-Длина массива хранится в свойстве `length` объекта типа массив. Получить длину массива можно просто обратившись к этому 
-свойству от имени объекта, через точку (см. также [[Объекты]](../l06oop/ClassesAndObjects.md)):
+Длина массива хранится в свойстве `length` объекта типа массив. Получить длину массива можно просто [обратившись к 
+этому свойству от имени объекта, через точку](../l06oop/ClassesAndObjects.md#calling-method):
 
-    // ArraysDemo.java
-    // arrayInitializationDemo()
-    /*
-     * <code> 
-     */
-    int[] someArr = new int[7];
-    int[] someArr2 = {37, 48, 125, 983, -23, 0, -112};
-    System.out.println("Длина массива someArr: " + someArr.length); // Длина массива someArr: 7
-    System.out.println("Длина массива someArr2: " + someArr2.length); // Длина массива someArr2: 7
+[`ArraysDemo.java`][Arrays]
+
+    arrayInitializationDemo() {
+        /* <code> */
+        int[] someArr = new int[7];
+        int[] someArr2 = {37, 48, 125, 983, -23, 0, -112};
+        System.out.println("Длина массива someArr: " + someArr.length); // Длина массива someArr: 7
+        System.out.println("Длина массива someArr2: " + someArr2.length); // Длина массива someArr2: 7
+        /* <code> */
+    }
     
-#### Печать массива
+#### Печать массива <a name="to-string"></a>
 
 Массив является объектом, поэтому вызов печати массива выдаст стандартное текстовое представление объекта (там будет 
 напечатан хеш-код объекта), а не содержимое массива, как хотелось бы
 
-    // ArraysDemo.java
-    // arrayInitializationDemo()
-    /*
-     * <code> 
-     */
-    System.out.println("someArr: " + someArr); // [I@12edcd21
+[`ArraysDemo.java`][Arrays]
+
+    arrayInitializationDemo() {
+        /* <code> */
+        System.out.println("someArr: " + someArr); // [I@12edcd21
+        /* <code> */
+    }
     
 Для удобного преобразования массива в строку (например, для вывода в консоль) необходимо использовать служебный 
 статический класс `Arrays` (`java.util.Arrays`) и его метод `toString()`, который определён для массивов из всех 
 примитивных или ссылочных типов данных.
 
-    // ArraysDemo.java
-    // arrayInitializationDemo()
-    /*
-     * <code> 
-     */
-    System.out.println("someArr = " + Arrays.toString(someArr)); // someArr = [0, 0, 0, 0, 0, 0, 0]
-    System.out.println("someArr2 = " + Arrays.toString(someArr2)); // someArr2 = [37, 48, 125, 983, -23, 0, -112]
+[`ArraysDemo.java`][Arrays]
 
-#### Повторная инициализация массива
+    arrayInitializationDemo() {
+        /* <code> */
+        System.out.println("someArr = " + Arrays.toString(someArr)); // someArr = [0, 0, 0, 0, 0, 0, 0]
+        System.out.println("someArr2 = " + Arrays.toString(someArr2)); // someArr2 = [37, 48, 125, 983, -23, 0, -112]
+        /* <code> */
+    }
+
+#### Повторная инициализация массива <a name="re-initialization"></a>
 
 Как и для любой другой переменной - массиву можно присвоить новое значение (переопределить его). При этом массив нужно 
 повторно инициализировать (т.е. вызвать конструктор массива того же типа данных и присвоить его имеющейся переменной).  
@@ -145,19 +160,20 @@
      
 компилятор уже не распознает.
 
-    // ArraysDemo.java
-    // arrayInitializationDemo()
-    /*
-     * <code> 
-     */
-    someArr = new int[]{-4, 12, 37, 48, 125};
-    someArr2 = new int[5];
-    System.out.println("Длина массива someArr: " + someArr.length); // Длина массива someArr: 5
-    System.out.println("Длина массива someArr2: " + someArr2.length); // Длина массива someArr2: 5
-    System.out.println("someArr = " + Arrays.toString(someArr)); // someArr = [-4, 12, 37, 48, 125]
-    System.out.println("someArr2 = " + Arrays.toString(someArr2)); // someArr2 = [0, 0, 0, 0, 0]
+[`ArraysDemo.java`][Arrays]
+
+    arrayInitializationDemo() {
+        /* <code> */
+        someArr = new int[]{-4, 12, 37, 48, 125};
+        someArr2 = new int[5];
+        System.out.println("Длина массива someArr: " + someArr.length); // Длина массива someArr: 5
+        System.out.println("Длина массива someArr2: " + someArr2.length); // Длина массива someArr2: 5
+        System.out.println("someArr = " + Arrays.toString(someArr)); // someArr = [-4, 12, 37, 48, 125]
+        System.out.println("someArr2 = " + Arrays.toString(someArr2)); // someArr2 = [0, 0, 0, 0, 0]
+        /* <code> */
+    }
     
-### Доступ к элементам массива.
+### Доступ к элементам массива <a name="elements"></a>
 
 После создания массива к любому из его элементов можно обратиться: прочитать его значение или изменить его. Для 
 обращения к элементу массива необходимо указать имя массива, и затем в `[]` указать *индекс* интерес интересующего 
@@ -165,20 +181,21 @@
 В качестве индекса можно передавать не только явное число, но и любую переменную, выражение, возвращаемое значение 
 метода, принимающие целое значение (`int`).
 
-    // ArraysDemo.java
-    // arrayInitializationDemo()
-    /*
-     * <code> 
-     */
-    int[] someArr = new int[7];
-    int[] someArr2 = {37, 48, 125, 983, -23, 0, -112};
-    System.out.println("someArr[4] = " + someArr[4]); // someArr[4] = 0
-    System.out.println("someArr2[7 / 2] = " + someArr2[7 / 2]); // someArr2[7 / 2] = 983
-    someArr[1] = 11;
-    someArr[5] = 17;
-    someArr[someArr2[5]] = 22;
-    System.out.println("someArr = " + Arrays.toString(someArr)); // someArr = [22, 11, 0, 0, 0, 17, 0]
-    System.out.println("someArr2 = " + Arrays.toString(someArr2)); // someArr2 = [37, 48, 125, 983, -23, 0, -112]
+[`ArraysDemo.java`][Arrays]
+
+    arrayInitializationDemo() {
+        /* <code> */
+        int[] someArr = new int[7];
+        int[] someArr2 = {37, 48, 125, 983, -23, 0, -112};
+        System.out.println("someArr[4] = " + someArr[4]); // someArr[4] = 0
+        System.out.println("someArr2[7 / 2] = " + someArr2[7 / 2]); // someArr2[7 / 2] = 983
+        someArr[1] = 11;
+        someArr[5] = 17;
+        someArr[someArr2[5]] = 22;
+        System.out.println("someArr = " + Arrays.toString(someArr)); // someArr = [22, 11, 0, 0, 0, 17, 0]
+        System.out.println("someArr2 = " + Arrays.toString(someArr2)); // someArr2 = [37, 48, 125, 983, -23, 0, -112]
+        /* <code> */
+    }
 
 При попытке обращения к несуществующему элементу массива (использовании некорректного индекса), будет выброшена ошибка 
 времени исполнения (runtime exception) `java.lang.ArrayIndexOutOfBoundsException` и выполнение программы прервётся.  
@@ -187,67 +204,75 @@
 ### Перебор элементов массива <a name="iterating"></a>
 
 Задачу перебрать все элементы массива (чтобы прочитать, обработать или изменить значения элементов) удобно решать с 
-помощью циклов. Наиболее удобно использовать циклы `for` (т.к. заранее известно необходимое количество итераций, равное 
-длине массива) или `foreach` (т.к. массив - итерируемый объект).
+помощью циклов. Наиболее удобно использовать циклы [`for`](../l02choicesloops/Loops.md#fori) (т.к. заранее известно 
+необходимое количество итераций, равное длине массива) или [`foreach`](../l02choicesloops/Loops.md#foreach) (т.к. 
+массив - итерируемый объект).
 
 Пример:  
 Создать массив целых чисел и заполнить его чётными числами начиная с нуля.
 
-    // ArraysDemo.java
-    // iteratingTroughArrayDemo()
-    /*
-     * <code> 
-     */
-    int[] arr = new int[10];
-    for (int i = 0; i < arr.length; i++) {
-        arr[i] = i * 2;
+[`ArraysDemo.java`][Arrays]
+
+    iteratingTroughArrayDemo() {
+        /* <code> */
+        int[] arr = new int[10];
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = i * 2;
+        }
+        System.out.println("arr = " + Arrays.toString(arr)); // arr = [0, 2, 4, 6, 8, 10, 12, 14, 16, 18]
+        /* <code> */
     }
-    System.out.println("arr = " + Arrays.toString(arr)); // arr = [0, 2, 4, 6, 8, 10, 12, 14, 16, 18]
-    
+
 Пример:  
 Удвоить значения всех элементов массива целых цисел
 
-    // ArraysDemo.java
-    // iteratingTroughArrayDemo()
-    /*
-     * <code> 
-     */
-    for (int i = 0; i < arr.length; i++) {
-        arr[i] *= 2;
+[`ArraysDemo.java`][Arrays]
+
+    iteratingTroughArrayDemo() {
+        /* <code> */
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] *= 2;
+        }
+        System.out.println("arr = " + Arrays.toString(arr)); // arr = [0, 4, 8, 12, 16, 20, 24, 28, 32, 36]
+        /* <code> */
     }
-    System.out.println("arr = " + Arrays.toString(arr)); // arr = [0, 4, 8, 12, 16, 20, 24, 28, 32, 36]
 
 Та же задача, но с использованием цикла `while`:
 
-    // ArraysDemo.java
-    // iteratingTroughArrayDemo()
-    /*
-     * <code> 
-     */
-    int i = 0;
-    while (i < arr.length) {
-        arr[i++] *= 2;
+[`ArraysDemo.java`][Arrays]
+
+    iteratingTroughArrayDemo() {
+        /* <code> */
+        int i = 0;
+        while (i < arr.length) {
+            arr[i++] *= 2;
+        }
+        System.out.println("arr = " + Arrays.toString(arr)); // arr = [0, 8, 16, 24, 32, 40, 48, 56, 64, 72]
+        /* <code> */
     }
-    System.out.println("arr = " + Arrays.toString(arr)); // arr = [0, 8, 16, 24, 32, 40, 48, 56, 64, 72]
 
 Пример:  
 Вывести квадраты всех элементов массива. Сам массив не изменять.
 
-    // ArraysDemo.java
-    // iteratingTroughArrayDemo()
-    /*
-     * <code> 
-     */
-    System.out.print("Квадраты элементов массива arr:");
-    for (int n : arr) {
-        n = n * n;
-        System.out.print(" " + n);
+[`ArraysDemo.java`][Arrays]
+
+    iteratingTroughArrayDemo() {
+        /* <code> */
+        System.out.print("Квадраты элементов массива arr:");
+        for (int n : arr) {
+            n = n * n;
+            System.out.print(" " + n);
+        }
+        System.out.println(); // Квадраты элементов массива arr: 0 64 256 576 1024 1600 2304 3136 4096 5184
+        System.out.println("arr = " + Arrays.toString(arr)); // arr = [0, 8, 16, 24, 32, 40, 48, 56, 64, 72]
+        /* <code> */
     }
-    System.out.println(); // Квадраты элементов массива arr: 0 64 256 576 1024 1600 2304 3136 4096 5184
-    System.out.println("arr = " + Arrays.toString(arr)); // arr = [0, 8, 16, 24, 32, 40, 48, 56, 64, 72]
     
 Несмотря на изменение переменной `n` внутри цикла, исходный массив не изменился.  
 В отличие от перебора циклом `for` (или `while`), цикл `foreach` не использует явно индексы элементов массива: в 
 переменную `n` в каждой итерации *копируется* текущий выбранный элемент массива, оригинал при этом остаётся без 
 изменений. 
 Соответственно, циклом `foreach` пользователь не имеет возможности изменить массив.
+
+<!--  ------------------------------  -->
+[Arrays]: ArraysDemo.java
