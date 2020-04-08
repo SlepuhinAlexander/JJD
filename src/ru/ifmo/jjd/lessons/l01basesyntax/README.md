@@ -1,4 +1,4 @@
-### Типы данных и операторы
+## Типы данных и операторы
 
 <table>
     <tr>
@@ -50,7 +50,7 @@
             <a href="Operators.md#comparison">Операторы сравнения</a><br/>
             <a href="Operators.md#logical">Логические операторы</a><br/>
             <a href="Operators.md#bitwise">Побитовые операторы</a><br/>
-            <a href="Operators.md#ternary">Тренарный (условный) оператор</a>
+            <a href="Operators.md#ternary">Тернарный (условный) оператор</a>
         </td>
         <td><a href="Operators.pdf">Операторы [pdf]</a></td>
     </tr>

@@ -22,6 +22,13 @@ public class ConditionalStatementsDemo {
         }
         // Число 68 - чётное.
 
+        // Если случайное число от 0 до 999 - двузначное, вывести этот факт в консоль.
+        n = (int) (Math.random() * 1000); // генерируем случайное целое число от 0 до 999
+        if (n >= 10 && n <= 99) {
+            System.out.println("Число " + n + " двузначное");
+        }
+        // Число 53 - двузначное
+
         /*
          * Условный оператор if может содержать необязательный блок else. Синтаксис:
          * if (условие) {
@@ -212,7 +219,12 @@ public class ConditionalStatementsDemo {
             case 111, 222, 333 -> num + " малый приз";
             case 444, 555 -> num + " средний приз";
             case 777 -> num + " крупный приз";
-            default -> num + " попробуйте ещё раз";
+            default -> {
+                String msg = " попробуйте ещё раз";
+                System.out.print(num);
+                // break msg; // Java 12
+                yield msg; // Java 13
+            }
         };
         System.out.println(result);
         // 777 крупный приз
