@@ -23,7 +23,7 @@
         <td><a href="ArraysOperations.md">Операции с массивами</a></td>
         <td>
             <a href="ArraysOperations.md#copying">Копирование массива</a><br/>
-            <a href="ArraysOperations.md#arrays">Методы класса `Arrays`</a>
+            <a href="ArraysOperations.md#arrays">Методы класса Arrays</a>
         </td>
         <td><a href="Arrays.pdf">Массивы [pdf]</a></td>
     </tr>

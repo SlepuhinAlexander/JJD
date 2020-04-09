@@ -110,7 +110,7 @@
 #### Получение длины массива <a name="length"></a>
 
 Длина массива хранится в свойстве `length` объекта типа массив. Получить длину массива можно просто [обратившись к 
-этому свойству от имени объекта, через точку](../l06oop/ClassesAndObjects.md#calling-method):
+этому свойству от имени объекта, через точку](../l06oop/ClassesAndObjects.md#calling-field):
 
 [`ArraysDemo.java`][Arrays]
 
