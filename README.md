@@ -32,7 +32,7 @@
 1. _(после [занятия 11](src/ru/ifmo/jjd/lessons/l11datetime))_: 
     1. [Фитнес](src/ru/ifmo/jjd/exercises/lesson11/fitness) - задача на наследование, интерфейсы, с участием API 
         даты-времени.
-    1. [Морской бой](src/ru/ifmo/jjd/exercises/lesson11/battleships) - задача ООП.
+    1. [Морской бой](src/ru/ifmo/jjd/exercises/lesson11/battleships) - задача на ООП.
     - дополнительные задачи: 
         - [Самолёты](src/ru/ifmo/jjd/exercises/lesson11/aircrafts) (API даты и времени)
         - [Альпинисты](src/ru/ifmo/jjd/exercises/lesson11/climbers) (классы и объекты) 
