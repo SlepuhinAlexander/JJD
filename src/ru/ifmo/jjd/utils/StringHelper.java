@@ -96,7 +96,7 @@ public class StringHelper {
     }
 
     public static String normalize(String s) {
-        return normalize(s, "[\\W&&\\S&&[^А-Яа-я-]]+");
+        return normalize(s, "[\\W&&\\S&&[^А-Яа-я\\-]]+");
     }
 
     public static String normalizeLatin(String s) {
