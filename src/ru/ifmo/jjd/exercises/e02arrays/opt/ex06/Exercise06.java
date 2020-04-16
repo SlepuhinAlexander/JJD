@@ -5,12 +5,6 @@ import java.util.Arrays;
 import static ru.ifmo.jjd.utils.ConsoleHelper.*;
 import static ru.ifmo.jjd.utils.ArraysHelper.*;
 
-/*
- * Создать двумерный массив из 7 строк по 4 столбца в каждой из случайных целых чисел из отрезка [-5;5].
- * Вывести массив в консоль.
- * Определить и вывести на экран индекс строки с наибольшим по модулю произведением элементов.
- * Если таких строк несколько, то вывести индекс первой встретившейся из них.
- * */
 public class Exercise06 {
     public static void main(String[] args) {
         int[][] someArr = new int[7][4];

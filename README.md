@@ -12,7 +12,7 @@
     </tr>
     <tr>
         <td align="right">1</td>
-        <td>2 мар</td>
+        <td>02.03</td>
         <td>
             <a href="src/ru/ifmo/jjd/lessons/l01basesyntax/Introduction.md">Введение в Java</a><br/>
             <a href="src/ru/ifmo/jjd/lessons/l01basesyntax/DataTypes.md">Типы данных</a><br/>
@@ -25,7 +25,7 @@
     </tr>
     <tr>
         <td align="right">2</td>
-        <td>4 мар</td>
+        <td>04.03</td>
         <td>
             <a href="src/ru/ifmo/jjd/lessons/l02choicesloops/ConditionalStatements.md">Условные конструкции</a><br/>
             <a href="src/ru/ifmo/jjd/lessons/l02choicesloops/Loops.md">Циклы</a>
@@ -34,7 +34,7 @@
     </tr>
     <tr>
         <td align="right">3</td>
-        <td>6 мар</td>
+        <td>06.03</td>
         <td>
             <a href="src/ru/ifmo/jjd/lessons/l03arrays/Arrays.md">Одномерные массивы</a><br/>
             <a href="src/ru/ifmo/jjd/lessons/l03arrays/ArraysOperations.md">Операции с массивами</a><br/>
@@ -44,19 +44,19 @@
     </tr>
     <tr>
         <td align="right">4</td>
-        <td>11 мар</td>
+        <td>11.03</td>
         <td><a href="src/ru/ifmo/jjd/lessons/l04git/Git.md">Основы Git</a></td>
         <td><a href="src/ru/ifmo/jjd/lessons/l04git">В процессе</a></td>
     </tr>
     <tr>
         <td align="right">5</td>
-        <td>13 мар</td>
+        <td>13.03</td>
         <td><a href="src/ru/ifmo/jjd/lessons/l05strings/README.md">Строки</a></td>
         <td><a href="src/ru/ifmo/jjd/lessons/l05strings">Черновик</a></td>
     </tr>
     <tr>
         <td align="right">6</td>
-        <td>16 мар</td>
+        <td>16.03</td>
         <td>
             <a href="src/ru/ifmo/jjd/lessons/l06oop/Packages.md">Пакеты</a><br/>
             <a href="src/ru/ifmo/jjd/lessons/l06oop/ClassesAndObjects.md">Классы и объекты</a>
@@ -65,7 +65,7 @@
     </tr>
     <tr>
         <td align="right">7</td>
-        <td>18 мар</td>
+        <td>18.03</td>
         <td><a href="src/ru/ifmo/jjd/lessons/l07inheritance/README.md">
             Наследование<br/>Абстрактные классы<br/>Интерфейсы
         </a></td>
@@ -73,37 +73,37 @@
     </tr>
     <tr>
         <td align="right">8</td>
-        <td>20 мар</td>
+        <td>20.03</td>
         <td><a href="src/ru/ifmo/jjd/lessons/l08staticfinal/README.md">Операторы static и final</a></td>
         <td><a href="src/ru/ifmo/jjd/lessons/l08staticfinal">Черновик</a></td>
     </tr>
     <tr>
         <td align="right">9</td>
-        <td>23 мар</td>
+        <td>23.03</td>
         <td><a href="src/ru/ifmo/jjd/lessons/l09objectclass/README.md">Класс Object и его методы</a></td>
         <td><a href="src/ru/ifmo/jjd/lessons/l09objectclass">Черновик</a></td>
     </tr>
     <tr>
         <td align="right">10</td>
-        <td>25 мар</td>
+        <td>25.03</td>
         <td><a href="src/ru/ifmo/jjd/lessons/l10random/README.md">Класс Random и его методы</a></td>
         <td><a href="src/ru/ifmo/jjd/lessons/l10random">Черновик</a></td>
     </tr>
     <tr>
         <td align="right">11</td>
-        <td>29 мар</td>
+        <td>29.03</td>
         <td><a href="src/ru/ifmo/jjd/lessons/l11datetime/README.md">API даты и времени</a></td>
         <td><a href="src/ru/ifmo/jjd/lessons/l11datetime">Черновик</a></td>
     </tr>
     <tr>
         <td align="right">12</td>
-        <td>10 апр</td>
+        <td>10.04</td>
         <td><a href="src/ru/ifmo/jjd/lessons/l12wrappers/README.md">Обёртки над примитивными типами</a></td>
         <td><a href="src/ru/ifmo/jjd/lessons/l12wrappers">Черновик</a></td>
     </tr>
     <tr>
         <td align="right">13</td>
-        <td>13 апр</td>
+        <td>13.04</td>
         <td><a href="src/ru/ifmo/jjd/lessons/l13enumsgc/README.md">
             Перечисления<br/>
             Модель памяти<br/>
@@ -114,13 +114,13 @@
     </tr>
     <tr>
         <td align="right">14</td>
-        <td>15 апр</td>
+        <td>15.04</td>
         <td><a href="src/ru/ifmo/jjd/lessons/l14exceptions/README.md">Исключения</a></td>
         <td><a href="src/ru/ifmo/jjd/lessons/l14exceptions">Черновик</a></td>
     </tr>
     <tr>
         <td align="right">15</td>
-        <td>17 апр</td>
+        <td>17.04</td>
         <td><a href="src/ru/ifmo/jjd/lessons/l15generics/README.md">Обобщения</a></td>
         <td><a href="src/ru/ifmo/jjd/lessons/l15generics"></a></td>
     </tr>
@@ -145,7 +145,7 @@
     </tr>
     <tr>
         <td align="right">1</td>
-        <td>2 мар</td>
+        <td>02.03</td>
         <td>
             <a href="src/ru/ifmo/jjd/lessons/l02choicesloops">Ветвления<br/>Циклы</a>
         </td>
@@ -158,7 +158,7 @@
     </tr>
     <tr>
         <td align="right" rowspan="2">2</td>
-        <td rowspan="2">4 мар</td>
+        <td rowspan="2">04.03</td>
         <td rowspan="2">
             <a href="src/ru/ifmo/jjd/lessons/l02choicesloops">Ветвления<br/>Циклы</a><br/>
             <a href="src/ru/ifmo/jjd/lessons/l03arrays">Массивы</a>
@@ -168,7 +168,7 @@
         <td>Готово</td>
     </tr>
     <tr>
-        <td><a href="src/ru/ifmo/jjd/exercises/e02arays/opt">Ещё задачи на массивы</a></td>
+        <td><a href="src/ru/ifmo/jjd/exercises/e02arrays/opt">Ещё задачи на массивы</a></td>
         <td>
             <i>Дополнительно.</i><br/>
             Набор задач на работу с одно- и двумерными массивами
@@ -177,7 +177,7 @@
     </tr>
     <tr>
         <td align="right">3</td>
-        <td>13 мар</td>
+        <td>13.03</td>
         <td><a href="src/ru/ifmo/jjd/lessons/l05strings">Строки</a></td>
         <td><a href="src/ru/ifmo/jjd/exercises/e03strings">Задачи на строки</a></td>
         <td>Набор задач на работу со строками</td>
@@ -185,7 +185,7 @@
     </tr>
     <tr>
         <td align="right" rowspan="2">4</td>
-        <td rowspan="2">16 мар</td>
+        <td rowspan="2">16.03</td>
         <td rowspan="2"><a href="src/ru/ifmo/jjd/lessons/l06oop">Классы и объекты</a></td>
         <td><a href="src/ru/ifmo/jjd/exercises/e04objects/geometry">Геометрия</a></td>
         <td>
@@ -204,10 +204,10 @@
     </tr>
     <tr>
         <td align="right">5</td>
-        <td>18 мар</td>
+        <td>18.03</td>
         <td>
             <a href="src/ru/ifmo/jjd/lessons/l06oop">Классы и объекты</a><br/>
-            <a href="src/ru/ifmo/jjd/lessons/l07inheritance/README.md">Наследование и интерфейсы</a>
+            <a href="src/ru/ifmo/jjd/lessons/l07inheritance">Наследование и интерфейсы</a>
         </td>
         <td><a href="src/ru/ifmo/jjd/exercises/e05school">Школа</a></td>
         <td>Моделирование работы школы и процесса обучения</td>
@@ -215,14 +215,14 @@
     </tr>
     <tr>
         <td align="right">6</td>
-        <td>25 мар</td>
+        <td>25.03</td>
         <td>
             ООП:<br/>
             <a href="src/ru/ifmo/jjd/lessons/l06oop">Объекты</a><br/>
-            <a href="src/ru/ifmo/jjd/lessons/l07inheritance/README.md">Наследование</a><br/>
-            <a href="src/ru/ifmo/jjd/lessons/l08staticfinal/README.md">static и final</a><br/>
-            <a href="src/ru/ifmo/jjd/lessons/l09objectclass/README.md">Object</a> и 
-            <a href="src/ru/ifmo/jjd/lessons/l09random/README.md">Random</a> 
+            <a href="src/ru/ifmo/jjd/lessons/l07inheritance">Наследование</a><br/>
+            <a href="src/ru/ifmo/jjd/lessons/l08staticfinal">static и final</a><br/>
+            <a href="src/ru/ifmo/jjd/lessons/l09objectclass">Object</a> и 
+            <a href="src/ru/ifmo/jjd/lessons/l09random">Random</a> 
         </td>
         <td><a href="src/ru/ifmo/jjd/exercises/e06farm">Ферма</a></td>
         <td>
@@ -233,21 +233,20 @@
     </tr>
     <tr>
         <td align="right">7</td>
-        <td>29 мар</td>
-        <td><a href="src/ru/ifmo/jjd/lessons/l11datetime/README.md">API даты и времени</a></td>
+        <td>29.03</td>
+        <td><a href="src/ru/ifmo/jjd/lessons/l11datetime">API даты и времени</a></td>
         <td><a href="src/ru/ifmo/jjd/exercises/e07aircrafts">Авиаперелёты</a></td>
         <td>
-            Построить детализацию маршрута перелёта из Сиднея в Оттаву<br/>
-            с пересадками и с учётом местных часовых поясов
+            Построить детализацию.03шрута перелёта из Сиднея в Оттаву с пересадками и с учётом местных часовых поясов
         </td>
         <td>Исправить<br/>замечания</td>
     </tr>
     <tr>
         <td align="right">8</td>
-        <td>31 мар</td>
+        <td>31.03</td>
         <td>
-            <a href="src/ru/ifmo/jjd/lessons/l07inheritance/README.md">ООП</a><br/>
-            <a href="src/ru/ifmo/jjd/lessons/l11datetime/README.md">API даты и времени</a>
+            <a href="src/ru/ifmo/jjd/lessons/l07inheritance">ООП</a><br/>
+            <a href="src/ru/ifmo/jjd/lessons/l11datetime">API даты и времени</a>
         </td>
         <td><a href="src/ru/ifmo/jjd/exercises/e08fitness">Фитнес</a></td>
         <td>Моделирование работы фитнес-клуба</td>
@@ -255,7 +254,7 @@
     </tr>
     <tr>
         <td align="right" rowspan="2">9</td>
-        <td rowspan="2">31 мар</td>
+        <td rowspan="2">31.03</td>
         <td><a href="src/ru/ifmo/jjd/lessons/l06oop">Классы и объекты</a></td>
         <td><a href="src/ru/ifmo/jjd/exercises/e09oop/climbers">Альпинисты</a></td>
         <td>
@@ -265,7 +264,7 @@
         <td>Не сделано</td>
     </tr>
     <tr>
-        <td><a href="src/ru/ifmo/jjd/lessons/l07inheritance/README.md">Наследование и интерфейсы</a></td>
+        <td><a href="src/ru/ifmo/jjd/lessons/l07inheritance">Наследование и интерфейсы</a></td>
         <td><a href="src/ru/ifmo/jjd/exercises/e09oop/temperature">Конвертеры температур</a></td>
         <td>
             <i>Дополнительно.</i><br/>
@@ -275,16 +274,16 @@
     </tr>
     <tr>
         <td align="right">10</td>
-        <td>6 апр</td>
-        <td><a href="src/ru/ifmo/jjd/lessons/l07inheritance/README.md">ООП</a></td>
+        <td>06.04</td>
+        <td><a href="src/ru/ifmo/jjd/lessons/l07inheritance">ООП</a></td>
         <td><a href="src/ru/ifmo/jjd/exercises/e10battleships">Морской бой</a></td>
         <td>Реализовать игру "Морской бой"</td>
         <td>На проверке</td>
     </tr>
     <tr>
         <td align="right" rowspan="2">11</td>
-        <td rowspan="2">6 апр</td>
-        <td rowspan="2"><a href="src/ru/ifmo/jjd/lessons/l11datetime/README.md">API даты и времени</a></td>
+        <td rowspan="2">06.04</td>
+        <td rowspan="2"><a href="src/ru/ifmo/jjd/lessons/l11datetime">API даты и времени</a></td>
         <td><a href="src/ru/ifmo/jjd/exercises/e11datetime/workshifts">Рабочие смены</a></td>
         <td>
             <i>Дополнительно.</i><br/>
@@ -302,16 +301,16 @@
     </tr>
     <tr>
         <td align="right">12</td>
-        <td>13 апр</td>
-        <td><a href="src/ru/ifmo/jjd/lessons/l13enumsgc/README.md">Перечисления</a></td>
+        <td>13.04</td>
+        <td><a href="src/ru/ifmo/jjd/lessons/l13enumsgc">Перечисления</a></td>
         <td><a href="src/ru/ifmo/jjd/exercises/e12hr">Отдел кадров</a></td>
         <td>По первой букве определить должность и создать соответствующий объект сотрудника</td>
         <td>Не сделано</td>
     </tr>
     <tr>
         <td align="right">13</td>
-        <td>15 апр</td>
-        <td><a href="src/ru/ifmo/jjd/lessons/l14exceptions/README.md">Перечисления</a></td>
+        <td>15.04</td>
+        <td><a href="src/ru/ifmo/jjd/lessons/l14exceptions">Исключения</a></td>
         <td><a href="src/ru/ifmo/jjd/exercises/e13exceptions">Исключения</a></td>
         <td>Задачи на работу с исключениями</td>
         <td>Не сделано</td>
