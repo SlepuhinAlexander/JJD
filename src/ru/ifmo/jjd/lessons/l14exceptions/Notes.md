@@ -9,7 +9,7 @@
 Поскольку исключения это объекты (и классы) - они имеют иерархию наследования.
 Во главе иерархии лежит интерфейс Throwable (с набором методов, которые есть у каждого исключения).
 https://docs.oracle.com/javase/7/docs/api/java/lang/Throwable.html
-![](exceptions.png)
+![](Exceptions.png)
 
 Все исключения делятся на Error и Exception
 
