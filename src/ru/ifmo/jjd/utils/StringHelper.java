@@ -114,4 +114,25 @@ public class StringHelper {
     public static String normalizeCyrillicWord(String s) {
         return normalize(s, "[^А-ЯЁа-яё\\-]+");
     }
+
+    public static boolean startsWithIgnoreCase(String string, String prefix) {
+        if (isNullOrEmpty(string) || isNullOrEmpty(prefix)) {
+            return false;
+        }
+        if (prefix.length() > string.length()) {
+            return false;
+        }
+        return string.regionMatches(true, 0, prefix, 0, prefix.length());
+    }
+
+    public static boolean endsWithIgnoreCase(String string, String postfix) {
+        if (isNullOrEmpty(string) || isNullOrEmpty(postfix)) {
+            return false;
+        }
+        if (postfix.length() > string.length()) {
+            return false;
+        }
+        return string.regionMatches(true, string.length() - postfix.length(),
+                postfix, 0, postfix.length());
+    }
 }

@@ -305,7 +305,7 @@
         <td><a href="src/ru/ifmo/jjd/lessons/l13enumsgc">Перечисления</a></td>
         <td><a href="src/ru/ifmo/jjd/exercises/e12hr">Отдел кадров</a></td>
         <td>По первой букве определить должность и создать соответствующий объект сотрудника</td>
-        <td>Не сделано</td>
+        <td>Готово</td>
     </tr>
     <tr>
         <td align="right">13</td>
