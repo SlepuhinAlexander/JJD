@@ -313,6 +313,6 @@
         <td><a href="src/ru/ifmo/jjd/lessons/l14exceptions">Исключения</a></td>
         <td><a href="src/ru/ifmo/jjd/exercises/e13exceptions">Исключения</a></td>
         <td>Задачи на работу с исключениями</td>
-        <td>Не сделано</td>
+        <td>Готово</td>
     </tr>
 </table>
