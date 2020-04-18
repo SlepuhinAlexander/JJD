@@ -122,7 +122,7 @@
         <td align="right">15</td>
         <td>17.04</td>
         <td><a href="src/ru/ifmo/jjd/lessons/l15generics/README.md">Обобщения</a></td>
-        <td><a href="src/ru/ifmo/jjd/lessons/l15generics"></a></td>
+        <td><a href="src/ru/ifmo/jjd/lessons/l15generics">Черновик</a></td>
     </tr>
 <!--
     <tr>

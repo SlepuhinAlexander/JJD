@@ -23,7 +23,6 @@ public class Player {
     private Mode mode = Mode.SHOOT;
     private Player enemy;
     private Field enemyField;
-    //    private boolean isShooting = true;
     private AI ai;
 
     public Player(String name, int height, int width, int... shipLengths) {
