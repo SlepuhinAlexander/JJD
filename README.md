@@ -46,7 +46,7 @@
         <td align="right">4</td>
         <td>11.03</td>
         <td><a href="src/ru/ifmo/jjd/lessons/l04git/Git.md">Основы Git</a></td>
-        <td><a href="src/ru/ifmo/jjd/lessons/l04git">В процессе</a></td>
+        <td><a href="src/ru/ifmo/jjd/lessons/l04git">Готово</a></td>
     </tr>
     <tr>
         <td align="right">5</td>
