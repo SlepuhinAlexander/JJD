@@ -124,11 +124,18 @@
         <td><a href="src/ru/ifmo/jjd/lessons/l15generics/README.md">Обобщения</a></td>
         <td><a href="src/ru/ifmo/jjd/lessons/l15generics">Черновик</a></td>
     </tr>
+    <tr>
+        <td align="right">16</td>
+        <td>20.04</td>
+        <td><a href="src/ru/ifmo/jjd/lessons/l16collections/README.md">Коллекции</a></td>
+        <td><a href="src/ru/ifmo/jjd/lessons/l16collections">Черновик</a></td>
+    </tr>
 <!--
     <tr>
-        <td align="right"><a href="src/ru/ifmo/jjd/lessons/     ">   </a></td>
-        <td>   </td>
-        <td><a href="src/ru/ifmo/jjd/lessons/     ">   </a></td>
+        <td align="right">   </td>
+        <td>    </td>
+        <td><a href="src/ru/ifmo/jjd/lessons/    ">    </a></td>
+        <td><a href="src/ru/ifmo/jjd/lessons/    ">    </a></td>
     </tr>
 -->
 </table>
@@ -313,6 +320,17 @@
         <td><a href="src/ru/ifmo/jjd/lessons/l14exceptions">Исключения</a></td>
         <td><a href="src/ru/ifmo/jjd/exercises/e13exceptions">Исключения</a></td>
         <td>Задачи на работу с исключениями</td>
+        <td>Готово</td>
+    </tr>
+    <tr>
+        <td align="right">14</td>
+        <td>20.04</td>
+        <td><a href="src/ru/ifmo/jjd/lessons/l16collections">Коллекции</a></td>
+        <td>
+            <a href="src/ru/ifmo/jjd/exercises/e14collections/employees">Сотрудники</a><br/>
+            <a href="src/ru/ifmo/jjd/exercises/e14collections/messages">Сообщения</a>
+        </td>
+        <td>Задачи на работу с коллекциями и их методами</td>
         <td>Готово</td>
     </tr>
 </table>

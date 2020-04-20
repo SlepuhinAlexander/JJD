@@ -1,5 +1,6 @@
 package ru.ifmo.jjd.utils;
 
+import java.util.Collection;
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -98,6 +99,13 @@ public class ConsoleHelper {
 
     public static void println(Object o) {
         System.out.println(o);
+    }
+
+    public static <T> void println(Collection<T> col) {
+        if (col == null) {
+            return;
+        }
+        col.forEach(System.out::println);
     }
 
     public static void printf(String format, Object... args) {
