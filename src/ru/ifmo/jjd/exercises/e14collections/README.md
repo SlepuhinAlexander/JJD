@@ -34,4 +34,4 @@
         </td>
         <td><a href="experiment">Готово</a></td>
     </tr>
-3</table>
+</table>

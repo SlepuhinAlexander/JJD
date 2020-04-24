@@ -130,6 +130,12 @@
         <td><a href="src/ru/ifmo/jjd/lessons/l16collections/README.md">Коллекции</a></td>
         <td><a href="src/ru/ifmo/jjd/lessons/l16collections">Черновик</a></td>
     </tr>
+    <tr>
+        <td align="right">17</td>
+        <td>22.04</td>
+        <td><a href="src/ru/ifmo/jjd/lessons/l17maps/README.md">Карты</a></td>
+        <td><a href="src/ru/ifmo/jjd/lessons/l17maps">Черновик</a></td>
+    </tr>
 <!--
     <tr>
         <td align="right">   </td>
@@ -331,6 +337,14 @@
             <a href="src/ru/ifmo/jjd/exercises/e14collections/messages">Сообщения</a>
         </td>
         <td>Задачи на работу с коллекциями и их методами</td>
+        <td>Готово</td>
+    </tr>
+    <tr>
+        <td align="right">14</td>
+        <td>22.04</td>
+        <td><a href="src/ru/ifmo/jjd/lessons/l17maps">Карты</a></td>
+        <td><a href="src/ru/ifmo/jjd/exercises/e15maps">Карты</a><br/></td>
+        <td>Задачи на работу с картами и их методами</td>
         <td>Готово</td>
     </tr>
 </table>

@@ -43,6 +43,6 @@ public class Pair<K, V> {
 
     @Override
     public String toString() {
-        return super.toString();
+        return key + "=" + value;
     }
 }

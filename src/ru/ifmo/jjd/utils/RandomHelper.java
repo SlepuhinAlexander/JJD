@@ -35,6 +35,7 @@ public class RandomHelper {
     }
 
     public static int randomInt(int lower, int upper) {
+        if (upper <= lower) throw new IllegalArgumentException();
         return R.nextInt(upper - lower) + lower;
     }
 

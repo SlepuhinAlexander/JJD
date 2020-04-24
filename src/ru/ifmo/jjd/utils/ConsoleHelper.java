@@ -2,10 +2,11 @@ package ru.ifmo.jjd.utils;
 
 import java.util.Collection;
 import java.util.Locale;
+import java.util.Map;
 import java.util.Scanner;
 
 public class ConsoleHelper {
-    private static Scanner scanner;
+    private static final Scanner scanner;
 
     static {
         scanner = new Scanner(System.in);
@@ -101,11 +102,61 @@ public class ConsoleHelper {
         System.out.println(o);
     }
 
+    public static void printText(String text, int wrapAt) {
+        if (text == null) {
+            System.out.println(text);
+            return;
+        }
+        wrapAt = Math.min(Math.max(40, wrapAt), 200);
+        outer:
+        while (text.length() > wrapAt) {
+            int nl = text.indexOf('\n');
+            if (nl >= 0 && nl <= wrapAt) {
+                System.out.print(text.substring(0, nl + 1));
+                text = text.substring(nl + 1);
+                continue;
+            }
+            for (int i = wrapAt; i > 0; i--) {
+                if (text.charAt(i) == ' ') {
+                    System.out.println(text.substring(0, i + 1));
+                    text = text.substring(i + 1);
+                    continue outer;
+                }
+            }
+            break;
+        }
+        System.out.println(text);
+    }
+
+    public static void printText(String text) {
+        printText(text, 100);
+    }
+
     public static <T> void println(Collection<T> col) {
         if (col == null) {
             return;
         }
         col.forEach(System.out::println);
+    }
+
+    public static <K, V> void println(Map<K, V> map) {
+        for (Map.Entry<K, V> entry : map.entrySet()) {
+            println(entry.getKey() + "=" + entry.getValue());
+        }
+    }
+
+    public static <K, V> void println(Map<K, V> map, String pattern) {
+        if (StringHelper.isNullOrBlank(pattern)) {
+            println(map);
+        }
+        pattern = pattern.replaceAll("%K", "%k").replaceAll("%V", "%v");
+        if (!pattern.contains("%k") || !pattern.contains("%v")) {
+            throw new IllegalArgumentException("invalid pattern");
+        }
+        for (Map.Entry<K, V> entry : map.entrySet()) {
+            println(pattern.replaceAll("%k", entry.getKey().toString()).
+                    replaceAll("%v", entry.getValue().toString()));
+        }
     }
 
     public static void printf(String format, Object... args) {

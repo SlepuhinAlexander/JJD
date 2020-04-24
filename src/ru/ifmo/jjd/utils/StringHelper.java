@@ -103,12 +103,16 @@ public class StringHelper {
         return normalize(s, "[\\W&&\\S&&[^\\-]]+");
     }
 
-    public static String normalizeLatinWord(String s) {
-        return normalize(s, "[^A-Za-z\\-]+");
-    }
-
     public static String normalizeCyrillic(String s) {
         return normalize(s,"[^А-ЯЁа-яё\\-_\\d\\s]+");
+    }
+
+    public static String normalizeWord(String s) {
+        return normalize(s, "[^A-Za-zА-ЯЁа-яё\\-]+");
+    }
+
+    public static String normalizeLatinWord(String s) {
+        return normalize(s, "[^A-Za-z\\-]+");
     }
 
     public static String normalizeCyrillicWord(String s) {
