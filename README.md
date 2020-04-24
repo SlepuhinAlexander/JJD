@@ -136,6 +136,13 @@
         <td><a href="src/ru/ifmo/jjd/lessons/l17maps/README.md">Карты</a></td>
         <td><a href="src/ru/ifmo/jjd/lessons/l17maps">Черновик</a></td>
     </tr>
+    <tr>
+        <td align="right">18</td>
+        <td>24.04</td>
+        <td><a href="src/ru/ifmo/jjd/lessons/l18reflection/Readme.md">Рефлексия</a></td>
+        <td><a href="src/ru/ifmo/jjd/lessons/l18reflection">Черновик</a></td>
+    </tr>
+
 <!--
     <tr>
         <td align="right">   </td>
