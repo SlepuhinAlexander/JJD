@@ -185,7 +185,6 @@ public class ReflectionTask {
  *             inhabitants: {
  *                 Bison={
  *                     age: 4,
- *                     aviary: ,
  *                     HORNS: 2,
  *                     clazz: 'Mammal',
  *                     family: 'Bovine',
@@ -194,7 +193,6 @@ public class ReflectionTask {
  *                 },
  *                 Bison={
  *                     age: 6,
- *                     aviary: ,
  *                     HORNS: 2,
  *                     clazz: 'Mammal',
  *                     family: 'Bovine',
@@ -207,7 +205,6 @@ public class ReflectionTask {
  *     animals: {
  *         Bison={
  *             age: 4,
- *             aviary: ,
  *             HORNS: 2,
  *             clazz: 'Mammal',
  *             family: 'Bovine',
@@ -248,7 +245,6 @@ public class ReflectionTask {
  *         },
  *         Bison={
  *             age: 6,
- *             aviary: ,
  *             HORNS: 2,
  *             clazz: 'Mammal',
  *             family: 'Bovine',
