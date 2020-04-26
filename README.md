@@ -139,7 +139,7 @@
     <tr>
         <td align="right">18</td>
         <td>24.04</td>
-        <td><a href="src/ru/ifmo/jjd/lessons/l18reflection/Readme.md">Рефлексия</a></td>
+        <td><a href="src/ru/ifmo/jjd/lessons/l18reflection/README.md">Рефлексия</a></td>
         <td><a href="src/ru/ifmo/jjd/lessons/l18reflection">Черновик</a></td>
     </tr>
 
@@ -347,11 +347,29 @@
         <td>Готово</td>
     </tr>
     <tr>
-        <td align="right">14</td>
+        <td align="right">15</td>
         <td>22.04</td>
         <td><a href="src/ru/ifmo/jjd/lessons/l17maps">Карты</a></td>
         <td><a href="src/ru/ifmo/jjd/exercises/e15maps">Карты</a><br/></td>
         <td>Задачи на работу с картами и их методами</td>
+        <td>Готово</td>
+    </tr>
+    <tr>
+        <td align="right" rowspan="2">16</td>
+        <td rowspan="2">24.04</td>
+        <td><a href="src/ru/ifmo/jjd/lessons/l18reflection">Рефлексия</a></td>
+        <td>
+            <a href="src/ru/ifmo/jjd/exercises/e16reflection/zoo"><code>toString</code></a><br/>
+        </td>
+        <td>Рефлексивно описать все поля объекта</td>
+        <td>Готово</td>
+    </tr>
+    <tr>
+        <td><a href="src/ru/ifmo/jjd/lessons/l18reflection">Аннотации</a></td>
+        <td>
+            <a href="src/ru/ifmo/jjd/exercises/e16reflection/config"><code>ConfigClass</code></a><br/>
+        </td>
+        <td>Рефлексивно создать объект аннотированного класса и заполнить у него аннотированные поля</td>
         <td>Готово</td>
     </tr>
 </table>
