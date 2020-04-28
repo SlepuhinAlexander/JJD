@@ -4,6 +4,17 @@ import java.util.Arrays;
 
 public class StringsDemo {
     public static void main(String[] args) {
+        stringCreationDemo();
+        stringEqualityDemo();
+        stringCommonMethodsDemo();
+        stringMethodsDemo();
+        stringConcatenationDemo();
+        stringBuilderDemo();
+        stringFromToArrayDemo();
+        stringCompareToDemo();
+    }
+
+    public static void stringCreationDemo() {
         /*
          * Строки - это ссылочный тип данных. Строка является объектом и создаётся на основе класса String.
          * до Java 8 (включительно) строки хранятся в как массив char - ов
@@ -26,7 +37,7 @@ public class StringsDemo {
         // Способы задания строк:
         String someString = "jjd";
         /*
-         * String - это укзаание на тип данных. Имя класса String.
+         * String - это указание на тип данных. Имя класса String.
          * someString - имя переменной
          * "jjd" - присвоенное строковое значение. Строковое значение всегда заключается в кавычки.
          * "Под капотом" объект someString хранит массив private final char[] value = {'j', 'j', 'd'};
@@ -48,18 +59,22 @@ public class StringsDemo {
          * И если таковой нет - записывать её в пул строк и возвращать ссылку на неё.
          * А если таковая строка есть - новую строку не создавать, и возвращать ссылку на неё.
          * */
+    }
 
+    public static void stringEqualityDemo() {
         // Сравнение строк:
         String string1 = "Some String";
         String string2 = "Some String";
         String string3 = new String("Some String");
         String string4 = new String("Some String");
         // сравнение ссылок на строки
-        System.out.println("string1 == string2 : " + (string1 == string2)); // true
-        System.out.println("string3 == string4 : " + (string3 == string4)); // false
+        System.out.println("string1 == string2 : " + (string1 == string2)); // string1 == string2 : true
+        System.out.println("string1 == string3 : " + (string1 == string3)); // string1 == string3 : false
+        System.out.println("string3 == string4 : " + (string3 == string4)); // string3 == string4 : false
         // сравнение значений строк (посимвольное сравнение)
-        System.out.println("string1.equals(string2) : " + string1.equals(string2)); // true
-        System.out.println("string3.equals(string4) : " + string3.equals(string4)); // true
+        System.out.println("string1.equals(string2) : " + string1.equals(string2)); // string1.equals(string2) : true
+        System.out.println("string1.equals(string3) : " + string1.equals(string3)); // string1.equals(string3) : true
+        System.out.println("string3.equals(string4) : " + string3.equals(string4)); // string3.equals(string4) : true
         // метод String.equals(), унаследованный от Object.equals() переопределён. Как раз для сравнения по значению.
 
         // метод intern()
@@ -70,15 +85,136 @@ public class StringsDemo {
          * Если там такой строки нет, он её помещает строку в пул строк и возвращает ссылку на пул строк.
          * Если в пуле строк такая строка есть, он просто возвращает ссылку на эту строку в пуле строк.
          * */
-        System.out.println("string3 == string4 : " + (string3 == string4)); // false
-        System.out.println("string3.intern() == string4.intern() : " + (string3.intern() == string4.intern())); // true
+        System.out.println("string3 == string4 : " + (string3 == string4)); // string3 == string4 : false
+        System.out.println("string3.intern() == string4.intern() : " + (string3.intern() == string4.intern()));
+        // string3.intern() == string4.intern() : true
+        System.out.println("string3 == string4 : " + (string3 == string4)); // string3 == string4 : false
+        string3 = string3.intern();
+        string4 = string4.intern();
+        System.out.println("string3 == string4 : " + (string3 == string4)); // string3 == string4 : true
 
 
         // Строки в Java неизменяемы и потокобезопасны.
         /*
          * При любом изменении строки создаётся новая строка с новым значением и возвращается ссылка на новую строку.
          * */
+    }
 
+    public static void stringCommonMethodsDemo() {
+        String str1 = "Some String";
+        // Метод length()
+        System.out.println("str1.length() = " + str1.length()); // str1.length() = 11
+        /*
+         * Метод length() возвращает количество символов (длину) вызывающей строки.
+         * (Фактически, это длина массива, хранящего строку).
+         * */
+
+        // Метод isEmpty()
+        String str2 = "";
+        System.out.println("str2.isEmpty()? " + str2.isEmpty()); // str2.isEmpty()? true
+        /*
+         * Метод isEmpty() проверяет является ли строка пустой (состоящей из 0 символов).
+         * */
+
+        // Метод isBlank()
+        String str3 = "   ";
+        System.out.println("str3.isEmpty()? " + str3.isEmpty()); // str3.isEmpty()? false
+        System.out.println("str3.isBlank()? " + str3.isBlank()); // str3.isBlank()? true
+        /*
+         * Метод isBlank() проверяет, состоит ли строка только из пробельных символов.
+         * */
+
+        // Метод toUpperCase()
+        System.out.println("str1.toUpperCase() = " + str1.toUpperCase()); // str1.toUpperCase() = SOME STRING
+        /*
+         * Метод toUpperCase() возвращает новую строку, значение которой равно вызывающей строке, преобразованной к
+         * верхнему регистру.
+         * */
+
+        // Метод toLowerCase()
+        System.out.println("str1.toLowerCase() = " + str1.toLowerCase()); // str1.toLowerCase() = some string
+        /*
+         * Метод toLowerCase() возвращает новую строку, значение которой равно вызывающей строке, преобразованной к
+         * нижнему регистру.
+         * */
+
+        // Метод charAt()
+        System.out.println("str1.charAt(1) = " + str1.charAt(1)); // str1.charAt(1) = o
+        /*
+         * Метод charAt() возвращает символ, который вызывающая строка хранит на указанной позиции.
+         * */
+
+        // Метод valueOf()
+        System.out.println("String.valueOf(123 + 456) = " + String.valueOf(123 + 456));
+        // String.valueOf(123 + 456) = 579
+        /*
+         * Метод valueOf() - статический. Он принадлежит классу String в целом, а не какому-либо его экземпляру.
+         * Метод valueOf() необходимо вызывать от класса String.
+         * Метод возвращает строковое представление своего аргумента: это может быть любой тип данных - и примитивный,
+         * и ссылочный.
+         * */
+    }
+
+    public static void stringMethodsDemo() {
+        String str1 = "Java";
+
+        // Метод startsWith()
+        System.out.println("str1.startsWith(\"Ja\") : " + str1.startsWith("Ja")); // str1.startsWith("Ja") : true
+        /*
+         * Метод startsWith() сравнивает с учётом регистра начало вызывающей строки со строкой, переданной в аргументе
+         * и возвращает значение типа boolean
+         * */
+
+        // Метод endsWith()
+        System.out.println("str1.endsWith(\"A\") : " + str1.endsWith("A")); // str1.endsWith("A") : false
+        /*
+         * Метод endsWith() сравнивает с учётом регистра конец вызывающей строки со строкой, переданной в аргументе
+         * и возвращает значение типа boolean
+         * */
+
+        // Метод trim()
+        str1 = "    Some \t String    ";
+        System.out.println("str1.trim() = " + str1.trim()); // str1.trim() = Some 	 String
+        /*
+         * Метод trim() возвращает новую строку, значение которой равно вызывающей строке, из которой удалили все
+         * предстоящие и завершающие пробелы.
+         * Промежуточные пробелы не удаляются. Другие непробельные символы (например, табуляция, переносы строк) не
+         * удаляются.
+         * */
+
+        // Метод replace()
+        str1 = "Java";
+        System.out.println("str1.replace(\"a\",\"AA\") = " + str1.replace("a", "AA"));
+        // str1.replace("a","AA") = JAAvAA
+        /*
+         * Метод replace возвращает новую строку, значение которой равно вызывающей строке, в которой все вхождения
+         * первого аргумента заменены на значения из второго аргумента
+         * Аргументом метода replace() могут быть символы и строки
+         * */
+
+        // Метод replaceAll()
+        System.out.println("str1.replaceAll(\"\\\\w\", \"Aa\") = " + str1.replaceAll("\\w", "Aa"));
+        // str1.replaceAll("\\w", "Aa") = AaAaAaAa
+        /*
+         * Метод replaceAll() возвращает новую строку, значение которой равно вызывающей строке, в которой все
+         * вхождения первого аргумента заменены на значения из второго аргумента
+         * В первом аргументе принимаются регулярные выражения.
+         * */
+
+        // метод split()
+        str1 = "Some string";
+        System.out.println("Arrays.toString(str1.split(\"\\\\s\") = " + Arrays.toString(str1.split("\\s")));
+        // str1.split() = [Some, string]
+        /*
+         * Метод split() разбивает переданную строку на массив строк по переданному разделителю.
+         * В качестве разделителя принимается регулярное выражение.
+         * Разделитель в результате не участвует.
+         * Если совпадение с регулярным выражением не найдено, в результирующем массиве будет одна строка равная
+         * вызывающей строке
+         * */
+    }
+
+    public static void stringConcatenationDemo() {
         // Конкатенация (склеивание / объединение строк).
         String str1 = "строка 1";
         String str2 = "строка 2";
@@ -130,7 +266,9 @@ public class StringsDemo {
         System.out.println("str1 = " + str1);
         // str1 = Строка итерация 0 итерация 1 итерация 2 итерация 3 итерация 4 итерация 5 итерация 6 итерация 7
         // итерация 8 итерация 9
+    }
 
+    public static void stringBuilderDemo() {
         /*
          * Операции +, concat(), join() -- тажеловесные операции.
          * При сложении больших строк или мнокоратном использовании сложения строк (например, в циклах) использовать
@@ -143,7 +281,7 @@ public class StringsDemo {
          * StringBuffer -- работает медленнее, но при этом потокобезопасен.
          * */
 
-        str1 = "Строка";
+        String str1 = "Строка";
         StringBuilder builder = new StringBuilder();
         /*
          * При создании можно в конструктор StringBuilder() передать строку, или строковый литерал, или выражение,
@@ -180,7 +318,9 @@ public class StringsDemo {
         System.out.println("str1 = " + str1);
         // str1 = Строка итерация 0 итерация 1 итерация 2 итерация 3 итерация 4 итерация 5 итерация 6 итерация 7
         // итерация 8 итерация 9
+    }
 
+    public static void stringFromToArrayDemo() {
         // Так же в конструктор строк можно передать char[], byte[]
         char[] charsArr = {'q', 'w', 'e'};
         String charStr = new String(charsArr);
@@ -194,10 +334,12 @@ public class StringsDemo {
         System.out.println("charsFromString = " + Arrays.toString(charsFromString)); // charsFromString = [q, w, e]
         byte[] bytesFromString = byteStr.getBytes();
         System.out.println("bytesFromString = " + Arrays.toString(bytesArr)); // bytesFromString = [111, 112, 113]
+    }
 
+    public static void stringCompareToDemo() {
         // Сравнение строк
-        str1 = "Java";
-        str2 = "java";
+        String str1 = "Java";
+        String str2 = "java";
         // Метод equals()
         System.out.println("str1.equals(str2) : " + str1.equals(str2)); // str1.equals(str2) : false
         /*
@@ -236,83 +378,6 @@ public class StringsDemo {
          * - положительное число, если вызывающая строка больше, чем переданный аргумент
          *     (т.е. вызывающая строка в алфавитном порядке следует позже, чем переданный аргумент)
          * абсолютная величина возвращённого числа равно разнице между первыми встретившимися расходящимися символами
-         * */
-
-        // Метод startsWith()
-        System.out.println("str1.startsWith(\"Ja\") : " + str1.startsWith("Ja")); // str1.startsWith("Ja") : true
-        /*
-         * Метод startsWith() сравнивает с учётом регистра начало вызывающей строки со строкой, переданной в аргументе
-         * и возвращает значение типа boolean
-         * */
-
-        // Метод endsWith()
-        System.out.println("str1.endsWith(\"A\") : " + str1.endsWith("A")); // str1.endsWith("A") : false
-        /*
-         * Метод endsWith() сравнивает с учётом регистра конец вызывающей строки со строкой, переданной в аргументе
-         * и возвращает значение типа boolean
-         * */
-
-        // Метод toUpperCase()
-        str1 = "Some String";
-        System.out.println("str1.toUpperCase() = " + str1.toUpperCase()); // str1.toUpperCase() = SOME STRING
-        /*
-         * Метод toUpperCase() возвращает новую строку, значение которой равно вызывающей строке, преобразованной к
-         * верхнему регистру.
-         * */
-
-        // Метод toLowerCase()
-        System.out.println("str1.toLowerCase() = " + str1.toLowerCase()); // str1.toLowerCase() = some string
-        /*
-         * Метод toLowerCase() возвращает новую строку, значение которой равно вызывающей строке, преобразованной к
-         * нижнему регистру.
-         * */
-
-        // Метод length()
-        System.out.println("str1.length() = " + str1.length()); // str1.length() = 11
-        /*
-         * Метод length() возвращает количество символов (длину) вызывающей строки.
-         * (Фактически, это длина массива, хранящего строку).
-         * */
-
-        // Метод trim()
-        str1 = "    Some \t String    ";
-        System.out.println("str1.trim() = " + str1.trim()); // str1.trim() = Some 	 String
-        /*
-         * Метод trim() возвращает новую строку, значение которой равно вызывающей строке, из которой удалили все
-         * предстоящие и завершающие пробелы.
-         * Промежуточные пробелы не удаляются. Другие непробельные символы (например, табуляция, переносы строк) не
-         * удаляются.
-         * */
-
-        // Метод replace()
-        str1 = "Java";
-        System.out.println("str1.replace(\"a\",\"AA\") = " + str1.replace("a", "AA"));
-        // str1.replace("a","AA") = JAAvAA
-        /*
-         * Метод replace возвращает новую строку, значение которой равно вызывающей строке, в которой все вхождения
-         * первого аргумента заменены на значения из второго аргумента
-         * Аргументом метода replace() могут быть символы и строки
-         * */
-
-        // Метод replaceAll()
-        System.out.println("str1.replaceAll(\"\\\\w\", \"Aa\") = " + str1.replaceAll("\\w", "Aa"));
-        // str1.replaceAll("\\w", "Aa") = AaAaAaAa
-        /*
-         * Метод replaceAll() возвращает новую строку, значение которой равно вызывающей строке, в которой все
-         * вхождения первого аргумента заменены на значения из второго аргумента
-         * В первом аргументе принимаются регулярные выражения.
-         * */
-
-        // метод split()
-        str1 = "Some string";
-        System.out.println("Arrays.toString(str1.split(\"\\\\s\") = " + Arrays.toString(str1.split("\\s")));
-        // str1.split() = [Some, string]
-        /*
-         * Метод split() разбивает переданную строку на массив строк по переданному разделителю.
-         * В качестве разделителя принимается регулярное выражение.
-         * Разделитель в результате не участвует.
-         * Если совпадение с регулярным выражением не найдено, в результирующем массиве будет одна строка равная
-         * вызывающей строке
          * */
     }
 }
