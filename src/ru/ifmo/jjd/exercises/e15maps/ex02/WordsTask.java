@@ -26,7 +26,7 @@ public class WordsTask {
             if (result.containsKey(wordNorm)) {
                 result.replace(wordNorm, result.get(wordNorm) + 1);
             } else {
-                result.put(wordNorm, 0);
+                result.put(wordNorm, 1);
             }
         }
         return result;

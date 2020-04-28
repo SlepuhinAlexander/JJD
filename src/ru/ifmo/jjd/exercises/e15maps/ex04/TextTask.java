@@ -4,8 +4,7 @@ import ru.ifmo.jjd.utils.Pair;
 
 import java.util.*;
 
-import static ru.ifmo.jjd.utils.ConsoleHelper.printText;
-import static ru.ifmo.jjd.utils.ConsoleHelper.println;
+import static ru.ifmo.jjd.utils.ConsoleHelper.*;
 import static ru.ifmo.jjd.utils.RandomHelper.randomDouble;
 import static ru.ifmo.jjd.utils.RandomHelper.randomInt;
 import static ru.ifmo.jjd.utils.StringHelper.randomWord;
@@ -18,7 +17,6 @@ public class TextTask {
         String text = Generator.generate(10000); //
         printText(text, 115);
         TextAnalyser analyser = TextAnalyser.forText(text);
-
 
         println();
         println("--- Popularity of a word ---");
