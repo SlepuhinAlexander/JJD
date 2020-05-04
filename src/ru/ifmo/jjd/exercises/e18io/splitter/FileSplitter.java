@@ -249,7 +249,6 @@ public class FileSplitter {
         for (File chunk : chunks) {
             sequence.add(new FileInputStream(chunk));
         }
-        BufferedInputStream inn = new BufferedInputStream(new SequenceInputStream(sequence.elements()));
         try (BufferedInputStream in = new BufferedInputStream(new SequenceInputStream(sequence.elements()));
              BufferedOutputStream out = new BufferedOutputStream(new FileOutputStream(result))) {
             int data;
