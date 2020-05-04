@@ -132,6 +132,158 @@ public class ConsoleHelper {
         printText(text, 100);
     }
 
+    public static void println(boolean[] arr) {
+        if (arr == null) throw new NullPointerException();
+        if (arr.length <= 1) {
+            print("[");
+            for (boolean b : arr) {
+                print(b);
+            }
+            return;
+        }
+        print("[ ");
+        print(arr[0]);
+        for (int i = 1; i < arr.length; i++) {
+            println();
+            print("  ");
+            print(arr[i]);
+        }
+        println(" ]");
+    }
+
+    public static void println(byte[] arr) {
+        if (arr == null) throw new NullPointerException();
+        if (arr.length <= 1) {
+            print("[");
+            for (byte b : arr) {
+                print(b);
+            }
+            return;
+        }
+        print("[ ");
+        print(arr[0]);
+        for (int i = 1; i < arr.length; i++) {
+            println();
+            print("  ");
+            print(arr[i]);
+        }
+        println(" ]");
+    }
+
+    public static void println(short[] arr) {
+        if (arr == null) throw new NullPointerException();
+        if (arr.length <= 1) {
+            print("[");
+            for (short value : arr) {
+                print(value);
+            }
+            return;
+        }
+        print("[ ");
+        print(arr[0]);
+        for (int i = 1; i < arr.length; i++) {
+            println();
+            print("  ");
+            print(arr[i]);
+        }
+        println(" ]");
+    }
+
+    public static void println(int[] arr) {
+        if (arr == null) throw new NullPointerException();
+        if (arr.length <= 1) {
+            print("[");
+            for (int value : arr) {
+                print(value);
+            }
+            return;
+        }
+        print("[ ");
+        print(arr[0]);
+        for (int i = 1; i < arr.length; i++) {
+            println();
+            print("  ");
+            print(arr[i]);
+        }
+        println(" ]");
+    }
+
+    public static void println(long[] arr) {
+        if (arr == null) throw new NullPointerException();
+        if (arr.length <= 1) {
+            print("[");
+            for (long l : arr) {
+                print(l);
+            }
+            return;
+        }
+        print("[ ");
+        print(arr[0]);
+        for (int i = 1; i < arr.length; i++) {
+            println();
+            print("  ");
+            print(arr[i]);
+        }
+        println(" ]");
+    }
+
+    public static void println(float[] arr) {
+        if (arr == null) throw new NullPointerException();
+        if (arr.length <= 1) {
+            print("[");
+            for (float v : arr) {
+                print(v);
+            }
+            return;
+        }
+        print("[ ");
+        print(arr[0]);
+        for (int i = 1; i < arr.length; i++) {
+            println();
+            print("  ");
+            print(arr[i]);
+        }
+        println(" ]");
+    }
+
+    public static void println(double[] arr) {
+        if (arr == null) throw new NullPointerException();
+        if (arr.length <= 1) {
+            print("[");
+            for (double v : arr) {
+                print(v);
+            }
+            return;
+        }
+        print("[ ");
+        print(arr[0]);
+        for (int i = 1; i < arr.length; i++) {
+            println();
+            print("  ");
+            print(arr[i]);
+        }
+        println(" ]");
+    }
+
+    public static void println(Object[] arr) {
+        if (arr == null) throw new NullPointerException();
+        if (arr.length <= 1) {
+            print("[");
+            for (Object v : arr) {
+                print(v);
+            }
+            return;
+        }
+        print("[ ");
+        print(arr[0]);
+        for (int i = 1; i < arr.length; i++) {
+            println();
+            print("  ");
+            print(arr[i]);
+        }
+        println(" ]");
+    }
+
     public static <T> void println(Collection<T> col) {
         if (col == null) {
             return;
