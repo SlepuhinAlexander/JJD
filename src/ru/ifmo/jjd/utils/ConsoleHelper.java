@@ -1,9 +1,6 @@
 package ru.ifmo.jjd.utils;
 
-import java.util.Collection;
-import java.util.Locale;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 
 public class ConsoleHelper {
     private static final Scanner scanner;
@@ -292,12 +289,21 @@ public class ConsoleHelper {
     }
 
     public static <K, V> void println(Map<K, V> map) {
-        for (Map.Entry<K, V> entry : map.entrySet()) {
+        if (map == null) {
+            println("null");
+            return;
+        }
+        Set<Map.Entry<K, V>> entries = map.entrySet();
+        for (Map.Entry<K, V> entry : entries) {
             println(entry.getKey() + "=" + entry.getValue());
         }
     }
 
     public static <K, V> void println(Map<K, V> map, String pattern) {
+        if (map == null) {
+            println("null");
+            return;
+        }
         if (StringHelper.isNullOrBlank(pattern)) {
             println(map);
         }
@@ -305,7 +311,8 @@ public class ConsoleHelper {
         if (!pattern.contains("%k") || !pattern.contains("%v")) {
             throw new IllegalArgumentException("invalid pattern");
         }
-        for (Map.Entry<K, V> entry : map.entrySet()) {
+        Set<Map.Entry<K, V>> entries = map.entrySet();
+        for (Map.Entry<K, V> entry : entries) {
             println(pattern.replaceAll("%k", entry.getKey().toString()).
                     replaceAll("%v", entry.getValue().toString()));
         }

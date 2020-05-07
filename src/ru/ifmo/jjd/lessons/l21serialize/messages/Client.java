@@ -6,9 +6,9 @@ import java.util.Scanner;
 
 public class Client {
     // клиентская программа должна знать IP и порт сервера, к которому нужно подключиться.
-    private final int port;
-    private final String ip;
-    private final Scanner scanner;
+    private int port;
+    private String ip;
+    private Scanner scanner;
 
     public Client(int port, String ip) {
         this.port = port;
@@ -45,6 +45,7 @@ public class Client {
          * */
         String name = scanner.nextLine();
         String messageText;
+        //noinspection InfiniteLoopStatement
         while (true) {
             System.out.println("Введите сообщение");
             messageText = scanner.nextLine();
@@ -61,6 +62,7 @@ public class Client {
     }
 
     private Socket getSocket() throws IOException {
+        //noinspection UnnecessaryLocalVariable
         Socket socket = new Socket(ip, port);
         /*
          * Домашнее задание:
