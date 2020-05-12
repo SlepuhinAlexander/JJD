@@ -401,7 +401,36 @@
         <td><a href="src/ru/ifmo/jjd/lessons/l18reflection/README.md">Рефлексия</a></td>
         <td><a href="src/ru/ifmo/jjd/lessons/l18reflection">Черновик</a></td>
     </tr>
-
+    <tr>
+        <td align="right">19</td>
+        <td>27.04</td>
+        <td><a href="src/ru/ifmo/jjd/lessons/l19properties/README.md">Класс Properties</a></td>
+        <td><a href="src/ru/ifmo/jjd/lessons/l19properties">Черновик</a></td>
+    </tr>
+    <tr>
+        <td align="right">20</td>
+        <td>29.04</td>
+        <td><a href="src/ru/ifmo/jjd/lessons/l20io/README.md">Системы ввода-вывода</a></td>
+        <td><a href="src/ru/ifmo/jjd/lessons/l20io">Черновик</a></td>
+    </tr>
+    <tr>
+        <td align="right">21</td>
+        <td>06.05</td>
+        <td><a href="src/ru/ifmo/jjd/lessons/l21serialize/README.md">Сериализация</a></td>
+        <td><a href="src/ru/ifmo/jjd/lessons/l21serialize">Черновик</a></td>
+    </tr>
+    <tr>
+        <td align="right">22</td>
+        <td>08.05</td>
+        <td><a href="src/ru/ifmo/jjd/lessons/l22nio/README.md">Java NIO API</a></td>
+        <td><a href="src/ru/ifmo/jjd/lessons/l22nio">Черновик</a></td>
+    </tr>
+    <tr>
+        <td align="right">23</td>
+        <td>11.05</td>
+        <td><a href="src/ru/ifmo/jjd/lessons/l23lambdas/README.md">Лямбда-выражения</a></td>
+        <td><a href="src/ru/ifmo/jjd/lessons/l23lambdas">Черновик</a></td>
+    </tr>
 <!--
     <tr>
         <td align="right">   </td>
