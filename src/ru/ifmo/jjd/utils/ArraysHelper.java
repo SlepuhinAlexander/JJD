@@ -1,6 +1,6 @@
 package ru.ifmo.jjd.utils;
 
-import static ru.ifmo.jjd.utils.RandomHelper.*;
+import static ru.ifmo.jjd.utils.RandomHelper.randomInt;
 
 public class ArraysHelper {
     /**
@@ -12,9 +12,7 @@ public class ArraysHelper {
      * @param upper upper border for int value to assign, exclusive
      */
     public static void fillRandomly(int[] arr, int lower, int upper) {
-        if (arr == null || upper <= lower) {
-            return;
-        }
+        if (arr == null || upper <= lower) return;
         for (int i = 0; i < arr.length; i++) {
             arr[i] = randomInt(lower, upper);
         }
@@ -29,16 +27,13 @@ public class ArraysHelper {
      * @param upper upper border for int value to assign, exclusive
      */
     public static void fillRandomly(int[][] arr, int lower, int upper) {
-        if (arr == null || upper <= lower) {
-            return;
-        }
+        if (arr == null || upper <= lower) return;
         for (int i = 0; i < arr.length; i++) {
             for (int j = 0; j < arr[i].length; j++) {
                 arr[i][j] = randomInt(lower, upper);
             }
         }
     }
-
 
     public static boolean[] revert(boolean[] arr) {
         if (arr == null) return null;
@@ -215,9 +210,7 @@ public class ArraysHelper {
         if (arr == null) return null;
         boolean[] result = new boolean[arr.length];
         for (int i = 0; i < arr.length; i++) {
-            if (arr[i] == null) {
-                throw new NullPointerException();
-            }
+            if (arr[i] == null) throw new NullPointerException();
             result[i] = arr[i];
         }
         return result;
@@ -227,9 +220,7 @@ public class ArraysHelper {
         if (arr == null) return null;
         char[] result = new char[arr.length];
         for (int i = 0; i < arr.length; i++) {
-            if (arr[i] == null) {
-                throw new NullPointerException();
-            }
+            if (arr[i] == null) throw new NullPointerException();
             result[i] = arr[i];
         }
         return result;
@@ -239,9 +230,7 @@ public class ArraysHelper {
         if (arr == null) return null;
         byte[] result = new byte[arr.length];
         for (int i = 0; i < arr.length; i++) {
-            if (arr[i] == null) {
-                throw new NullPointerException();
-            }
+            if (arr[i] == null) throw new NullPointerException();
             result[i] = arr[i];
         }
         return result;
@@ -251,9 +240,7 @@ public class ArraysHelper {
         if (arr == null) return null;
         short[] result = new short[arr.length];
         for (int i = 0; i < arr.length; i++) {
-            if (arr[i] == null) {
-                throw new NullPointerException();
-            }
+            if (arr[i] == null) throw new NullPointerException();
             result[i] = arr[i];
         }
         return result;
@@ -263,9 +250,7 @@ public class ArraysHelper {
         if (arr == null) return null;
         int[] result = new int[arr.length];
         for (int i = 0; i < arr.length; i++) {
-            if (arr[i] == null) {
-                throw new NullPointerException();
-            }
+            if (arr[i] == null) throw new NullPointerException();
             result[i] = arr[i];
         }
         return result;
@@ -275,9 +260,7 @@ public class ArraysHelper {
         if (arr == null) return null;
         long[] result = new long[arr.length];
         for (int i = 0; i < arr.length; i++) {
-            if (arr[i] == null) {
-                throw new NullPointerException();
-            }
+            if (arr[i] == null) throw new NullPointerException();
             result[i] = arr[i];
         }
         return result;
@@ -287,9 +270,7 @@ public class ArraysHelper {
         if (arr == null) return null;
         float[] result = new float[arr.length];
         for (int i = 0; i < arr.length; i++) {
-            if (arr[i] == null) {
-                throw new NullPointerException();
-            }
+            if (arr[i] == null) throw new NullPointerException();
             result[i] = arr[i];
         }
         return result;
@@ -299,9 +280,7 @@ public class ArraysHelper {
         if (arr == null) return null;
         double[] result = new double[arr.length];
         for (int i = 0; i < arr.length; i++) {
-            if (arr[i] == null) {
-                throw new NullPointerException();
-            }
+            if (arr[i] == null) throw new NullPointerException();
             result[i] = arr[i];
         }
         return result;

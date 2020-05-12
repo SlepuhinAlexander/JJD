@@ -4,7 +4,7 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 
-import static ru.ifmo.jjd.utils.ConsoleHelper.*;
+import static ru.ifmo.jjd.utils.ConsoleHelper.println;
 
 public class TimeRange {
     public static final DateTimeFormatter FORMAT = DateTimeFormatter.ofPattern("H:mm");
@@ -21,30 +21,15 @@ public class TimeRange {
     }
 
     public static LocalTime trim(LocalTime t) {
-        if (t != null) {
-            return t.withSecond(0).withNano(0);
-        }
-        else return null;
+        return t == null ? null : t.withSecond(0).withNano(0);
     }
 
     private static LocalTime min(LocalTime one, LocalTime two) {
-        if (one == null || two == null) {
-            return null;
-        } else {
-            LocalTime o = trim(one);
-            LocalTime t = trim(two);
-            return o.isBefore(t) ? o : t;
-        }
+        return (one == null || two == null) ? null : trim(one).isBefore(trim(two)) ? trim(one) : trim(two);
     }
 
     private static LocalTime max(LocalTime one, LocalTime two) {
-        if (one == null || two == null) {
-            return null;
-        } else {
-            LocalTime o = trim(one);
-            LocalTime t = trim(two);
-            return o.isBefore(t) ? t : o;
-        }
+        return (one == null || two == null) ? null : trim(one).isBefore(trim(two)) ? trim(two) : trim(one);
     }
 
     private static int hash(LocalTime t) {
@@ -77,22 +62,15 @@ public class TimeRange {
     }
 
     public void set(LocalTime from, LocalTime to) {
-        if (from != null && to != null) {
-            LocalTime f = trim(from);
-            LocalTime t = trim(to);
-            if (f.isBefore(t)) {
-                this.from = f;
-                this.to = t;
-            } else {
-                throw new IllegalArgumentException("From time `" + from.format(FORMAT) +
-                        "' must be earlier than To time '" + to.format(FORMAT) + "'");
-            }
-        } else if (from == null) {
-            throw new NullPointerException("From time is null");
-        } else {
-            throw new NullPointerException("To time is null");
-        }
-
+        if (from == null) throw new NullPointerException("From date cannot be null");
+        if (to == null) throw new NullPointerException("to date cannot be null");
+        LocalTime f = trim(from);
+        LocalTime t = trim(to);
+        if (!f.isBefore(t)) throw new IllegalArgumentException("From time `" + f.format(FORMAT) +
+                                                               "' must be earlier than To time '" + t.format(FORMAT) +
+                                                               "'");
+        this.from = f;
+        this.to = t;
     }
 
     public void set(int fromHour, int fromMinute, int toHour, int toMinute) {
@@ -131,7 +109,7 @@ public class TimeRange {
         if (!(o instanceof TimeRange)) return false;
         TimeRange timeRange = (TimeRange) o;
         return from.getHour() == timeRange.from.getHour() && from.getMinute() == timeRange.from.getMinute() &&
-                to.getHour() == timeRange.to.getHour() && to.getMinute() == timeRange.to.getMinute();
+               to.getHour() == timeRange.to.getHour() && to.getMinute() == timeRange.to.getMinute();
     }
 
     @Override

@@ -10,11 +10,9 @@ public class StringHelper {
             's', 't', 'v', 'w', 'x', 'z'};
 
     public static String uppercaseFirst(String s) {
-        if (!isNullOrEmpty(s) && Character.isLowerCase(s.charAt(0))) {
-            return s.substring(0, 1).toUpperCase() + s.substring(1);
-        } else {
-            return s;
-        }
+        return (isNullOrEmpty(s) || Character.isLowerCase(s.charAt(0))) ?
+                s :
+                s.substring(0, 1).toUpperCase() + s.substring(1);
     }
 
     /**
@@ -22,20 +20,16 @@ public class StringHelper {
      * Assuming it is a random word.
      * Uses latin alphabet. Lowercase.
      *
-     * @param length sets the length of generated word. Cannot be less than 1.
+     * @param length sets the length of generated word. Must be positive
+     * @throws IllegalArgumentException if provided length is not-positive
      */
     public static String randomWord(int length) {
-        length = Math.max(length, 1);
+        if (length < 1) throw new IllegalArgumentException("length must be positive");
         boolean nextIsVowel = Math.random() < 0.5; // A word can start with vowel
         StringBuilder builder = new StringBuilder();
         for (int i = 0; i < length; i++) {
-            if (nextIsVowel) {
-                builder.append(VOWELS[randomInt(VOWELS.length)]);
-                nextIsVowel = false;
-            } else {
-                builder.append(CONSONANTS[randomInt(CONSONANTS.length)]);
-                nextIsVowel = true;
-            }
+            builder.append(nextIsVowel ? VOWELS[randomInt(VOWELS.length)] : CONSONANTS[randomInt(CONSONANTS.length)]);
+            nextIsVowel = !nextIsVowel;
         }
         return builder.toString();
     }
@@ -43,10 +37,11 @@ public class StringHelper {
     /**
      * Provides a sentence composed of randomly generated words having from 1 to 10 symbols.
      *
-     * @param length sets the amount of words in sentence. Cannot be less than 2.
+     * @param length sets the amount of words in sentence. Must be positive
+     * @throws IllegalArgumentException if provided length is not-positive
      */
     public static String randomSentence(int length) {
-        length = Math.max(length, 2);
+        if (length < 1) throw new IllegalArgumentException("length must be positive");
         StringBuilder builder = new StringBuilder();
         builder.append(uppercaseFirst(randomWord(randomInt(1, 11))));
         for (int i = 1; i < length; i++) {
@@ -81,18 +76,14 @@ public class StringHelper {
      * any param is null or blank.
      */
     public static String normalize(String s, String regex) {
-        if (!isNullOrBlank(s) && !isNullOrBlank(regex)) {
-            try {
-                Pattern.compile(regex);
-                s = s.replaceAll(regex, "").replaceAll("\\s", " ").
-                        replaceAll(" {2,}", " ").trim();
-            } catch (Exception e) {
-                s = "";
-            }
-        } else {
-            s = "";
+        if (isNullOrBlank(s) || isNullOrBlank(regex)) return "";
+        try {
+            Pattern.compile(regex);
+            return s.replaceAll(regex, "").replaceAll("\\s", " ").
+                    replaceAll(" {2,}", " ").trim();
+        } catch (Exception e) {
+            return "";
         }
-        return s;
     }
 
     public static String normalize(String s) {
@@ -104,7 +95,7 @@ public class StringHelper {
     }
 
     public static String normalizeCyrillic(String s) {
-        return normalize(s,"[^А-ЯЁа-яё\\-_\\d\\s]+");
+        return normalize(s, "[^А-ЯЁа-яё\\-_\\d\\s]+");
     }
 
     public static String normalizeWord(String s) {
@@ -120,23 +111,17 @@ public class StringHelper {
     }
 
     public static boolean startsWithIgnoreCase(String string, String prefix) {
-        if (isNullOrEmpty(string) || isNullOrEmpty(prefix)) {
-            return false;
-        }
-        if (prefix.length() > string.length()) {
-            return false;
-        }
-        return string.regionMatches(true, 0, prefix, 0, prefix.length());
+        return !isNullOrEmpty(string) &&
+               !isNullOrEmpty(prefix) &&
+               prefix.length() <= string.length() &&
+               string.regionMatches(true, 0, prefix, 0, prefix.length());
     }
 
     public static boolean endsWithIgnoreCase(String string, String postfix) {
-        if (isNullOrEmpty(string) || isNullOrEmpty(postfix)) {
-            return false;
-        }
-        if (postfix.length() > string.length()) {
-            return false;
-        }
-        return string.regionMatches(true, string.length() - postfix.length(),
-                postfix, 0, postfix.length());
+        return !isNullOrEmpty(string) &&
+               !isNullOrEmpty(postfix) &&
+               postfix.length() <= string.length() &&
+               string.regionMatches(true, string.length() - postfix.length(), postfix, 0,
+                       postfix.length());
     }
 }

@@ -23,14 +23,12 @@ public class ConfigLoader {
             paths = new Properties();
             try (BufferedReader in = new BufferedReader(new FileReader(GLOBAL_CONFIG_PATH))) {
                 paths.load(in);
-                Set<String> keys = paths.stringPropertyNames();
-                for (String key : keys) {
+                paths.stringPropertyNames().forEach(key -> {
                     File config = new File(paths.getProperty(key));
                     if (config.exists() && config.isFile() && config.canRead()) {
                         configs.put(config, new Properties());
                     }
-
-                }
+                });
             } catch (IOException e) {
                 e.printStackTrace();
             }

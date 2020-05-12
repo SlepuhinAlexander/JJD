@@ -1,6 +1,9 @@
 package ru.ifmo.jjd.utils;
 
-import java.util.*;
+import java.util.Collection;
+import java.util.Locale;
+import java.util.Map;
+import java.util.Scanner;
 
 public class ConsoleHelper {
     private static final Scanner scanner;
@@ -11,7 +14,6 @@ public class ConsoleHelper {
     }
 
     public static void print() {
-
         System.out.print("");
     }
 
@@ -101,7 +103,7 @@ public class ConsoleHelper {
 
     public static void printText(String text, int wrapAt) {
         if (text == null) {
-            System.out.println(text);
+            System.out.println((String) null);
             return;
         }
         wrapAt = Math.min(Math.max(40, wrapAt), 200);
@@ -130,192 +132,210 @@ public class ConsoleHelper {
     }
 
     public static void println(boolean[] arr) {
-        if (arr == null) throw new NullPointerException();
-        if (arr.length <= 1) {
-            print("[");
-            for (boolean b : arr) {
-                print(b);
-            }
+        if (arr == null) {
+            System.out.println((String) null);
             return;
         }
-        print("[ ");
+        print("[");
+        if (arr.length <= 1) {
+            print(arr[0]);
+            println("]");
+            return;
+        }
         print(arr[0]);
         for (int i = 1; i < arr.length; i++) {
-            println();
-            print("  ");
+            print("\n ");
             print(arr[i]);
         }
-        println(" ]");
+        println("]");
     }
 
     public static void println(byte[] arr) {
-        if (arr == null) throw new NullPointerException();
-        if (arr.length <= 1) {
-            print("[");
-            for (byte b : arr) {
-                print(b);
-            }
+        if (arr == null) {
+            System.out.println((String) null);
             return;
         }
-        print("[ ");
+        print("[");
+        if (arr.length <= 1) {
+            print(arr[0]);
+            println("]");
+            return;
+        }
         print(arr[0]);
         for (int i = 1; i < arr.length; i++) {
-            println();
-            print("  ");
+            print("\n ");
             print(arr[i]);
         }
-        println(" ]");
+        println("]");
     }
 
     public static void println(short[] arr) {
-        if (arr == null) throw new NullPointerException();
-        if (arr.length <= 1) {
-            print("[");
-            for (short value : arr) {
-                print(value);
-            }
+        if (arr == null) {
+            System.out.println((String) null);
             return;
         }
-        print("[ ");
+        print("[");
+        if (arr.length <= 1) {
+            print(arr[0]);
+            println("]");
+            return;
+        }
         print(arr[0]);
         for (int i = 1; i < arr.length; i++) {
-            println();
-            print("  ");
+            print("\n ");
             print(arr[i]);
         }
-        println(" ]");
+        println("]");
     }
 
     public static void println(int[] arr) {
-        if (arr == null) throw new NullPointerException();
-        if (arr.length <= 1) {
-            print("[");
-            for (int value : arr) {
-                print(value);
-            }
+        if (arr == null) {
+            System.out.println((String) null);
             return;
         }
-        print("[ ");
+        print("[");
+        if (arr.length <= 1) {
+            print(arr[0]);
+            println("]");
+            return;
+        }
         print(arr[0]);
         for (int i = 1; i < arr.length; i++) {
-            println();
-            print("  ");
+            print("\n ");
             print(arr[i]);
         }
-        println(" ]");
+        println("]");
     }
 
     public static void println(long[] arr) {
-        if (arr == null) throw new NullPointerException();
-        if (arr.length <= 1) {
-            print("[");
-            for (long l : arr) {
-                print(l);
-            }
+        if (arr == null) {
+            System.out.println((String) null);
             return;
         }
-        print("[ ");
+        print("[");
+        if (arr.length <= 1) {
+            print(arr[0]);
+            println("]");
+            return;
+        }
         print(arr[0]);
         for (int i = 1; i < arr.length; i++) {
-            println();
-            print("  ");
+            print("\n ");
             print(arr[i]);
         }
-        println(" ]");
+        println("]");
     }
 
     public static void println(float[] arr) {
-        if (arr == null) throw new NullPointerException();
-        if (arr.length <= 1) {
-            print("[");
-            for (float v : arr) {
-                print(v);
-            }
+        if (arr == null) {
+            System.out.println((String) null);
             return;
         }
-        print("[ ");
+        print("[");
+        if (arr.length <= 1) {
+            print(arr[0]);
+            println("]");
+            return;
+        }
         print(arr[0]);
         for (int i = 1; i < arr.length; i++) {
-            println();
-            print("  ");
+            print("\n ");
             print(arr[i]);
         }
-        println(" ]");
+        println("]");
     }
 
     public static void println(double[] arr) {
-        if (arr == null) throw new NullPointerException();
-        if (arr.length <= 1) {
-            print("[");
-            for (double v : arr) {
-                print(v);
-            }
+        if (arr == null) {
+            System.out.println((String) null);
             return;
         }
-        print("[ ");
+        print("[");
+        if (arr.length <= 1) {
+            print(arr[0]);
+            println("]");
+            return;
+        }
         print(arr[0]);
         for (int i = 1; i < arr.length; i++) {
-            println();
-            print("  ");
+            print("\n ");
             print(arr[i]);
         }
-        println(" ]");
+        println("]");
     }
 
     public static void println(Object[] arr) {
-        if (arr == null) throw new NullPointerException();
-        if (arr.length <= 1) {
-            print("[");
-            for (Object v : arr) {
-                print(v);
-            }
+        if (arr == null) {
+            System.out.println((String) null);
             return;
         }
-        print("[ ");
+        print("[");
+        if (arr.length <= 1) {
+            print(arr[0]);
+            println("]");
+            return;
+        }
         print(arr[0]);
         for (int i = 1; i < arr.length; i++) {
-            println();
-            print("  ");
+            print("\n ");
             print(arr[i]);
         }
-        println(" ]");
+        println("]");
     }
 
     public static <T> void println(Collection<T> col) {
         if (col == null) {
+            println((String) null);
             return;
         }
-        col.forEach(System.out::println);
+        if (col.size() <= 1) {
+            print("{");
+            col.forEach(ConsoleHelper::print);
+            println("}");
+            return;
+        }
+        StringBuilder builder = new StringBuilder();
+        builder.append("{");
+        col.forEach(e -> {
+            builder.append(e);
+            builder.append("\n ");
+        });
+        builder.setLength(builder.length() - 2); // crop last separator
+        builder.append("}");
+        println(builder);
     }
 
     public static <K, V> void println(Map<K, V> map) {
-        if (map == null) {
-            println("null");
-            return;
-        }
-        Set<Map.Entry<K, V>> entries = map.entrySet();
-        for (Map.Entry<K, V> entry : entries) {
-            println(entry.getKey() + "=" + entry.getValue());
-        }
+        println(map, "%k=%v");
     }
 
     public static <K, V> void println(Map<K, V> map, String pattern) {
         if (map == null) {
-            println("null");
+            println((String) null);
             return;
         }
-        if (StringHelper.isNullOrBlank(pattern)) {
-            println(map);
-        }
+        if (StringHelper.isNullOrBlank(pattern)) pattern = "%k=%v";
         pattern = pattern.replaceAll("%K", "%k").replaceAll("%V", "%v");
-        if (!pattern.contains("%k") || !pattern.contains("%v")) {
-            throw new IllegalArgumentException("invalid pattern");
+        if (!pattern.contains("%k") || !pattern.contains("%v")) throw new IllegalArgumentException("invalid pattern '" +
+                                                                                                   pattern + "'");
+        String finalPattern = pattern;
+        if (map.size() <= 1) {
+            print("{");
+            map.forEach((k, v) -> println(finalPattern.replaceAll("%k", k.toString()).
+                    replaceAll("%v", v.toString())));
+            println("}");
+            return;
         }
-        Set<Map.Entry<K, V>> entries = map.entrySet();
-        for (Map.Entry<K, V> entry : entries) {
-            println(pattern.replaceAll("%k", entry.getKey().toString()).
-                    replaceAll("%v", entry.getValue().toString()));
-        }
+        StringBuilder builder = new StringBuilder();
+        builder.append("{");
+        map.forEach((k, v) -> {
+            builder.append(finalPattern.replaceAll("%k", k.toString()).
+                    replaceAll("%v", v.toString()));
+            builder.append("\n ");
+        });
+        builder.setLength(builder.length() - 2); // crop last separator
+        builder.append("}");
+        println(builder);
     }
 
     public static void printf(String format, Object... args) {
@@ -349,176 +369,121 @@ public class ConsoleHelper {
     public static Boolean readBoolean(String message) {
         print(message);
         try {
-            if (scanner.hasNextBoolean()) {
-                return scanner.nextBoolean();
-            } else {
-                scanner.nextLine();
-                return null;
-            }
+            if (scanner.hasNextBoolean()) return scanner.nextBoolean();
         } catch (Exception e) {
             e.printStackTrace();
-            scanner.nextLine();
-            return null;
         }
+        scanner.nextLine();
+        return null;
     }
 
     public static Byte readByte(String message) {
         try {
-            if (scanner.hasNextByte()) {
-                return scanner.nextByte();
-            } else {
-                scanner.nextLine();
-                return null;
-            }
+            if (scanner.hasNextByte()) return scanner.nextByte();
         } catch (Exception e) {
             e.printStackTrace();
-            scanner.nextLine();
-            return null;
         }
+        scanner.nextLine();
+        return null;
     }
 
     public static Short readShort(String message) {
         print(message);
         try {
-            if (scanner.hasNextShort()) {
-                return scanner.nextShort();
-            } else {
-                scanner.nextLine();
-                return null;
-            }
+            if (scanner.hasNextShort()) return scanner.nextShort();
         } catch (Exception e) {
             e.printStackTrace();
-            scanner.nextLine();
-            return null;
         }
+        scanner.nextLine();
+        return null;
     }
 
     public static Integer readInteger(String message) {
         print(message);
         try {
-            if (scanner.hasNextInt()) {
-                return scanner.nextInt();
-            } else {
-                scanner.nextLine();
-                return null;
-            }
+            if (scanner.hasNextInt()) return scanner.nextInt();
         } catch (Exception e) {
             e.printStackTrace();
-            scanner.nextLine();
-            return null;
         }
+        scanner.nextLine();
+        return null;
     }
 
     public static Long readLong(String message) {
         print(message);
         try {
-            if (scanner.hasNextLong()) {
-                return scanner.nextLong();
-            } else {
-                scanner.nextLine();
-                return null;
-            }
+            if (scanner.hasNextLong()) return scanner.nextLong();
         } catch (Exception e) {
             e.printStackTrace();
-            scanner.nextLine();
-            return null;
         }
+        scanner.nextLine();
+        return null;
     }
 
     public static Float readFloat(String message) {
         print(message);
         try {
-            if (scanner.hasNextFloat()) {
-                return scanner.nextFloat();
-            } else {
-                scanner.nextLine();
-                return null;
-            }
+            if (scanner.hasNextFloat()) return scanner.nextFloat();
         } catch (Exception e) {
             e.printStackTrace();
-            scanner.nextLine();
-            return null;
         }
+        scanner.nextLine();
+        return null;
     }
 
     public static Double readDouble(String message) {
         print(message);
         try {
-            if (scanner.hasNextDouble()) {
-                return scanner.nextDouble();
-            } else {
-                scanner.nextLine();
-                return null;
-            }
+            if (scanner.hasNextDouble()) return scanner.nextDouble();
         } catch (Exception e) {
-            scanner.nextLine();
             e.printStackTrace();
-            return null;
         }
+        scanner.nextLine();
+        return null;
     }
 
     public static Byte readByte(String message, int radix) {
         print(message);
         try {
-            if (scanner.hasNextByte(radix)) {
-                return scanner.nextByte(radix);
-            } else {
-                scanner.nextLine();
-                return null;
-            }
+            if (scanner.hasNextByte(radix)) return scanner.nextByte(radix);
         } catch (Exception e) {
             e.printStackTrace();
-            scanner.nextLine();
-            return null;
         }
+        scanner.nextLine();
+        return null;
     }
 
     public static Short readShort(String message, int radix) {
         print(message);
         try {
-            if (scanner.hasNextShort(radix)) {
-                return scanner.nextShort(radix);
-            } else {
-                scanner.nextLine();
-                return null;
-            }
+            if (scanner.hasNextShort(radix)) return scanner.nextShort(radix);
         } catch (Exception e) {
             e.printStackTrace();
-            scanner.nextLine();
-            return null;
         }
+        scanner.nextLine();
+        return null;
     }
 
     public static Integer readInteger(String message, int radix) {
         print(message);
         try {
-            if (scanner.hasNextInt(radix)) {
-                return scanner.nextInt(radix);
-            } else {
-                scanner.nextLine();
-                return null;
-            }
+            if (scanner.hasNextInt(radix)) return scanner.nextInt(radix);
         } catch (Exception e) {
             e.printStackTrace();
-            scanner.nextLine();
-            return null;
         }
+        scanner.nextLine();
+        return null;
     }
 
     public static Long readLong(String message, int radix) {
         print(message);
         try {
-            if (scanner.hasNextLong(radix)) {
-                return scanner.nextLong(radix);
-            } else {
-                scanner.nextLine();
-                return null;
-            }
+            if (scanner.hasNextLong(radix)) return scanner.nextLong(radix);
         } catch (Exception e) {
             e.printStackTrace();
-            scanner.nextLine();
-            return null;
         }
+        scanner.nextLine();
+        return null;
     }
 
     public static String read() {

@@ -51,17 +51,13 @@ public class DateRange {
     }
 
     public void set(LocalDate from, LocalDate to) {
-        if (from != null && to != null && !from.isAfter(to)) {
-            this.from = from;
-            this.to = to;
-        } else if (from == null) {
-            throw new NullPointerException("From date is null");
-        } else if (to == null) {
-            throw new NullPointerException("To date is null");
-        } else {
-            throw new IllegalArgumentException("From date '" + from.format(FORMAT) +
-                    "' cannot be after To date '" + to.format(FORMAT) + "'");
-        }
+        if (from == null) throw new NullPointerException("From date cannot be null");
+        if (to == null) throw new NullPointerException("to date cannot be null");
+        if (from.isAfter(to)) throw new IllegalArgumentException("From date '" + from.format(FORMAT) +
+                                                                 "' cannot be after To date '" + to.format(FORMAT) +
+                                                                 "'");
+        this.from = from;
+        this.to = to;
     }
 
     public void set(int yearFrom, Month monthFrom, int dayFrom, int yearTo, Month monthTo, int dayTo) {
@@ -101,8 +97,7 @@ public class DateRange {
         if (this == o) return true;
         if (!(o instanceof DateRange)) return false;
         DateRange dateRange = (DateRange) o;
-        return from.equals(dateRange.from) &&
-                to.equals(dateRange.to);
+        return from.equals(dateRange.from) && to.equals(dateRange.to);
     }
 
     @Override
