@@ -1,4 +1,4 @@
-package ru.ifmo.jjd.exercises.e14collections.messages;
+package ru.ifmo.jjd.exercises.e20lambdas.ex02;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -7,24 +7,11 @@ import java.util.Objects;
 
 import static ru.ifmo.jjd.utils.RandomHelper.randomInt;
 
-enum MessagePriority {
-    LOW, MEDIUM, HIGH, URGENT;
-
-    public static MessagePriority getPriority(int ord) {
-        for (MessagePriority mp : values()) {
-            if (ord == mp.ordinal()) {
-                return mp;
-            }
-        }
-        throw new AssertionError("Wrong ordinal: " + ord);
-    }
-}
-
 public class Message {
     private int code;
-    private MessagePriority priority;
+    private Priority priority;
 
-    public Message(int code, MessagePriority priority) {
+    public Message(int code, Priority priority) {
         this.code = code;
         this.priority = priority;
     }
@@ -37,11 +24,11 @@ public class Message {
         this.code = code;
     }
 
-    public MessagePriority getPriority() {
+    public Priority getPriority() {
         return priority;
     }
 
-    public void setPriority(MessagePriority priority) {
+    public void setPriority(Priority priority) {
         this.priority = priority;
     }
 
@@ -65,18 +52,27 @@ public class Message {
                ", priority=" + priority +
                '}';
     }
-}
 
-class MessageGenerator {
-    public static List<Message> generate(int num) {
-        if (num <= 0) {
-            return Collections.emptyList();
+    enum Priority {
+        LOW, MEDIUM, HIGH, URGENT;
+
+        public static Priority getPriority(int ord) {
+            for (Priority priority : Priority.values()) {
+                if (ord == priority.ordinal()) return priority;
+            }
+            throw new IllegalArgumentException("Wrong ordinal: " + ord);
         }
-        List<Message> messages = new ArrayList<>(num);
-        for (int i = 0; i < num; i++) {
-            messages.add(new Message(randomInt(10),
-                    MessagePriority.getPriority(randomInt(MessagePriority.values().length))));
+    }
+
+    static class Generator {
+        public static List<Message> generate(int amount) {
+            if (amount <= 0) return Collections.emptyList();
+            List<Message> messages = new ArrayList<>();
+            int length = Priority.values().length;
+            for (int i = 0; i < amount; i++) {
+                messages.add(new Message(randomInt(10, 50), Priority.getPriority(randomInt(length))));
+            }
+            return messages;
         }
-        return messages;
     }
 }

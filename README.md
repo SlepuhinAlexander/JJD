@@ -257,7 +257,19 @@
         <td>Доработать набор классов для обмена сообщениями в простейшей клиент-серверной архитектуре</td>
         <td>Готово</td>
     </tr>
-
+    <tr>
+        <td align="right">20</td>
+        <td>11.05</td>
+        <td><a href="src/ru/ifmo/jjd/lessons/l23lambdas">Функциональные интерфейсы<br/>Лямбда-выражения</a></td>
+        <td>
+            <a href="src/ru/ifmo/jjd/exercises/e20lambdas">Коллекции<br/>Мапы</a>
+        </td>
+        <td>
+            Отрефакторить задачи из <a href="src/ru/ifmo/jjd/exercises/e16collections">задания по коллекциям</a>
+            и <a href="src/ru/ifmo/jjd/exercises/e17maps">задания по мапам</a>, используя лямбда-выражения 
+        </td>
+        <td>Готово</td>
+    </tr>
 </table>
 
 ## Занятия

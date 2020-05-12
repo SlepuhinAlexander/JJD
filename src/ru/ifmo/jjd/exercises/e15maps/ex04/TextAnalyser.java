@@ -57,7 +57,7 @@ public class TextAnalyser {
                 symbols.put(c, 1);
             }
         }
-        symbolsCount = joined.length();
+        symbolsCount = chars.length;
     }
 
     public Map<String, Integer> words() {
@@ -85,7 +85,7 @@ public class TextAnalyser {
 
     public double wordPopularity(String word) {
         tokenize();
-        if (isNullOrBlank(word)) return 0f;
+        if (isNullOrBlank(word)) return 0d;
         Integer count = words.getOrDefault(word.toLowerCase(), 0);
         return count == null ? 0 : (int) (10000d * count / wordsCount) / 100d;
     }
