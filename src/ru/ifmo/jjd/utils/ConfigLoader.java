@@ -55,6 +55,10 @@ public class ConfigLoader {
         return getConfig(new File(paths.getProperty(globalKey, "")));
     }
 
+    public File getConfigFile(String globalKey) {
+        return new File(paths.getProperty(globalKey,""));
+    }
+
     public String getProperty(File file, String key) {
         if (!configs.containsKey(file)) return null;
         if (configs.get(file).size() == 0) loadConfig(file);

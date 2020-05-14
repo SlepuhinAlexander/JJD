@@ -67,7 +67,7 @@ public class Message {
     static class Generator {
         public static List<Message> generate(int amount) {
             if (amount <= 0) return Collections.emptyList();
-            List<Message> messages = new ArrayList<>();
+            List<Message> messages = new ArrayList<>(amount);
             int length = Priority.values().length;
             for (int i = 0; i < amount; i++) {
                 messages.add(new Message(randomInt(10, 50), Priority.getPriority(randomInt(length))));

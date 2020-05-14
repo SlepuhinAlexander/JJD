@@ -146,7 +146,7 @@
         <td><a href="src/ru/ifmo/jjd/lessons/l07inheritance">ООП</a></td>
         <td><a href="src/ru/ifmo/jjd/exercises/e10battleships">Морской бой</a></td>
         <td>Реализовать игру "Морской бой"</td>
-        <td>На проверке</td>
+        <td>Готово</td>
     </tr>
     <tr>
         <td align="right" rowspan="2">11</td>
@@ -265,9 +265,23 @@
             <a href="src/ru/ifmo/jjd/exercises/e20lambdas">Коллекции<br/>Мапы</a>
         </td>
         <td>
+            <i>Дополнительно.</i><br/>
             Отрефакторить задачи из <a href="src/ru/ifmo/jjd/exercises/e16collections">задания по коллекциям</a>
             и <a href="src/ru/ifmo/jjd/exercises/e17maps">задания по мапам</a>, используя лямбда-выражения 
         </td>
+        <td>Готово</td>
+    </tr>
+    <tr>
+        <td align="right">21</td>
+        <td>13.05</td>
+        <td>
+            <a href="src/ru/ifmo/jjd/lessons/l24streams">Stream API</a><br/>
+            <a href="src/ru/ifmo/jjd/lessons/l23lambdas">Функциональные интерфейсы</a>
+        </td>
+        <td>
+            <a href="src/ru/ifmo/jjd/exercises/e21streams">Стримы</a>
+        </td>
+        <td>Набор задач на работу со Stream API</td>
         <td>Готово</td>
     </tr>
 </table>
@@ -442,6 +456,12 @@
         <td>11.05</td>
         <td><a href="src/ru/ifmo/jjd/lessons/l23lambdas/README.md">Лямбда-выражения</a></td>
         <td><a href="src/ru/ifmo/jjd/lessons/l23lambdas">Черновик</a></td>
+    </tr>
+    <tr>
+        <td align="right">24</td>
+        <td>13.05</td>
+        <td><a href="src/ru/ifmo/jjd/lessons/l24streams/README.md">Stream API</a></td>
+        <td><a href="src/ru/ifmo/jjd/lessons/l24streams">Черновик</a></td>
     </tr>
 <!--
     <tr>

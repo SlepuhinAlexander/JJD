@@ -103,7 +103,7 @@ public class ConsoleHelper {
 
     public static void printText(String text, int wrapAt) {
         if (text == null) {
-            System.out.println((String) null);
+            println((String) null);
             return;
         }
         wrapAt = Math.min(Math.max(40, wrapAt), 200);
@@ -133,7 +133,7 @@ public class ConsoleHelper {
 
     public static void println(boolean[] arr) {
         if (arr == null) {
-            System.out.println((String) null);
+            println((String) null);
             return;
         }
         print("[");
@@ -152,7 +152,7 @@ public class ConsoleHelper {
 
     public static void println(byte[] arr) {
         if (arr == null) {
-            System.out.println((String) null);
+            println((String) null);
             return;
         }
         print("[");
@@ -171,7 +171,7 @@ public class ConsoleHelper {
 
     public static void println(short[] arr) {
         if (arr == null) {
-            System.out.println((String) null);
+            println((String) null);
             return;
         }
         print("[");
@@ -190,7 +190,7 @@ public class ConsoleHelper {
 
     public static void println(int[] arr) {
         if (arr == null) {
-            System.out.println((String) null);
+            println((String) null);
             return;
         }
         print("[");
@@ -209,7 +209,7 @@ public class ConsoleHelper {
 
     public static void println(long[] arr) {
         if (arr == null) {
-            System.out.println((String) null);
+            println((String) null);
             return;
         }
         print("[");
@@ -228,7 +228,7 @@ public class ConsoleHelper {
 
     public static void println(float[] arr) {
         if (arr == null) {
-            System.out.println((String) null);
+            println((String) null);
             return;
         }
         print("[");
@@ -247,7 +247,7 @@ public class ConsoleHelper {
 
     public static void println(double[] arr) {
         if (arr == null) {
-            System.out.println((String) null);
+            println((String) null);
             return;
         }
         print("[");
@@ -266,7 +266,7 @@ public class ConsoleHelper {
 
     public static void println(Object[] arr) {
         if (arr == null) {
-            System.out.println((String) null);
+            println((String) null);
             return;
         }
         print("[");
