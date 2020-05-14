@@ -25,14 +25,14 @@ public class PupilTask {
         println(groupByBirthYear(pupils));
         println("\nPupils with unique names:");
         printHavingUniqueNames(pupils);
-        println("\nSorted by gender, birth date, name (desc): ");
+        println("\nSorted by gender, birth date, name (desc):");
         println(sorted(pupils));
         int lower = randomInt(6, 12), upper = lower + randomInt(1, 6);
-        println("\nPupils who are " + lower + " to " + upper + " years old");
+        println("\nPupils who are " + lower + " to " + upper + " years old:");
         println(filterByAge(pupils, lower, upper));
         String name = Stream.of("Mike", "Tom", "Alex", "John", "Peter", "Jack", "Charlie", "Max", "Jenifer", "Linda",
                 "Elizabeth", "Samantha", "Sophia").findAny().get();
-        println("\nPupils called " + name);
+        println("\nPupils called " + name + ":");
         println(filterByName(pupils, name));
         println("\nHave summarized ages by gender:");
         println(sumAgesByGender(pupils));
@@ -69,7 +69,7 @@ public class PupilTask {
         DateTimeFormatter format = DateTimeFormatter.ofPattern("d MMM yy", Locale.ENGLISH);
         pupils.stream()
                 .collect(Collectors.toMap(Pupil::getName, Pupil::getBirthday, (pupil, pupil2) -> pupil))
-                .forEach((name, date) -> System.out.println(name + ": " + date.format(format)));
+                .forEach((name, date) -> println(name + ": " + date.format(format)));
     }
 
     public static List<Pupil> sorted(List<Pupil> pupils) {
@@ -252,7 +252,7 @@ public class PupilTask {
  *  Pupil{number=3, name='Linda', gender=female, birthday='15 Feb 14'}
  *  Pupil{number=14, name='Linda', gender=female, birthday='11 Apr 14'}}
  *
- * Pupils who are 10 to 14 years old
+ * Pupils who are 10 to 14 years old:
  * {Pupil{number=5, name='Charlie', gender=male, birthday='10 Jun 07'}
  *  Pupil{number=10, name='Elizabeth', gender=female, birthday='24 Dec 07'}
  *  Pupil{number=11, name='Charlie', gender=male, birthday='8 Apr 07'}
@@ -267,22 +267,11 @@ public class PupilTask {
  *  Pupil{number=27, name='Peter', gender=male, birthday='7 Apr 07'}
  *  Pupil{number=29, name='Jack', gender=male, birthday='5 Aug 09'}}
  *
- * Pupils called Mike
+ * Pupils called Mike:
  * {Pupil{number=28, name='Mike', gender=male, birthday='24 Sep 10'}}
  *
  * Have summarized ages by gender:
  * {FEMALE=121
  *  MALE=167}
  * */
-
-
-
-
-
-
-
-
-
-
-
 
