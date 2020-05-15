@@ -10,7 +10,7 @@ public class StringHelper {
             's', 't', 'v', 'w', 'x', 'z'};
 
     public static String uppercaseFirst(String s) {
-        return (isNullOrEmpty(s) || Character.isLowerCase(s.charAt(0))) ?
+        return (isNullOrEmpty(s) || Character.isUpperCase(s.charAt(0))) ?
                 s :
                 s.substring(0, 1).toUpperCase() + s.substring(1);
     }

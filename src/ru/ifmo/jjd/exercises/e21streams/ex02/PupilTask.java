@@ -25,6 +25,8 @@ public class PupilTask {
         println(groupByBirthYear(pupils));
         println("\nPupils with unique names:");
         printHavingUniqueNames(pupils);
+
+        
         println("\nSorted by gender, birth date, name (desc):");
         println(sorted(pupils));
         int lower = randomInt(6, 12), upper = lower + randomInt(1, 6);

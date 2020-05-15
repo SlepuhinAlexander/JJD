@@ -138,7 +138,7 @@ public class ConsoleHelper {
         }
         print("[");
         if (arr.length <= 1) {
-            print(arr[0]);
+            for (int i = 0; i < arr.length; i++) print(arr[0]);
             println("]");
             return;
         }
@@ -157,7 +157,7 @@ public class ConsoleHelper {
         }
         print("[");
         if (arr.length <= 1) {
-            print(arr[0]);
+            for (int i = 0; i < arr.length; i++) print(arr[0]);
             println("]");
             return;
         }
@@ -176,7 +176,7 @@ public class ConsoleHelper {
         }
         print("[");
         if (arr.length <= 1) {
-            print(arr[0]);
+            for (int i = 0; i < arr.length; i++) print(arr[0]);
             println("]");
             return;
         }
@@ -195,7 +195,7 @@ public class ConsoleHelper {
         }
         print("[");
         if (arr.length <= 1) {
-            print(arr[0]);
+            for (int i = 0; i < arr.length; i++) print(arr[0]);
             println("]");
             return;
         }
@@ -214,7 +214,7 @@ public class ConsoleHelper {
         }
         print("[");
         if (arr.length <= 1) {
-            print(arr[0]);
+            for (int i = 0; i < arr.length; i++) print(arr[0]);
             println("]");
             return;
         }
@@ -233,7 +233,7 @@ public class ConsoleHelper {
         }
         print("[");
         if (arr.length <= 1) {
-            print(arr[0]);
+            for (int i = 0; i < arr.length; i++) print(arr[0]);
             println("]");
             return;
         }
@@ -252,7 +252,7 @@ public class ConsoleHelper {
         }
         print("[");
         if (arr.length <= 1) {
-            print(arr[0]);
+            for (int i = 0; i < arr.length; i++) print(arr[0]);
             println("]");
             return;
         }
@@ -271,7 +271,7 @@ public class ConsoleHelper {
         }
         print("[");
         if (arr.length <= 1) {
-            print(arr[0]);
+            for (int i = 0; i < arr.length; i++) print(arr[0]);
             println("]");
             return;
         }
