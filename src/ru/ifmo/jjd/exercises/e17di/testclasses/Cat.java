@@ -6,7 +6,6 @@ import ru.ifmo.jjd.exercises.e17di.testclasses.config.CatConfig;
 
 import java.util.ArrayList;
 
-@RequiredClass
 public class Cat extends Animal{
     @Required
     private CatConfig config;

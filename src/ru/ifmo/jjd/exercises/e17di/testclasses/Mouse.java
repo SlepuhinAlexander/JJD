@@ -4,7 +4,6 @@ import ru.ifmo.jjd.exercises.e17di.container.marks.Required;
 import ru.ifmo.jjd.exercises.e17di.container.marks.RequiredClass;
 import ru.ifmo.jjd.exercises.e17di.testclasses.config.MouseConfig;
 
-@RequiredClass
 public class Mouse extends Animal {
     @Required
     private MouseConfig config;
