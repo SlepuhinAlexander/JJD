@@ -278,11 +278,20 @@
             <a href="src/ru/ifmo/jjd/lessons/l24streams">Stream API</a><br/>
             <a href="src/ru/ifmo/jjd/lessons/l23lambdas">Функциональные интерфейсы</a>
         </td>
-        <td>
-            <a href="src/ru/ifmo/jjd/exercises/e21streams">Стримы</a>
-        </td>
+        <td><a href="src/ru/ifmo/jjd/exercises/e21streams">Стримы</a></td>
         <td>Набор задач на работу со Stream API</td>
         <td>Готово</td>
+    </tr>
+    <tr>
+        <td align="right">22</td>
+        <td>15.05</td>
+        <td><a href="src/ru/ifmo/jjd/lessons/l25threads">Паттерн Listener</a></td>
+        <td><a href="src/ru/ifmo/jjd/exercises/e22alarm">Сигнализация</a></td>
+        <td>
+            <i>Дополнительно.</i><br/>
+            Реализовать модель датчика температуры и сигнализации
+        </td>
+        <td>Не сделано</td>
     </tr>
 </table>
 
@@ -462,6 +471,12 @@
         <td>13.05</td>
         <td><a href="src/ru/ifmo/jjd/lessons/l24streams/README.md">Stream API</a></td>
         <td><a href="src/ru/ifmo/jjd/lessons/l24streams">Черновик</a></td>
+    </tr>
+    <tr>
+        <td align="right">25</td>
+        <td>15.05</td>
+        <td><a href="src/ru/ifmo/jjd/lessons/l25threads/README.md">Многопоточность. Потоки</a></td>
+        <td><a href="src/ru/ifmo/jjd/lessons/l25threads">Черновик</a></td>
     </tr>
 <!--
     <tr>
