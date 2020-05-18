@@ -291,6 +291,19 @@
             <i>Дополнительно.</i><br/>
             Реализовать модель датчика температуры и сигнализации
         </td>
+        <td>Готово</td>
+    </tr>
+    <tr>
+        <td rowspan="2" align="right">23</td>
+        <td rowspan="2">18.05</td>
+        <td rowspan="2"><a href="src/ru/ifmo/jjd/lessons/l26sync">Синхронизация</a></td>
+        <td><a href="src/ru/ifmo/jjd/exercises/e23sync/ex01">Транзакции</a></td>
+        <td>Многопоточная обработка банковских транзакций</td>
+        <td>Не сделано</td>
+    </tr>
+    <tr>
+        <td><a href="src/ru/ifmo/jjd/exercises/e23sync/ex02">Топ 100 слов</a></td>
+        <td>Параллельная статистическая обработка тектса</td>
         <td>Не сделано</td>
     </tr>
 </table>
@@ -475,15 +488,13 @@
     <tr>
         <td align="right">25</td>
         <td>15.05</td>
-        <td><a href="src/ru/ifmo/jjd/lessons/l25threads/README.md">Многопоточность. Потоки</a></td>
+        <td><a href="src/ru/ifmo/jjd/lessons/l25threads/README.md">Многопоточность</a></td>
         <td><a href="src/ru/ifmo/jjd/lessons/l25threads">Черновик</a></td>
     </tr>
-<!--
     <tr>
-        <td align="right">   </td>
-        <td>    </td>
-        <td><a href="src/ru/ifmo/jjd/lessons/    ">    </a></td>
-        <td><a href="src/ru/ifmo/jjd/lessons/    ">    </a></td>
+        <td align="right">26</td>
+        <td>18.05</td>
+        <td><a href="src/ru/ifmo/jjd/lessons/l26sync/README.md">Синхронизация</a></td>
+        <td><a href="src/ru/ifmo/jjd/lessons/l26sync">Черновик</a></td>
     </tr>
--->
 </table>
