@@ -9,10 +9,7 @@ import java.lang.invoke.MethodHandles;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import static ru.ifmo.jjd.utils.ConsoleHelper.printf;
 import static ru.ifmo.jjd.utils.ConsoleHelper.println;
@@ -48,10 +45,14 @@ public class TextTask {
         }
         Map<String, Integer> words = new HashMap<>();
         int part = lines.size() / processors;
+        Set<Thread> threads = new HashSet<>();
         for (int i = 1; i <= processors; i++) {
             Thread thread = new Thread(new WordProcessor(words, lines.subList((i - 1) * part, i == processors ?
                     lines.size() : i * part)));
-            thread.start();
+            threads.add(thread);
+        }
+        threads.forEach(Thread::start);
+        for (Thread thread : threads) {
             try {
                 thread.join();
             } catch (InterruptedException e) {
