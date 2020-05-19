@@ -299,12 +299,12 @@
         <td rowspan="2"><a href="src/ru/ifmo/jjd/lessons/l26sync">Синхронизация</a></td>
         <td><a href="src/ru/ifmo/jjd/exercises/e23sync/ex01">Транзакции</a></td>
         <td>Многопоточная обработка банковских транзакций</td>
-        <td>Не сделано</td>
+        <td>Готово</td>
     </tr>
     <tr>
         <td><a href="src/ru/ifmo/jjd/exercises/e23sync/ex02">Топ 100 слов</a></td>
         <td>Параллельная статистическая обработка тектса</td>
-        <td>Не сделано</td>
+        <td>Готово</td>
     </tr>
 </table>
 
