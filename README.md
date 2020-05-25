@@ -306,6 +306,14 @@
         <td>Параллельная статистическая обработка текста</td>
         <td>Готово</td>
     </tr>
+    <tr>
+        <td align="right">24</td>
+        <td>20.05</td>
+        <td><a href="src/ru/ifmo/jjd/lessons/l27concurrent">Очереди</a></td>
+        <td><a href="src/ru/ifmo/jjd/exercises/e24restaurant">Ресторан</a></td>
+        <td>Реализовать простейшую модель работы ресторана, используя очереди</td>
+        <td>Готово</td>
+    </tr>
 </table>
 
 ## Занятия
@@ -495,6 +503,25 @@
         <td align="right">26</td>
         <td>18.05</td>
         <td><a href="src/ru/ifmo/jjd/lessons/l26sync/README.md">Синхронизация</a></td>
+        <td><a href="src/ru/ifmo/jjd/lessons/l26sync">Черновик</a></td>
+    </tr>
+    <tr>
+        <td align="right">27</td>
+        <td>20.05</td>
+        <td><a href="src/ru/ifmo/jjd/lessons/l27concurrent/README.md">
+            Многопоточные коллекции, мапы<br/>
+            Пакет <code>java.util.concurrent</code><br/>
+            Очереди: блокирующие, отложенные.
+        </a></td>
+        <td><a href="src/ru/ifmo/jjd/lessons/l27concurrent">Черновик</a></td>
+    </tr>
+    <tr>
+        <td align="right">28</td>
+        <td>22.05</td>
+        <td><a href="src/ru/ifmo/jjd/lessons/l28executors/README.md">
+            Пулы потоков<br/>
+            Экзекьюторы
+        </a></td>
         <td><a href="src/ru/ifmo/jjd/lessons/l26sync">Черновик</a></td>
     </tr>
 </table>
