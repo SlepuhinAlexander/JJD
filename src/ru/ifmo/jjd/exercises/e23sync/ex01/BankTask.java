@@ -10,7 +10,6 @@ import static ru.ifmo.jjd.utils.RandomHelper.randomInt;
 public class BankTask {
     public static void main(String[] args) {
         Bank bank = new Bank();
-/*
         // worst case when two accs are tossing all their money
         Account a1 = new Account(0, 1000);
         Account a2 = new Account(1, 1000);
@@ -20,7 +19,7 @@ public class BankTask {
             bank.transferMoney(a1, a2, 1000);
             bank.transferMoney(a2, a1, 1000);
         }
-*/
+/*
         ArrayList<Account> accounts = new ArrayList<>(AccountGenerator.generate(5));
         accounts.forEach(bank::addAccount);
         bank.accountStats();
@@ -29,6 +28,7 @@ public class BankTask {
             int dstInd = (srcInd + randomInt(1, accounts.size())) % accounts.size();
             bank.transferMoney(accounts.get(srcInd), accounts.get(dstInd), randomInt(1,100));
         }
+*/
         try {
             Thread.sleep(30000);
         } catch (InterruptedException e) {

@@ -47,8 +47,8 @@ public class TextTask {
         int part = lines.size() / processors;
         Set<Thread> threads = new HashSet<>();
         for (int i = 1; i <= processors; i++) {
-            Thread thread = new Thread(new WordProcessor(words, lines.subList((i - 1) * part, i == processors ?
-                    lines.size() : i * part)));
+            Thread thread = new Thread(new WordProcessor(words, lines.subList((i - 1) * part,
+                    i == processors ? lines.size() : i * part)));
             threads.add(thread);
         }
         threads.forEach(Thread::start);
