@@ -17,10 +17,10 @@ import java.util.stream.Collectors;
 import static ru.ifmo.jjd.utils.StringHelper.uppercaseFirst;
 
 public class DIContainer {
-    private Path packageDirectory;
-    private Path configDir;
     private final Map<String, Object> configObjects = new HashMap<>();
     private final Map<String, Object> requiredObjects = new HashMap<>();
+    private Path packageDirectory;
+    private Path configDir;
 
     private DIContainer() {
     }
@@ -71,13 +71,15 @@ public class DIContainer {
                 .collect(Collectors.toMap(Class::getSimpleName, Function.identity()));
         Map<String, Class<?>> requiredClasses = allClasses.get("RequiredClass").stream()
                 .collect(Collectors.toMap(Class::getSimpleName, Function.identity()));
+
+
+
         for (String className : configClasses.keySet()) {
             configObjects.put(className, instantiate(configClasses.get(className)));
         }
         for (String className : configObjects.keySet()) {
             Class<?> aClass = configClasses.get(className);
-            ConfigClass annotation = aClass.getAnnotation(ConfigClass.class);
-            Objects.requireNonNull(annotation);
+            ConfigClass annotation = Objects.requireNonNull(aClass.getAnnotation(ConfigClass.class));
             Path valuesFile = configDir.resolve(annotation.file());
             if (!Files.exists(valuesFile) || !Files.isRegularFile(valuesFile) || !Files.isReadable(valuesFile)) {
                 throw new FileNotFoundException(valuesFile.toString());
@@ -123,6 +125,8 @@ public class DIContainer {
                 }
             }
         }
+
+
         for (String className : requiredClasses.keySet()) {
             requiredObjects.put(className, instantiate(requiredClasses.get(className)));
         }
@@ -156,13 +160,9 @@ public class DIContainer {
 
     private Object instantiate(Class<?> aClass) throws NoSuchMethodException, IllegalAccessException,
             InvocationTargetException, InstantiationException {
-        Objects.requireNonNull(aClass);
-        Constructor<?> aConstructor = aClass.getConstructor();
-        Objects.requireNonNull(aConstructor);
+        Constructor<?> aConstructor = Objects.requireNonNull(Objects.requireNonNull(aClass).getConstructor());
         aConstructor.setAccessible(true);
-        Object anObject = aConstructor.newInstance();
-        Objects.requireNonNull(anObject);
-        return anObject;
+        return Objects.requireNonNull(aConstructor.newInstance());
     }
 
     public Object get(Class<?> aClass) {
