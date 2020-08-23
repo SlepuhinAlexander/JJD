@@ -72,19 +72,18 @@ public class Accounting {
                     }
                 }
                 switch (count) {
-                    case 0 -> {
+                    case 0:
                         System.out.println("Could not find such job position. Please try again");
                         continue;
-                    }
-                    case 1 -> {
+                    case 1:
                         for (Position value : Position.values()) {
                             if (startsWithIgnoreCase(value.name, position)) {
                                 position = value.name;
                                 break;
                             }
                         }
-                    }
-                    default -> {
+                        break;
+                    default:
                         print("Could not identify your job position. Did you mean: ");
                         StringBuilder builder = new StringBuilder();
                         for (Position value : Position.values()) {
@@ -96,7 +95,6 @@ public class Accounting {
                         builder.append("?");
                         println(builder.toString());
                         continue;
-                    }
                 }
                 break;
             }

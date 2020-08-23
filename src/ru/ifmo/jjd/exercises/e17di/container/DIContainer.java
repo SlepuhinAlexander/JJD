@@ -101,17 +101,42 @@ public class DIContainer {
                 }
                 value = value.trim();
                 Class<?> fieldType = field.getType();
-                Object parsedValue = switch (fieldType.getSimpleName()) {
-                    case "boolean", "Boolean" -> Boolean.parseBoolean(value);
-                    case "char", "Character" -> value.charAt(0);
-                    case "byte", "Byte", "short", "Short", "int", "Integer" -> Integer.parseInt(value);
-                    case "long", "Long" -> Long.parseLong(value);
-                    case "float", "Float", "double", "Double" -> Double.parseDouble(value);
-                    case "String" -> value;
-                    default -> throw new ReflectiveOperationException("Unexpected field type '"
-                                                                      + field.getType() + "' in @ConfigClass class '"
-                                                                      + aClass.getName() + "'");
-                };
+                Object parsedValue;
+                switch (fieldType.getSimpleName()) {
+                    case "boolean":
+                    case "Boolean":
+                        parsedValue = Boolean.parseBoolean(value);
+                        break;
+                    case "char":
+                    case "Character":
+                        parsedValue = value.charAt(0);
+                        break;
+                    case "byte":
+                    case "Byte":
+                    case "short":
+                    case "Short":
+                    case "int":
+                    case "Integer":
+                        parsedValue = Integer.parseInt(value);
+                        break;
+                    case "long":
+                    case "Long":
+                        parsedValue = Long.parseLong(value);
+                        break;
+                    case "float":
+                    case "Float":
+                    case "double":
+                    case "Double":
+                        parsedValue = Double.parseDouble(value);
+                        break;
+                    case "String":
+                        parsedValue = value;
+                        break;
+                    default:
+                        throw new ReflectiveOperationException("Unexpected field type '"
+                                                               + field.getType() + "' in @ConfigClass class '"
+                                                               + aClass.getName() + "'");
+                }
                 Method setter;
                 setter = Arrays.stream(aClass.getMethods())
                         .filter(method -> method.getName().equals("set" + uppercaseFirst(field.getName())))

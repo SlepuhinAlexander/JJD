@@ -14,26 +14,30 @@ public class ReflectionTask {
         char[] chars = s.toCharArray();
         for (int i = 0; i < s.length(); i++) {
             switch (chars[i]) {
-                case '{', '[' -> {
+                case '{':
+                case '[':
                     System.out.println(chars[i]);
                     pad++;
                     System.out.print(padding.repeat(pad));
-                }
-                case ',' -> {
+                    break;
+                case ',':
                     System.out.println(chars[i]);
                     System.out.print(padding.repeat(pad));
-                }
-                case ']', '}' -> {
+                    break;
+                case ']':
+                case '}':
                     pad--;
                     System.out.println();
                     System.out.print(padding.repeat(pad));
                     System.out.print(chars[i]);
-                }
-                case ' ' -> {
+                    break;
+                case ' ':
                     if (i > 1 && chars[i - 1] == ',') continue;
                     System.out.print(chars[i]);
-                }
-                default -> System.out.print(chars[i]);
+                    break;
+                default:
+                    System.out.print(chars[i]);
+                    break;
             }
         }
     }

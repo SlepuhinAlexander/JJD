@@ -10,33 +10,25 @@ import static ru.ifmo.jjd.utils.RandomHelper.randomInt;
 public class EmployeesTask {
     public static void main(String[] args) {
         List<Employee> employees = Employee.generate(randomInt(10, 30));
-        print("""
-              =======================================
-              Created employees list (before sorting)
-              =======================================
-              """);
+        print("=======================================\n" +
+              "Created employees list (before sorting)\n" +
+              "=======================================\n");
         println(employees);
         employees.sort(Comparator.comparing(Employee::getName));
-        print("""
-              =======================================
-              Employee list sorted by name (asc)
-              ======================================= 
-              """);
+        print("=======================================\n" +
+              "Employee list sorted by name (asc)\n" +
+              "=======================================\n");
         println(employees);
         employees.sort(Comparator.comparing(Employee::getName).thenComparing(Employee::getSalary));
-        print("""
-              ===================================================
-              Employee list sorted by name (asc) and salary (asc)
-              =================================================== 
-              """);
+        print("===================================================\n" +
+              "Employee list sorted by name (asc) and salary (asc)\n" +
+              "===================================================\n");
         println(employees);
         employees.sort(Comparator.comparing(Employee::getName).thenComparing(Employee::getSalary).
                 thenComparing(Employee::getAge).thenComparing(Employee::getCompany));
-        print("""
-              =============================================================================
-              Employee list sorted by name (asc), salary (asc), age (asc) and company (asc)
-              =============================================================================
-              """);
+        print("=============================================================================\n" +
+              "Employee list sorted by name (asc), salary (asc), age (asc) and company (asc)\n" +
+              "=============================================================================\n");
         println(employees);
     }
 }

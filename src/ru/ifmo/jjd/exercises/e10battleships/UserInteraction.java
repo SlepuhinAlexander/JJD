@@ -11,11 +11,9 @@ import static ru.ifmo.jjd.utils.StringHelper.*;
 
 public class UserInteraction {
     public static int selectMainMenu() {
-        return selectAlternative("""
-                ================
-                BATTLESHIPS GAME
-                ================
-                """, "Start new game", "How to play", "Exit");
+        return selectAlternative("================\n" +
+                                 "BATTLESHIPS GAME\n" +
+                                 "================\n", "Start new game", "How to play", "Exit");
     }
 
     public static String selectName() {
@@ -302,76 +300,88 @@ public class UserInteraction {
     }
 
     public static void help() {
-        System.out.println("""
-                                
-                HOW TO PLAY
-                                
-                Battleships game is a strategy-type guessing game for two players.
-                                
-                Each player has its own fleet of naval units located on some battlefield (open sea).
-                The locations of the fleets are concealed from the other player. 
-                And the objective of the game is to find and destroy the opposing player's fleet before losing your 
-                own.               
-                                
-                The battlefield is represented by a rectangle, consisting of tiles.
-                Each naval unit occupies a line from one to several tiles the battlefield.
-                                
-                Players alternate turns trying to guess where the opposing players's fleet is located.
-                Player selects a target tile and 'shoots' there. 
-                The second player should response with the result: 
-                - 'Miss' when the targeted tile was empty;
-                - 'Hit' when the opponent succeeded - a ship was hit;
-                - 'Sunk' when the successfully targeted ship has all its tiles hit and now goes to the bottom.
-                                
-                If player misses he passes the turn to the other player.
-                But when player hits or sinks an enemy's ship he gets one more turn.
-                                
-                The game ends when one of the players has no fleet afloat.
-                                
-                In the given version of the game you can select and adjust a variety of options: 
-                - for each player you can select who is going to play: a person or a computer; in any combinations
-                - for each player you can adjust both battlefield dimensions
-                - for each player you can assemble your own fleet of mighty battle ships in any combinations 
-                - human player can arrange his fleet on the battlefield both manually or using randomly generated 
-                    positions
-                                
-                Remember that none ships can be placed next to each other. That's a rule. 
-                Each tile of a battle ship should be at least one tile from any tiles of any other ship.   
-                                
-                                
-                                
-                Most interactions with the game happens in console. Just follow-up the instructions shown.
-                Set-up steps are based on selecting an option form given alternatives.
-                Sea battle turns expect you to select a target for the next action.
-                                
-                During the main game stage of sea battle player can choose the current applied game mode, or in other 
-                words - the selected tool:
-                - Shooting: in this mode the selected target will be shot. It counts as a turn.
-                - Marking: in this mode player can mark a tile as presumably empty. For example a tile next to an 
-                  already sunk enemy ship. 
-                - Un-Marking: in this mode player can remove marks previously placed in Marking mode.  
-                                
-                Both Marking and Un-Marking do not count as a turn and do not affect opponents fleet, they are only 
-                for player's convenience.
-                By default, the Shooting mode is selected.
-                In order to switch the mode just leave the empty input for the next target selection dialog.
-                                
-                Each player has both his own and opponent's battlefields.
-                Player's own battlefield is to the left. Here the player can see his fleet and places where his 
-                opponent has already shot.
-                Opponent's battlefield if to the right and it displays only know information: previous targets, already 
-                hit tiles, sunk ships, and placed marks.
-                                
-                The game uses the following legend:
-                -   - (blank tile) on player's battlefield this tile is definitely empty;
-                      on opponent's battlefield this tile is yet concealed;
-                - · - a placed mark on opponent's battlefield, presuming this tile does not contain a ship;
-                - O - a tile occupied by one of your naval units; yet in service;
-                - * - a tile that was shot but none battle ship was hit;
-                - X - a hit tile of a player's or opponent's battle ship.
-                                
-                The game expects using a monospaced font in order to display the game contents properly.  
-                """);
+        System.out.println("\n" +
+                           "HOW TO PLAY\n" +
+                           "\n" +
+                           "Battleships game is a strategy-type guessing game for two players.\n" +
+                           "\n" +
+                           "Each player has its own fleet of naval units located on some battlefield (open sea).\n" +
+                           "The locations of the fleets are concealed from the other player.\n" +
+                           "And the objective of the game is to find and destroy the opposing player's fleet before " +
+                           "losing your\n" +
+                           "own.\n" +
+                           "\n" +
+                           "The battlefield is represented by a rectangle, consisting of tiles.\n" +
+                           "Each naval unit occupies a line from one to several tiles the battlefield.\n" +
+                           "\n" +
+                           "Players alternate turns trying to guess where the opposing players's fleet is located.\n" +
+                           "Player selects a target tile and 'shoots' there.\n" +
+                           "The second player should response with the result:\n" +
+                           "- 'Miss' when the targeted tile was empty;\n" +
+                           "- 'Hit' when the opponent succeeded - a ship was hit;\n" +
+                           "- 'Sunk' when the successfully targeted ship has all its tiles hit and now goes to the " +
+                           "bottom.\n" +
+                           "\n" +
+                           "If player misses he passes the turn to the other player.\n" +
+                           "But when player hits or sinks an enemy's ship he gets one more turn.\n" +
+                           "\n" +
+                           "The game ends when one of the players has no fleet afloat.\n" +
+                           "\n" +
+                           "In the given version of the game you can select and adjust a variety of options:\n" +
+                           "- for each player you can select who is going to play: a person or a computer; in any " +
+                           "combinations\n" +
+                           "- for each player you can adjust both battlefield dimensions\n" +
+                           "- for each player you can assemble your own fleet of mighty battle ships in any " +
+                           "combinations\n" +
+                           "- human player can arrange his fleet on the battlefield both manually or using randomly " +
+                           "generated\n" +
+                           "    positions\n" +
+                           "\n" +
+                           "Remember that none ships can be placed next to each other. That's a rule.\n" +
+                           "Each tile of a battle ship should be at least one tile from any tiles of any other ship" +
+                           ".\n" +
+                           "\n" +
+                           "\n" +
+                           "\n" +
+                           "Most interactions with the game happens in console. Just follow-up the instructions shown" +
+                           ".\n" +
+                           "Set-up steps are based on selecting an option form given alternatives.\n" +
+                           "Sea battle turns expect you to select a target for the next action.\n" +
+                           "\n" +
+                           "During the main game stage of sea battle player can choose the current applied game mode," +
+                           " or in other\n" +
+                           "words - the selected tool:\n" +
+                           "- Shooting: in this mode the selected target will be shot. It counts as a turn.\n" +
+                           "- Marking: in this mode player can mark a tile as presumably empty. For example a tile " +
+                           "next to an\n" +
+                           "  already sunk enemy ship.\n" +
+                           "- Un-Marking: in this mode player can remove marks previously placed in Marking mode.\n" +
+                           "\n" +
+                           "Both Marking and Un-Marking do not count as a turn and do not affect opponents fleet, " +
+                           "they are only\n" +
+                           "for player's convenience.\n" +
+                           "By default, the Shooting mode is selected.\n" +
+                           "In order to switch the mode just leave the empty input for the next target selection " +
+                           "dialog.\n" +
+                           "\n" +
+                           "Each player has both his own and opponent's battlefields.\n" +
+                           "Player's own battlefield is to the left. Here the player can see his fleet and places " +
+                           "where his\n" +
+                           "opponent has already shot.\n" +
+                           "Opponent's battlefield if to the right and it displays only know information: previous " +
+                           "targets, already\n" +
+                           "hit tiles, sunk ships, and placed marks.\n" +
+                           "\n" +
+                           "The game uses the following legend:\n" +
+                           "-   - (blank tile) on player's battlefield this tile is definitely empty;\n" +
+                           "      on opponent's battlefield this tile is yet concealed;\n" +
+                           "- · - a placed mark on opponent's battlefield, presuming this tile does not contain a " +
+                           "ship;\n" +
+                           "- O - a tile occupied by one of your naval units; yet in service;\n" +
+                           "- * - a tile that was shot but none battle ship was hit;\n" +
+                           "- X - a hit tile of a player's or opponent's battle ship.\n" +
+                           "\n" +
+                           "The game expects using a monospaced font in order to display the game contents properly.\n");
         Game.pause(15000);
     }
 

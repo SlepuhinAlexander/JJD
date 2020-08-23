@@ -15,9 +15,13 @@ public class Exercise11 {
             return;
         }
         switch (count) {
-            case 1 -> println("1");
-            case 2 -> println("1 1");
-            default -> {
+            case 1:
+                println("1");
+                break;
+            case 2:
+                println("1 1");
+                break;
+            default:
                 BigInteger previous = BigInteger.valueOf(1);
                 BigInteger current = BigInteger.valueOf(1);
                 BigInteger swap;
@@ -28,7 +32,7 @@ public class Exercise11 {
                     current = swap;
                     print(" " + current);
                 }
-            }
+                break;
         }
     }
 }

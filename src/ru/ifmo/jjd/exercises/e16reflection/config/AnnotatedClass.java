@@ -22,9 +22,7 @@ public class AnnotatedClass extends Ancestor implements AnInterface {
     @Required
     private ArrayList<ArrayList<Integer>> lists = new ArrayList<>();
     @Required
-    private String text = """
-            some text
-            """;
+    private String text = "some text\n";
 
     private Map<Integer,Integer> map;
 

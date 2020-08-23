@@ -20,11 +20,14 @@ public class Game {
     private static void mainMenu() {
         while (true) {
             switch (selectMainMenu()) {
-                case 0 -> initialize();
-                case 1 -> help();
-                case 2 -> {
+                case 0:
+                    initialize();
+                    break;
+                case 1:
+                    help();
+                    break;
+                case 2:
                     return;
-                }
             }
         }
     }
@@ -50,9 +53,7 @@ public class Game {
 
     private static void initialize() {
 
-        print("""
-                Setting up the first player
-                """);
+        print("Setting up the first player\n");
         boolean firstIsAI = selectAI();
         String firstName;
         if (firstIsAI) {
@@ -78,9 +79,7 @@ public class Game {
             placeFleet(first, firstFleet);
         }
 
-        print("""
-                Setting up the second player
-                """);
+        print("Setting up the second player\n");
         boolean secondIsAI = selectAI();
         String secondName;
         if (secondIsAI) {

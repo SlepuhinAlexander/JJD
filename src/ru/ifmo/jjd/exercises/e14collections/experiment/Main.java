@@ -57,23 +57,35 @@ public class Main {
         int pos = ll.size() / 2;
         Integer value;
         begin("Receiving " + position.getName() + " element form LinkedList of " + ll.size() + " elements " +
-                AMOUNT + " times");
+              AMOUNT + " times");
         for (int i = 0; i < AMOUNT; i++) {
             switch (position) {
-                case FIRST -> value = ll.getFirst();
-                case MIDDLE -> value = ll.get(pos);
-                case LAST -> value = ll.getLast();
+                case FIRST:
+                    value = ll.getFirst();
+                    break;
+                case MIDDLE:
+                    value = ll.get(pos);
+                    break;
+                case LAST:
+                    value = ll.getLast();
+                    break;
             }
         }
         end();
         avg(AMOUNT);
-        pos = switch (position) {
-            case FIRST -> 0;
-            case MIDDLE -> al.size() / 2;
-            case LAST -> al.size() - 1;
-        };
+        switch (position) {
+            case FIRST:
+                pos = 0;
+                break;
+            case MIDDLE:
+                pos = al.size() / 2;
+                break;
+            case LAST:
+                pos = al.size() - 1;
+                break;
+        }
         begin("Receiving " + position.getName() + " element form ArrayList of " + al.size() + " elements " +
-                AMOUNT + " times");
+              AMOUNT + " times");
         for (int i = 0; i < AMOUNT; i++) {
             value = al.get(pos);
         }
@@ -87,23 +99,35 @@ public class Main {
         println("---addingTest---");
         int pos = ll.size() / 2;
         begin("Adding element to " + position.getName() + " position in LinkedList of " + ll.size() + " elements " +
-                AMOUNT + " times");
+              AMOUNT + " times");
         for (int i = 0; i < AMOUNT; i++) {
             switch (position) {
-                case FIRST -> ll.addFirst(randomInt());
-                case MIDDLE -> ll.add(pos, randomInt());
-                case LAST -> ll.addLast(randomInt());
+                case FIRST:
+                    ll.addFirst(randomInt());
+                    break;
+                case MIDDLE:
+                    ll.add(pos, randomInt());
+                    break;
+                case LAST:
+                    ll.addLast(randomInt());
+                    break;
             }
         }
         end();
         avg(AMOUNT);
-        pos = switch (position) {
-            case FIRST -> 0;
-            case MIDDLE -> al.size() / 2;
-            case LAST -> al.size() - 1;
-        };
+        switch (position) {
+            case FIRST:
+                pos = 0;
+                break;
+            case MIDDLE:
+                pos = al.size() / 2;
+                break;
+            case LAST:
+                pos = al.size() - 1;
+                break;
+        }
         begin("Adding element to " + position.getName() + " position in ArrayList of " + al.size() + " elements " +
-                AMOUNT + " times");
+              AMOUNT + " times");
         for (int i = 0; i < AMOUNT; i++) {
             if (position == Position.LAST) {
                 al.add(randomInt());
@@ -121,23 +145,35 @@ public class Main {
         println("---removalTest---");
         int pos = ll.size() / 2;
         begin("Removing element from " + position.getName() + " position in LinkedList of " + ll.size() +
-                " elements " + AMOUNT + " times");
+              " elements " + AMOUNT + " times");
         for (int i = 0; i < AMOUNT; i++) {
             switch (position) {
-                case FIRST -> ll.removeFirst();
-                case MIDDLE -> ll.remove(pos);
-                case LAST -> ll.removeLast();
+                case FIRST:
+                    ll.removeFirst();
+                    break;
+                case MIDDLE:
+                    ll.remove(pos);
+                    break;
+                case LAST:
+                    ll.removeLast();
+                    break;
             }
         }
         end();
         avg(AMOUNT);
-        pos = switch (position) {
-            case FIRST -> 0;
-            case MIDDLE -> al.size() / 2;
-            case LAST -> al.size() - 1;
-        };
+        switch (position) {
+            case FIRST:
+                pos = 0;
+                break;
+            case MIDDLE:
+                pos = al.size() / 2;
+                break;
+            case LAST:
+                pos = al.size() - 1;
+                break;
+        }
         begin("Removing element from " + position.getName() + " position in ArrayList of " + al.size() +
-                " elements " + AMOUNT + " times");
+              " elements " + AMOUNT + " times");
         for (int i = 0; i < AMOUNT; i++) {
             if (position == Position.LAST) {
                 al.remove(al.size() - 1);

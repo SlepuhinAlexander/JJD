@@ -30,9 +30,12 @@ public class Main {
 
     static void throwException(Status status) throws FileNotFoundException, AccessDeniedException, JarException {
         switch (status) {
-            case FILE_NOT_FOUND -> throw new FileNotFoundException();
-            case ACCESS_DENIED -> throw new AccessDeniedException(null);
-            case JAR_ERROR -> throw new JarException();
+            case FILE_NOT_FOUND:
+                throw new FileNotFoundException();
+            case ACCESS_DENIED:
+                throw new AccessDeniedException(null);
+            case JAR_ERROR:
+                throw new JarException();
         }
     }
 

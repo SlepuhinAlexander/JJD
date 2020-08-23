@@ -203,10 +203,21 @@ public class ConditionalStatementsDemo {
         // тот же пример
         num = ((int) (Math.random() * 9) + 1) * 111;
         switch (num) {
-            case 111, 222, 333 -> System.out.println(num + " малый приз");
-            case 444, 555 -> System.out.println(num + " средний приз");
-            case 777 -> System.out.println(num + " крупный приз");
-            default -> System.out.println(num + " попробуйте ещё раз");
+            case 111:
+            case 222:
+            case 333:
+                System.out.println(num + " малый приз");
+                break;
+            case 444:
+            case 555:
+                System.out.println(num + " средний приз");
+                break;
+            case 777:
+                System.out.println(num + " крупный приз");
+                break;
+            default:
+                System.out.println(num + " попробуйте ещё раз");
+                break;
         }
         // 111 малый приз
 
@@ -215,17 +226,26 @@ public class ConditionalStatementsDemo {
          * */
         // тот же пример.
         num = ((int) (Math.random() * 9) + 1) * 111;
-        String result = switch (num) {
-            case 111, 222, 333 -> num + " малый приз";
-            case 444, 555 -> num + " средний приз";
-            case 777 -> num + " крупный приз";
-            default -> {
+        String result;
+        switch (num) {
+            case 111:
+            case 222:
+            case 333:
+                result = num + " малый приз";
+                break;
+            case 444:
+            case 555:
+                result = num + " средний приз";
+                break;
+            case 777:
+                result = num + " крупный приз";
+                break;
+            default:
                 String msg = " попробуйте ещё раз";
                 System.out.print(num);
-                // break msg; // Java 12
-                yield msg; // Java 13
-            }
-        };
+                result = msg;
+                break;
+        }
         System.out.println(result);
         // 777 крупный приз
     }

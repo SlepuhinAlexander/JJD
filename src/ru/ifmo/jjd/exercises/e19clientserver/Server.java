@@ -113,19 +113,26 @@ public class Server {
         if (command.length == 0) {
             responseText = "unknown command";
         } else {
-            responseText = switch (command[0].toLowerCase()) {
-                case "/help" -> """
-                                                                
-                                /help this help message
-                                /ping check connection to server
-                                /count get total amount of connections to server made
-                                /name get current sender name (client-side)
-                                /name [Name] set current sender name (client-side) 
-                                /exit stop and close application""";
-                case "/ping" -> "available";
-                case "/count" -> "" + connectionsCount;
-                default -> "unknown command";
-            };
+            switch (command[0].toLowerCase()) {
+                case "/help":
+                    responseText = "\n" +
+                    "/help this help message\n" +
+                    "/ping check connection to server\n" +
+                    "/count get total amount of connections to server made\n" +
+                    "/name get current sender name (client-side)\n" +
+                    "/name [Name] set current sender name (client-side)\n" +
+                    "/exit stop and close application";
+                    break;
+                case "/ping":
+                    responseText = "available";
+                    break;
+                case "/count":
+                    responseText = "" + connectionsCount;
+                    break;
+                default:
+                    responseText = "unknown command";
+                    break;
+            }
         }
         Message response = new Message(name, responseText);
         int attempt = 0;

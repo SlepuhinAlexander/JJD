@@ -129,20 +129,23 @@ public class Client {
             String[] command = text.split("\\s+");
             if (command.length == 0) continue;
             switch (command[0].toLowerCase()) {
-                case "/name" -> {
+                case "/name":
                     if (command.length > 1) {
                         name = command[1];
                         ConfigLoader.getConfigLoader().setProperty(className, "senderName", name);
                     } else {
                         println(name);
                     }
-                }
-                case "/exit" -> {
+                    break;
+                case "/exit":
                     return;
-                }
-                case "/help" -> interact(new Message(name, "/help"));
-                case "/count" -> interact(new Message(name, "/count"));
-                case "/ping" -> {
+                case "/help":
+                    interact(new Message(name, "/help"));
+                    break;
+                case "/count":
+                    interact(new Message(name, "/count"));
+                    break;
+                case "/ping":
                     Message request = new Message(name, "/ping");
                     Message response = interact(request);
                     if (response != null) {
@@ -150,8 +153,10 @@ public class Client {
                         long elapsed = duration.getSeconds() * 1_000_000_000L + duration.getNano();
                         println("elapsed " + elapsed / 1_000_000 + "." + (elapsed % 1_000_000) / 1_000 + " ms");
                     }
-                }
-                default -> println("unknown command");
+                    break;
+                default:
+                    println("unknown command");
+                    break;
             }
         }
     }

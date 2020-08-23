@@ -49,17 +49,15 @@ public class FileSplitter {
     }
 
     private static void usage() {
-        println("""
-                Usage: 
-                [fileName / filePath] 
-                (for any file chunk) to merge all corresponding file chunks into one file
-                                               
-                [fileName / filePath] [amount]
-                to split the given file into given amount of equally-sized chunks
-                                    
-                [fileName / FilePath] [1K / 1.44m / 2.4G / etc]
-                to split the given file into chunks occupying at most the given size
-                """);
+        println("Usage:\n" +
+                "[fileName / filePath]\n" +
+                "(for any file chunk) to merge all corresponding file chunks into one file\n" +
+                "\n" +
+                "[fileName / filePath] [amount]\n" +
+                "to split the given file into given amount of equally-sized chunks\n" +
+                "\n" +
+                "[fileName / FilePath] [1K / 1.44m / 2.4G / etc]\n" +
+                "to split the given file into chunks occupying at most the given size\n");
     }
 
     private static File findFile(String path) {
@@ -177,10 +175,18 @@ public class FileSplitter {
             return 0;
         }
         switch (lastChar) {
-            case 'b' -> result = (long) size;
-            case 'k' -> result = (long) (size * 1024);
-            case 'm' -> result = (long) (size * 1024) * 1024; // round to kb
-            case 'g' -> result = (long) (size * 1024) * 1024 * 1024; // round to mb
+            case 'b':
+                result = (long) size;
+                break;
+            case 'k':
+                result = (long) (size * 1024);
+                break;
+            case 'm':
+                result = (long) (size * 1024) * 1024;         // round to kb
+                break;
+            case 'g':
+                result = (long) (size * 1024) * 1024 * 1024; // round to mb
+                break;
         }
         return result;
     }

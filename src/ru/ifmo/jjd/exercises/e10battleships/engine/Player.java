@@ -162,7 +162,7 @@ public class Player {
             Cell.State result = enemy.checkHit(target.x, target.y);
             if (result != null) {
                 switch (result) {
-                    case HIT -> {
+                    case HIT:
                         Game.pause(1000);
                         target.setState(Cell.State.HIT);
                         hasSunk = enemy.checkHasSunk();
@@ -172,13 +172,13 @@ public class Player {
                             println("Hit!");
                         }
                         println(name + " can make one more move");
-                    }
-                    case MISS -> {
+                        break;
+                    case MISS:
                         Game.pause(1000);
                         println("Miss!");
                         target.setState(Cell.State.MISS);
                         Game.passTurn();
-                    }
+                        break;
                 }
                 display();
             } else {
@@ -321,9 +321,15 @@ public class Player {
                     return;
                 }
                 switch (mode) {
-                    case SHOOT -> shoot(target[0], target[1]);
-                    case MARK -> mark(target[0], target[1]);
-                    case UNMARK -> unMark(target[0], target[1]);
+                    case SHOOT:
+                        shoot(target[0], target[1]);
+                        break;
+                    case MARK:
+                        mark(target[0], target[1]);
+                        break;
+                    case UNMARK:
+                        unMark(target[0], target[1]);
+                        break;
                 }
             } catch (NullPointerException | IndexOutOfBoundsException e) {
                 println("Invalid target. Please try again");

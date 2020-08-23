@@ -18,17 +18,18 @@ public class Exercise03 {
     }
 
     static boolean isStrictlyIncreasing(int[] arr) {
-        return switch (arr.length) {
-            case 0, 1 -> false;
-            default -> {
+        switch (arr.length) {
+            case 0:
+            case 1:
+                return false;
+            default:
                 for (int i = 1; i < arr.length; i++) {
                     if (arr[i] <= arr[i - 1]) {
-                        yield false;
+                        return false;
                     }
                 }
-                yield true;
-            }
-        };
+                return true;
+        }
     }
 }
 /*

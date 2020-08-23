@@ -27,26 +27,27 @@ public class Cell {
             throw new NullPointerException("New cell state cannot be null");
         }
         switch (state) {
-            case NONE -> {
+            case NONE:
                 if (this.state == State.EMPTY) {
                     this.state = state;
                 }
-            }
-            case BUSY, EMPTY -> {
+                break;
+            case BUSY:
+            case EMPTY:
                 if (this.state == State.NONE) {
                     this.state = state;
                 }
-            }
-            case MISS -> {
+                break;
+            case MISS:
                 if (this.state == State.NONE || this.state == State.EMPTY) {
                     this.state = state;
                 }
-            }
-            case HIT -> {
+                break;
+            case HIT:
                 if (this.state == State.NONE || this.state == State.EMPTY || this.state == State.BUSY) {
                     this.state = state;
                 }
-            }
+                break;
         }
     }
 
